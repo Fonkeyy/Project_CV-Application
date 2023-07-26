@@ -2,14 +2,14 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
 import './App.css';
-import Header from './Header';
-import EducTile from './Components/EducTile';
+import HeaderSection from './HeaderSection';
+import EducSection from './EducSection';
 
 function App() {
     return (
         <div className="App">
-            <Header />
-            <EducTile />
+            <HeaderSection />
+            <EducSection />
         </div>
     );
 }

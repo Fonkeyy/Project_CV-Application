@@ -4,9 +4,9 @@ import InputText from './Components/InputText';
 import Address from './Components/Address';
 import SubmitBtn from './Components/SubmitBtn';
 
-function Header() {
+function HeaderSection() {
     return (
-        <div className="Header">
+        <div className="Header-section">
             <InputText label="First Name:" placeholder="Enter your first Name" />
             <InputText label="Last Name:" placeholder="Enter your last Name" />
             <InputText label="Phone Number:" placeholder="Enter your phone number" />
@@ -16,4 +16,4 @@ function Header() {
     );
 }
 
-export default Header;
+export default HeaderSection;
