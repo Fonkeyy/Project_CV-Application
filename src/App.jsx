@@ -4,12 +4,14 @@ import React from 'react';
 import './App.css';
 import HeaderSection from './HeaderSection';
 import EducSection from './EducSection';
+import PracticeSection from './PracticeSection';
 
 function App() {
     return (
         <div className="App">
             <HeaderSection />
             <EducSection />
+            <PracticeSection />
         </div>
     );
 }
