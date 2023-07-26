@@ -3,12 +3,14 @@
 import React from 'react';
 import './App.css';
 import Header from './Header';
+import EducTile from './Components/EducTile';
 
 function App() {
     return (
-        <>
+        <div className="App">
             <Header />
-        </>
+            <EducTile />
+        </div>
     );
 }
 

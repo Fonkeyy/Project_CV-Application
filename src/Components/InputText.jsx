@@ -6,7 +6,7 @@ function InputText({ label, placeholder }) {
     return (
         <>
             <label>
-                {label} <input placeholder={placeholder} />
+                {label} <input type="text" placeholder={placeholder} />
             </label>
         </>
     );
