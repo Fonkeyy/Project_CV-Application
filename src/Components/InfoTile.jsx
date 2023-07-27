@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
-import SubmitBtn from './SubmitBtn';
 import InputField from './InputField';
 
 function InfoTile() {
@@ -19,7 +18,6 @@ function InfoTile() {
                     <InputField label={field.label} placeholder={field.placeholder} />
                 </div>
             ))}
-            {/* <SubmitBtn value="Submit" /> */}
         </div>
     );
 }

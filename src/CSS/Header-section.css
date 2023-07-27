@@ -23,11 +23,11 @@
 }
 
 .header-name {
-    font-size: 2.5rem;
+    font-size: clamp(24px, 6vw, 40px);
 }
 
 .header-title {
-    font-size: 1.5rem;
+    font-size: clamp(14px, 6vw, 30px);
 }
 
 #profile-picture-container {

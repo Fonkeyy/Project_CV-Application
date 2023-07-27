@@ -3,9 +3,11 @@ import React from 'react';
 import EducTile from './Components/EducTile';
 import AddMoreBtn from './Components/AddMoreBtn';
 
+import '../src/CSS/Educ-section.css';
+
 function EducSection() {
     return (
-        <div className="Educ-section">
+        <div id="Educ-section">
             <EducTile />
             <AddMoreBtn />
         </div>

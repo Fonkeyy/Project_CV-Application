@@ -2,7 +2,7 @@
 import React from 'react';
 import InputField from './Components/InputField';
 
-import '../src/CSS/Header.css';
+import '../src/CSS/Header-section.css';
 import '../src/CSS/App.css';
 
 function HeaderSection() {

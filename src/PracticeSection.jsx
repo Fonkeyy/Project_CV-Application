@@ -3,9 +3,11 @@ import React from 'react';
 import PracticeTile from './Components/PracticeTile';
 import AddMoreBtn from './Components/AddMoreBtn';
 
+import '../src/CSS/Practice-section.css';
+
 function PracticeSection() {
     return (
-        <div className="Practice-section">
+        <div id="Practice-section">
             <PracticeTile />
             <AddMoreBtn />
         </div>

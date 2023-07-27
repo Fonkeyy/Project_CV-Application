@@ -5,13 +5,15 @@ import '../src/CSS/App.css';
 import HeaderSection from './HeaderSection';
 import EducSection from './EducSection';
 import PracticeSection from './PracticeSection';
+import ContactSection from './ContactSection';
 
 function App() {
     return (
         <div className="App">
             <HeaderSection />
-            <EducSection />
             <PracticeSection />
+            <EducSection />
+            <ContactSection />
         </div>
     );
 }
