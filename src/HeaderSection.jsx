@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
 import InputField from './Components/InputField';
-import Address from './Components/Address';
+import AddressTile from './Components/AddressTile';
 import SubmitBtn from './Components/SubmitBtn';
 
 function HeaderSection() {
