@@ -6,12 +6,13 @@ import SubmitBtn from './Components/SubmitBtn';
 
 function HeaderSection() {
     return (
-        <div className="Header-section">
-            <InputText label="First Name:" placeholder="Enter your first Name" />
-            <InputText label="Last Name:" placeholder="Enter your last Name" />
-            <InputText label="Phone Number:" placeholder="Enter your phone number" />
-            <Address />
-            <SubmitBtn value="Submit" />
+        <div id="Header" className="relative grid place-content-center gap-8 h-[75vh] w-screen">
+            <InputField
+                className=" text-white font-bold text-2xl bg-transparent border-b-8 "
+                type="text"
+                placeholder="Full Name"
+            />
+            <InputField className="text-red-500 font-bold text-xl " type="text" placeholder="Title" />
         </div>
     );
 }

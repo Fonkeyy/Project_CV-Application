@@ -1,0 +1,15 @@
+#Header::before {
+    content: '';
+    background-image: url(https://images.pexels.com/photos/270632/pexels-photo-270632.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0.8;
+    filter: blur(3px);
+}
