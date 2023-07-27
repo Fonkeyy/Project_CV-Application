@@ -7,9 +7,12 @@ import '../src/CSS/App.css';
 
 function HeaderSection() {
     return (
-        <div id="Header" className="">
+        <div id="Header">
             <InputField className="Input-field header-name " type="text" placeholder="Full Name" />
             <InputField className="Input-field header-title" type="text" placeholder="Title" />
+            <div id="profile-picture-container">
+                <div id="profile-picture"></div>
+            </div>
         </div>
     );
 }
