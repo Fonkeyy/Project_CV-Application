@@ -1,6 +1,6 @@
 #Header {
     position: relative;
-    height: 75vh;
+    height: 70vh;
     display: grid;
     place-content: center;
     gap: 2rem;
@@ -12,7 +12,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    height: 75vh;
+    height: 70vh;
     width: 100%;
     position: absolute;
     top: 0;
