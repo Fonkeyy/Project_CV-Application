@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
-import InputText from './Components/InputText';
+import InputField from './Components/InputField';
 import Address from './Components/Address';
 import SubmitBtn from './Components/SubmitBtn';
 
