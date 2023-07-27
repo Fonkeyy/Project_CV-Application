@@ -1,7 +1,7 @@
 // import { useState } from 'react';
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
-import './App.css';
+import '../src/CSS/App.css';
 import HeaderSection from './HeaderSection';
 import EducSection from './EducSection';
 import PracticeSection from './PracticeSection';

@@ -1,14 +1,15 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
 import InputField from './Components/InputField';
-import AddressTile from './Components/AddressTile';
-import SubmitBtn from './Components/SubmitBtn';
+
+import '../src/CSS/Header.css';
+import '../src/CSS/App.css';
 
 function HeaderSection() {
     return (
         <div id="Header" className="">
-            <InputField className="InputField " type="text" placeholder="Full Name" />
-            <InputField className="InputField" type="text" placeholder="Title" />
+            <InputField className="Input-field header-name " type="text" placeholder="Full Name" />
+            <InputField className="Input-field header-title" type="text" placeholder="Title" />
         </div>
     );
 }

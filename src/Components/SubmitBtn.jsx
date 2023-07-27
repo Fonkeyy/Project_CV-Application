@@ -2,8 +2,8 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
 
-function SubmitBtn({ value }) {
-    return <button>{value}</button>;
+function SubmitBtn() {
+    return <button className="submit-btn"> </button>;
 }
 
 export default SubmitBtn;
