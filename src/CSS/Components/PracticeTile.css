@@ -1,5 +1,7 @@
-.Practice-tile {
-    /* display: grid;
-    place-content: center;
-    place-items: center; */
+#Practice-tile {
+    /* align-self: flex-start !important; */
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: lightsalmon;
 }
