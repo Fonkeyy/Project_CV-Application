@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
-import AddBtn from './AddBtn';
 import EditBtn from './EditBtn';
 
 import '../CSS/Components/PracticeTile.css';
@@ -9,7 +8,7 @@ import InputTextArea from './InputTextArea';
 import InputText from './InputText';
 import SubmitBtn from './SubmitBtn';
 
-const PracticeTile = () => {
+const PracticeTile = ({ data, onTileSubmit }) => {
     const [submitted, setSubmitted] = useState(false);
     const [companyValue, setCompanyValue] = useState('');
     const [titleValue, setTitleValue] = useState('');
@@ -27,8 +26,9 @@ const PracticeTile = () => {
         }
     };
 
-    const handleAddBtn = () => {
+    const handleSubmitBtn = () => {
         setSubmitted(true);
+        onTileSubmit({ company: companyValue, title: titleValue, description: descriptionValue });
     };
 
     const handleEdit = () => {
@@ -51,20 +51,23 @@ const PracticeTile = () => {
                         className="Input-text"
                         placeholder="Enter company name"
                         onChange={handleInputChange}
+                        value={companyValue}
                     />
                     <InputText
                         id="position-title"
                         className="Input-text"
                         placeholder="Enter position title"
                         onChange={handleInputChange}
+                        value={titleValue}
                     />
                     <InputTextArea
                         id="description"
                         placeholder="Describe your experience"
                         onChange={handleInputChange}
+                        value={descriptionValue}
                     />
 
-                    <SubmitBtn onClick={handleAddBtn} />
+                    <SubmitBtn onClick={handleSubmitBtn} />
                 </>
             )}
         </div>
