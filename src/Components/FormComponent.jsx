@@ -8,12 +8,15 @@ import EditBtn from './EditBtn';
 
 import '../CSS/Components/FormComponent.css';
 
-const FormComponent = ({ id, placeholder }) => {
+const FormComponent = ({ id, className, placeholder, onValueChange }) => {
     const [inputValue, setInputValue] = useState('');
     const [submitted, setSubmitted] = useState(false);
 
     const handleInputChange = (event) => {
         setInputValue(event.target.value);
+        if (onValueChange) {
+            onValueChange(event);
+        }
     };
 
     const handleSubmit = () => {
@@ -21,16 +24,16 @@ const FormComponent = ({ id, placeholder }) => {
         !inputValue && alert('Please enter value before submitting');
     };
 
-    const handleModify = () => {
+    const handleEdit = () => {
         setSubmitted(false);
     };
 
     return (
-        <div id="Form-component">
+        <div className={className}>
             {submitted ? (
                 <>
                     <div className="text">{inputValue}</div>
-                    <EditBtn onClick={handleModify} />
+                    <EditBtn onClick={handleEdit} />
                 </>
             ) : (
                 <>
