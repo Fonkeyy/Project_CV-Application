@@ -1,0 +1,10 @@
+.Input-text-area {
+    background: transparent;
+    height: 50px;
+    color: white;
+    border: 1px solid black;
+}
+
+.Input-text-area::placeholder {
+    color: white;
+}

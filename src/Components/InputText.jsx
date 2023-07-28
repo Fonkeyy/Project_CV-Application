@@ -4,11 +4,11 @@ import React, { useState } from 'react';
 
 import '../CSS/Components/InputText.css';
 
-function InputText({ value, onChange, id, placeholder }) {
+function InputText({ id, className, value, onChange, placeholder }) {
     return (
         <input
             id={id}
-            className="Input-text"
+            className={className}
             type="text"
             placeholder={placeholder}
             value={value}

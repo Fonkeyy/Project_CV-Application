@@ -8,8 +8,19 @@ import FormComponent from './Components/FormComponent';
 function HeaderSection() {
     return (
         <div id="Header">
-            <FormComponent id="full-name" className="header-form Form-component" placeholder="Full Name" />
-            <FormComponent id="title" className="header-form Form-component" placeholder="Title" />
+            <FormComponent
+                id="full-name"
+                className="header-form Form-component"
+                inputClassName="Input-text"
+                placeholder="Full Name"
+            />
+
+            <FormComponent
+                id="title"
+                className="header-form Form-component"
+                inputClassName="Input-text"
+                placeholder="Title"
+            />
 
             <div id="profile-picture-container">
                 <div id="profile-picture"></div>

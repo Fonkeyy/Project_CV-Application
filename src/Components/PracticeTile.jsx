@@ -1,12 +1,13 @@
 /* eslint-disable react/prop-types */
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
-import FormComponent from './FormComponent';
 import AddBtn from './AddBtn';
 import EditBtn from './EditBtn';
 
 import '../CSS/Components/PracticeTile.css';
 import InputTextArea from './InputTextArea';
+import InputText from './InputText';
+import SubmitBtn from './SubmitBtn';
 
 const PracticeTile = () => {
     const [submitted, setSubmitted] = useState(false);
@@ -45,17 +46,17 @@ const PracticeTile = () => {
                 </>
             ) : (
                 <>
-                    <FormComponent
+                    <InputText
                         id="company-name"
-                        className="Practice-form Form-component"
+                        className="Input-text"
                         placeholder="Enter company name"
-                        onValueChange={handleInputChange}
+                        onChange={handleInputChange}
                     />
-                    <FormComponent
+                    <InputText
                         id="position-title"
-                        className="Practice-form Form-component"
+                        className="Input-text"
                         placeholder="Enter position title"
-                        onValueChange={handleInputChange}
+                        onChange={handleInputChange}
                     />
                     <InputTextArea
                         id="description"
@@ -63,7 +64,7 @@ const PracticeTile = () => {
                         onChange={handleInputChange}
                     />
 
-                    <AddBtn onClick={handleAddBtn} />
+                    <SubmitBtn onClick={handleAddBtn} />
                 </>
             )}
         </div>

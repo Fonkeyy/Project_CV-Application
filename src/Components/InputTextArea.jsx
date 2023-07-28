@@ -1,8 +1,9 @@
 /* eslint-disable react/prop-types */
 // eslint-disable-next-line no-unused-vars
-import React, { useState } from 'react';
+import React from 'react';
 
-import '../CSS/Components/InputText.css';
+// import '../CSS/Components/InputText';
+import '../CSS/Components/InputTextArea.css';
 
 function InputTextArea({ value, onChange, id, placeholder }) {
     return (

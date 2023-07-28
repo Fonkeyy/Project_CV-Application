@@ -8,7 +8,7 @@ import EditBtn from './EditBtn';
 
 import '../CSS/Components/FormComponent.css';
 
-const FormComponent = ({ id, className, placeholder, onValueChange }) => {
+const FormComponent = ({ id, className, inputClassName, placeholder, onValueChange }) => {
     const [inputValue, setInputValue] = useState('');
     const [submitted, setSubmitted] = useState(false);
 
@@ -41,6 +41,7 @@ const FormComponent = ({ id, className, placeholder, onValueChange }) => {
                         value={inputValue}
                         onChange={handleInputChange}
                         id={id}
+                        className={inputClassName}
                         placeholder={placeholder}
                     />
                     <SubmitBtn onClick={handleSubmit} />
