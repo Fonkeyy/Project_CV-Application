@@ -1,18 +1,17 @@
 /* eslint-disable react/prop-types */
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
-import SubmitBtn from './SubmitBtn';
 
-function InputText({ id, placeholder }) {
-    const [value, setValue] = useState('');
-    const [status, setStatus] = useState('');
-
+function InputText({ value, onChange, id, placeholder }) {
     return (
-        <div className="Input-text-wrapper">
-            <input id={id} className="Input-text" type="text" placeholder={placeholder} />
-
-            <SubmitBtn />
-        </div>
+        <input
+            id={id}
+            className="Input-text"
+            type="text"
+            placeholder={placeholder}
+            value={value}
+            onChange={onChange}
+        />
     );
 }
 

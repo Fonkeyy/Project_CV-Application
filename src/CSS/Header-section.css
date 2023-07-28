@@ -23,11 +23,11 @@
     filter: blur(3px);
 }
 
-#header-name {
+#full-name {
     font-size: clamp(24px, 6vw, 40px);
 }
 
-#header-title {
+#title {
     font-size: clamp(14px, 6vw, 30px);
 }
 

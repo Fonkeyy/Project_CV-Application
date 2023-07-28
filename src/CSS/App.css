@@ -21,7 +21,7 @@
     outline: none;
 }
 
-.submit-btn {
+.Submit-btn {
     width: 50px;
     height: 50px;
     background: center url('../assets/SVG/check.svg');
@@ -29,7 +29,15 @@
     cursor: pointer;
 }
 
-.submit-btn:hover {
+.Modify-btn {
+    width: 50px;
+    height: 50px;
     background: center url('../assets/SVG/checkColor.svg');
-    /* ?transform: rotate('20deg'); */
+    border: none;
+    cursor: pointer;
 }
+
+/* .submit-btn:hover {
+    background: center url('../assets/SVG/checkColor.svg');
+    /* ?transform: rotate('20deg'); 
+} */
