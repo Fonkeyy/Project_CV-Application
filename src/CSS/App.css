@@ -1,43 +1,9 @@
-.Input-text-wrapper {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    border: none;
-}
 
-.Input-text {
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid white;
-    color: white;
-}
 
-.Input-text::placeholder {
-    color: white;
-    border: none;
-}
 
-.Input-text:focus {
-    outline: none;
-}
 
-.Submit-btn {
-    width: 50px;
-    height: 50px;
-    background: center url('../assets/SVG/check.svg');
-    border: none;
-    cursor: pointer;
-}
 
-.Modify-btn {
-    width: 50px;
-    height: 50px;
-    background: center url('../assets/SVG/checkColor.svg');
-    border: none;
-    cursor: pointer;
-}
 
-/* .submit-btn:hover {
-    background: center url('../assets/SVG/checkColor.svg');
-    /* ?transform: rotate('20deg'); 
-} */
+
+
+

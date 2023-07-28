@@ -2,6 +2,8 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
 
+import '../CSS/Components/InputText.css';
+
 function InputText({ value, onChange, id, placeholder }) {
     return (
         <input

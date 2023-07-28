@@ -1,9 +1,12 @@
 /* eslint-disable react/prop-types */
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
+
 import SubmitBtn from './SubmitBtn';
 import InputText from './InputText';
 import EditBtn from './EditBtn';
+
+import '../CSS/Components/FormComponent.css';
 
 const FormComponent = ({ id, placeholder }) => {
     const [inputValue, setInputValue] = useState('');
@@ -14,7 +17,8 @@ const FormComponent = ({ id, placeholder }) => {
     };
 
     const handleSubmit = () => {
-        setSubmitted(true);
+        inputValue && setSubmitted(true);
+        !inputValue && alert('Please enter value before submitting');
     };
 
     const handleModify = () => {
@@ -22,7 +26,7 @@ const FormComponent = ({ id, placeholder }) => {
     };
 
     return (
-        <>
+        <div id="Form-component">
             {submitted ? (
                 <>
                     <div className="text">{inputValue}</div>
@@ -39,7 +43,7 @@ const FormComponent = ({ id, placeholder }) => {
                     <SubmitBtn onClick={handleSubmit} />
                 </>
             )}
-        </>
+        </div>
     );
 };
 
