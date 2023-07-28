@@ -5,13 +5,12 @@ import FormComponent from './FormComponent';
 import AddBtn from './AddBtn';
 import EditBtn from './EditBtn';
 
-const PracticeTile = () => {
+const PracticeTile = ({ onAddBtnClick }) => {
     const [submitted, setSubmitted] = useState(false);
     const [companyValue, setCompanyValue] = useState('');
     const [titleValue, setTitleValue] = useState('');
 
     const handleInputChange = (event) => {
-        console.log(event.target);
         if (event.target.id === 'company-name') {
             setCompanyValue(event.target.value);
         }
@@ -22,6 +21,7 @@ const PracticeTile = () => {
 
     const handleAddBtn = () => {
         setSubmitted(true);
+        onAddBtnClick(true);
     };
 
     const handleEdit = () => {
@@ -29,7 +29,7 @@ const PracticeTile = () => {
     };
 
     return (
-        <div className={submitted ? 'submitted' : 'Practice-tile'}>
+        <>
             {submitted ? (
                 <div>
                     <div>{companyValue}</div>
@@ -53,7 +53,7 @@ const PracticeTile = () => {
                     <AddBtn onClick={handleAddBtn} />
                 </div>
             )}
-        </div>
+        </>
     );
 };
 

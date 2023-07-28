@@ -1,5 +1,14 @@
 #Practice-section {
     /* height: 70vh; */
     display: grid;
+    width: 80vw;
     justify-content: center;
+}
+
+.submitted {
+    color: lightgreen;
+}
+
+.not-submitted {
+    color: lightcoral;
 }
