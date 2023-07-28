@@ -1,9 +1,9 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
-import InputField from './InputField';
+import InputText from './InputText';
 
 function AddressTile() {
-    const InputFields = [
+    const InputTexts = [
         { label: 'Street number:', placeholder: 'Enter your street number' },
         { label: 'Street name:', placeholder: 'Enter your street name' },
         { label: 'ZIP code:', placeholder: 'Enter your ZIP code' },
@@ -12,9 +12,9 @@ function AddressTile() {
 
     return (
         <div className="px-10 py-6">
-            {InputFields.map((field, index) => (
+            {InputTexts.map((field, index) => (
                 <div key={index} className="flex flex-col xl:flex-row mb-2">
-                    <InputField label={field.label} placeholder={field.placeholder} />
+                    <InputText label={field.label} placeholder={field.placeholder} />
                 </div>
             ))}
             {/* <SubmitBtn value="Submit" /> */}

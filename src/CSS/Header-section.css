@@ -8,10 +8,11 @@
 
 #Header::before {
     content: '';
-    background-image: url(https://images.pexels.com/photos/270632/pexels-photo-270632.jpeg);
+    /* background-image: url(https://images.pexels.com/photos/270632/pexels-photo-270632.jpeg);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center; */
+    background-color: rgba(5, 5, 5);
     height: 70vh;
     width: 100%;
     position: absolute;
@@ -22,11 +23,11 @@
     filter: blur(3px);
 }
 
-.header-name {
+#header-name {
     font-size: clamp(24px, 6vw, 40px);
 }
 
-.header-title {
+#header-title {
     font-size: clamp(14px, 6vw, 30px);
 }
 

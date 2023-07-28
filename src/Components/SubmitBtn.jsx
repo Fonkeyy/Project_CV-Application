@@ -3,7 +3,10 @@
 import React from 'react';
 
 function SubmitBtn() {
-    return <button className="submit-btn"> </button>;
+    return <button type="submit" className="submit-btn"></button>;
 }
 
+// function SubmitBtn() {
+//     return <button className="submit-btn"> </button>;
+// }
 export default SubmitBtn;
