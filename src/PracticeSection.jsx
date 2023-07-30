@@ -5,8 +5,11 @@ import '../src/CSS/Practice-section.css';
 import PracticeTile from './Components/PracticeTile';
 import Button from './Components/Button';
 
+import { v4 as uuidv4 } from 'uuid';
+
 const PracticeSection = () => {
     // // const [practiceTiles, setPracticeTiles] = useState([PracticeTile]);
+    const [practiceTiles, setPracticeTiles] = useState([]);
     const [needAddBtn, setNeedAddBtn] = useState(false);
 
     const handleOnChildSubmit = (value) => {
@@ -14,18 +17,30 @@ const PracticeSection = () => {
     };
 
     const handleAddClick = () => {
-        return <PracticeTile onSubmit={handleOnChildSubmit} />;
+        setPracticeTiles([...practiceTiles, <PracticeTile key={uuidv4()} onSubmit={handleOnChildSubmit} />]);
+        setNeedAddBtn(false);
     };
+
+    if (practiceTiles.length === 0) {
+        setPracticeTiles([<PracticeTile key={uuidv4()} onSubmit={handleOnChildSubmit} />]);
+    }
 
     return (
         <>
-            {needAddBtn ? (
-                <Button className="add-btn" onClick={handleAddClick} />
-            ) : (
-                <PracticeTile onSubmit={handleOnChildSubmit} />
-            )}
+            {practiceTiles.map((practiceTile) => {
+                return <div key={practiceTile.key}>{practiceTile}</div>;
+            })}
+            {needAddBtn && <Button className="add-btn" onClick={handleAddClick} />}
         </>
     );
 };
 
 export default PracticeSection;
+
+// // <>
+// //     {needAddBtn ? (
+// //         <Button className="add-btn" onClick={handleAddClick} />
+// //     ) : (
+// //         <PracticeTile onSubmit={handleOnChildSubmit} />
+// //     )}
+// // </>
