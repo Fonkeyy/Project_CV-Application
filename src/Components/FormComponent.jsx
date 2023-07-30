@@ -2,9 +2,8 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
 
-import SubmitBtn from './SubmitBtn';
-import InputText from './InputText';
-import EditBtn from './EditBtn';
+import Button from './Button';
+import InputField from './InputField';
 
 import '../CSS/Components/FormComponent.css';
 
@@ -33,18 +32,18 @@ const FormComponent = ({ id, className, inputClassName, placeholder, onValueChan
             {submitted ? (
                 <>
                     <div className="text">{inputValue}</div>
-                    <EditBtn onClick={handleEdit} />
+                    <Button className="edit-btn" onClick={handleEdit} />
                 </>
             ) : (
                 <>
-                    <InputText
+                    <InputField
                         value={inputValue}
                         onChange={handleInputChange}
                         id={id}
                         className={inputClassName}
                         placeholder={placeholder}
                     />
-                    <SubmitBtn onClick={handleSubmit} />
+                    <Button className="submit-btn" onClick={handleSubmit} />
                 </>
             )}
         </div>

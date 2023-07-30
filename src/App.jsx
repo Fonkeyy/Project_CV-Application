@@ -12,8 +12,8 @@ function App() {
         <div className="App">
             <HeaderSection />
             <PracticeSection />
-            <EducSection />
-            <ContactSection />
+            {/* <EducSection />
+            <ContactSection /> */}
         </div>
     );
 }

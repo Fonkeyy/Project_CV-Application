@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
-import InputText from './InputText';
+import InputField from './InputField';
 
 function InfoTile() {
-    const InputTexts = [
+    const InputFields = [
         { label: 'First Name:', placeholder: 'Enter your first Name' },
         { label: 'Last Name:', placeholder: 'Enter your last Name' },
         { label: 'Phone Number:', placeholder: 'Enter your phone number' },
@@ -13,9 +13,9 @@ function InfoTile() {
 
     return (
         <div className="">
-            {InputTexts.map((field, index) => (
+            {InputFields.map((field, index) => (
                 <div key={index} className="">
-                    <InputText label={field.label} placeholder={field.placeholder} />
+                    <InputField label={field.label} placeholder={field.placeholder} />
                 </div>
             ))}
         </div>

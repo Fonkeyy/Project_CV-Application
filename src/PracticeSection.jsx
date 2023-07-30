@@ -1,36 +1,31 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
-import PracticeTile from './Components/PracticeTile';
 
 import '../src/CSS/Practice-section.css';
-import AddBtn from './Components/AddBtn';
+import PracticeTile from './Components/PracticeTile';
+import Button from './Components/Button';
 
-function PracticeSection() {
-    const [practiceTiles, setPracticeTiles] = useState([]);
+const PracticeSection = () => {
+    // // const [practiceTiles, setPracticeTiles] = useState([PracticeTile]);
+    const [needAddBtn, setNeedAddBtn] = useState(false);
 
-    const handleTileSubmit = (tileData) => {
-        setPracticeTiles([...practiceTiles, tileData]);
+    const handleOnChildSubmit = (value) => {
+        setNeedAddBtn(value);
     };
 
-    const handleAddBtnClick = () => {
-        setPracticeTiles([...practiceTiles, null]);
+    const handleAddClick = () => {
+        return <PracticeTile onSubmit={handleOnChildSubmit} />;
     };
 
     return (
-        <div id="Practice-section">
-            {practiceTiles.map((tileData, index) => (
-                <PracticeTile
-                    key={index}
-                    isSubmitted={tileData !== null}
-                    data={tileData}
-                    onTileSubmit={handleTileSubmit}
-                />
-            ))}
-            {practiceTiles.length > 1 || practiceTiles[practiceTiles.length - 1] !== null ? (
-                <AddBtn onClick={handleAddBtnClick} />
-            ) : null}
-        </div>
+        <>
+            {needAddBtn ? (
+                <Button className="add-btn" onClick={handleAddClick} />
+            ) : (
+                <PracticeTile onSubmit={handleOnChildSubmit} />
+            )}
+        </>
     );
-}
+};
 
 export default PracticeSection;

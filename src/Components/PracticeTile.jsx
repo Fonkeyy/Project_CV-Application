@@ -1,73 +1,58 @@
 /* eslint-disable react/prop-types */
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
-import EditBtn from './EditBtn';
+import InputField from './InputField';
+import Button from './Button';
 
-import '../CSS/Components/PracticeTile.css';
-import InputTextArea from './InputTextArea';
-import InputText from './InputText';
-import SubmitBtn from './SubmitBtn';
+const PracticeTile = ({ onSubmit }) => {
+    const [isSubmitted, setIsSubmitted] = useState(false);
+    const [companyValue, setCompanyValue] = useState();
+    const [titleValue, setTitleValue] = useState();
 
-const PracticeTile = ({ data, onTileSubmit }) => {
-    const [submitted, setSubmitted] = useState(false);
-    const [companyValue, setCompanyValue] = useState('');
-    const [titleValue, setTitleValue] = useState('');
-    const [descriptionValue, setDescriptionValue] = useState('');
+    const handleOnChange = (event) => {
+        const target = event.target;
 
-    const handleInputChange = (event) => {
-        if (event.target.id === 'company-name') {
-            setCompanyValue(event.target.value);
-        }
-        if (event.target.id === 'position-title') {
-            setTitleValue(event.target.value);
-        }
-        if (event.target.id === 'description') {
-            setDescriptionValue(event.target.value);
-        }
+        target.id === 'company-name' && setCompanyValue(target.value);
+        target.id === 'job-title' && setTitleValue(target.value);
     };
 
-    const handleSubmitBtn = () => {
-        setSubmitted(true);
-        onTileSubmit({ company: companyValue, title: titleValue, description: descriptionValue });
+    const handleOnSubmit = () => {
+        setIsSubmitted(true);
+        onSubmit(true);
     };
 
     const handleEdit = () => {
-        setSubmitted(false);
+        setIsSubmitted(false);
+        onSubmit(false);
     };
 
     return (
-        <div id="Practice-tile" className={submitted ? 'submitted' : 'not-submitted'}>
-            {submitted ? (
+        <div id="Practice-tile">
+            {isSubmitted ? (
                 <>
                     <p>{companyValue}</p>
                     <p>{titleValue}</p>
-                    <p>{descriptionValue}</p>
-                    <EditBtn onClick={handleEdit} />
+                    <Button className="edit-btn" onClick={handleEdit} />
                 </>
             ) : (
                 <>
-                    <InputText
+                    <InputField
                         id="company-name"
                         className="Input-text"
-                        placeholder="Enter company name"
-                        onChange={handleInputChange}
+                        type="text"
+                        placeholder="Company name"
                         value={companyValue}
+                        onChange={handleOnChange}
                     />
-                    <InputText
-                        id="position-title"
+                    <InputField
+                        id="job-title"
                         className="Input-text"
-                        placeholder="Enter position title"
-                        onChange={handleInputChange}
+                        type="text"
+                        placeholder="Job title"
                         value={titleValue}
+                        onChange={handleOnChange}
                     />
-                    <InputTextArea
-                        id="description"
-                        placeholder="Describe your experience"
-                        onChange={handleInputChange}
-                        value={descriptionValue}
-                    />
-
-                    <SubmitBtn onClick={handleSubmitBtn} />
+                    <Button className="submit-btn" onClick={handleOnSubmit} />
                 </>
             )}
         </div>
