@@ -29,7 +29,6 @@ const PracticeSection = () => {
     };
 
     const handleOnDelete = (tileId) => {
-        console.log(tileId);
         setPracticeTiles((prevTiles) => prevTiles.filter((tile) => tile.props.id !== tileId));
     };
 

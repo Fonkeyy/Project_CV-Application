@@ -24,8 +24,12 @@ const PracticeTile = ({ onSubmit, onDelete, id }) => {
     };
 
     const handleOnSubmit = () => {
-        setIsSubmitted(true);
-        onSubmit(true);
+        if (companyValue !== '' && titleValue !== '') {
+            setIsSubmitted(true);
+            onSubmit(true);
+        }
+        companyValue === '' && alert('Please enter company name before submitting') && setIsSubmitted(false);
+        titleValue === '' && alert('Please enter job title before submitting') && setIsSubmitted(false);
     };
 
     const handleEdit = () => {
@@ -39,8 +43,13 @@ const PracticeTile = ({ onSubmit, onDelete, id }) => {
                 <>
                     <p className="companyValue-submitted">{companyValue}</p>
                     <p className="titleValue-submitted">{titleValue}</p>
-                    <Button className="edit-btn-30" onClick={handleEdit} />
-                    {onOver && <Button className="delete-btn" onClick={handleOnClickDelete} />}
+
+                    {onOver && (
+                        <div className="tile-btn-wrapper">
+                            <Button className="edit-btn-30" onClick={handleEdit} />
+                            <Button className="delete-btn" onClick={handleOnClickDelete} />
+                        </div>
+                    )}
                 </>
             ) : (
                 <>

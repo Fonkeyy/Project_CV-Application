@@ -43,3 +43,11 @@
     border-radius: 50%;
     cursor: pointer;
 }
+
+.delete-btn {
+    background: center url('../../assets/SVG/delete.svg');
+    width: 30px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+}
