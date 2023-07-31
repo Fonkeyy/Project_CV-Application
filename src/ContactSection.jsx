@@ -4,7 +4,7 @@ import InfoTile from './Components/InfoTile';
 
 function ContactSection() {
     return (
-        <div id="Contact-section">
+        <div id="ContactSection">
             <InfoTile />
             {/* < ? Form /> */}
         </div>

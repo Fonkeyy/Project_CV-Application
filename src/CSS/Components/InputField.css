@@ -1,15 +1,15 @@
-.Input-text {
+.input-text {
     background: transparent;
     border: none;
     border-bottom: 1px solid white;
     color: white;
 }
 
-.Input-text::placeholder {
+.input-text::placeholder {
     color: white;
     border: none;
 }
 
-.Input-text:focus {
+.input-text:focus {
     outline: none;
 }

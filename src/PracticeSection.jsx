@@ -1,14 +1,13 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
 
-import '../src/CSS/Practice-section.css';
+import '../src/CSS/PracticeSection.css';
 import PracticeTile from './Components/PracticeTile';
 import Button from './Components/Button';
 
 import { v4 as uuidv4 } from 'uuid';
 
 const PracticeSection = () => {
-    // // const [practiceTiles, setPracticeTiles] = useState([PracticeTile]);
     const [practiceTiles, setPracticeTiles] = useState([]);
     const [needAddBtn, setNeedAddBtn] = useState(false);
 
@@ -26,21 +25,13 @@ const PracticeSection = () => {
     }
 
     return (
-        <>
+        <div id="Practice-section" className="section">
             {practiceTiles.map((practiceTile) => {
                 return <div key={practiceTile.key}>{practiceTile}</div>;
             })}
             {needAddBtn && <Button className="add-btn" onClick={handleAddClick} />}
-        </>
+        </div>
     );
 };
 
 export default PracticeSection;
-
-// // <>
-// //     {needAddBtn ? (
-// //         <Button className="add-btn" onClick={handleAddClick} />
-// //     ) : (
-// //         <PracticeTile onSubmit={handleOnChildSubmit} />
-// //     )}
-// // </>

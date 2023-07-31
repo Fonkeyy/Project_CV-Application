@@ -1,15 +1,37 @@
 // eslint-disable-next-line no-unused-vars
-import React from 'react';
+import React, { useState } from 'react';
 import EducTile from './Components/EducTile';
 
-import '../src/CSS/Educ-section.css';
+import { v4 as uuidv4 } from 'uuid';
 
-function EducSection() {
+import '../src/CSS/EducSection.css';
+import Button from './Components/Button';
+
+const EducSection = () => {
+    const [needAddBtn, setNeedAddBtn] = useState(false);
+    const [educTiles, setEducTiles] = useState([]);
+
+    const handleOnChildSubmit = (value) => {
+        setNeedAddBtn(value);
+    };
+
+    if (educTiles.length === 0) {
+        setEducTiles([<EducTile key={uuidv4()} onSubmit={handleOnChildSubmit} />]);
+    }
+
+    const handleAddBtn = () => {
+        setEducTiles([...educTiles, <EducTile key={uuidv4()} onSubmit={handleOnChildSubmit} />]);
+        setNeedAddBtn(false);
+    };
+
     return (
-        <div id="Educ-section">
-            <EducTile />
+        <div id="EducSection" className="section">
+            {educTiles.map((tile) => {
+                return <div key={tile.key}>{tile}</div>;
+            })}
+            {needAddBtn && <Button className="add-btn" onClick={handleAddBtn} />}
         </div>
     );
-}
+};
 
 export default EducSection;

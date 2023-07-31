@@ -4,7 +4,7 @@
     display: grid;
     place-content: center;
     gap: 2rem;
-    margin-bottom: calc(var(--pp-size) / 1.5);
+    margin-bottom: calc(var(--pp-size) / 1.6);
 }
 
 #Header::before {
@@ -38,7 +38,7 @@
     height: var(--pp-size);
     background-color: transparent;
     bottom: calc(0px - var(--pp-size) / 2);
-    left: calc(50vw - calc(var(--pp-size) / 2));
+    left: calc(50% - calc(var(--pp-size) / 2));
 }
 
 #profile-picture {

@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
 
-import '../src/CSS/Header-section.css';
+import '../src/CSS/HeaderSection.css';
 import '../src/CSS/App.css';
 import FormComponent from './Components/FormComponent';
 
@@ -11,14 +11,14 @@ function HeaderSection() {
             <FormComponent
                 id="full-name"
                 className="header-form Form-component"
-                inputClassName="Input-text"
+                inputClassName="input-text"
                 placeholder="Full Name"
             />
 
             <FormComponent
                 id="title"
                 className="header-form Form-component"
-                inputClassName="Input-text"
+                inputClassName="input-text"
                 placeholder="Title"
             />
 

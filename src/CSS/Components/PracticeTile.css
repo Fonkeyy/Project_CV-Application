@@ -1,11 +1,13 @@
 #Practice-tile {
-    /* align-self: flex-start !important; */
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    color: lightsalmon;
 }
 
-.Input-text {
-    color: red;
+.companyValue-submitted {
+    color: lightgreen;
+    font-size: 1.6rem;
+    margin: 0px;
+}
+
+.titleValue-submitted {
+    font-size: 1.2rem;
+    color: lightsalmon;
 }

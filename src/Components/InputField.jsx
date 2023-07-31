@@ -16,17 +16,5 @@ function InputField(props) {
         />
     );
 }
-// // function InputField({ id, className, value, onChange, placeholder }) {
-// //     return (
-// //         <input
-// //             id={id}
-// //             className={className}
-// //             type="text"
-// //             placeholder={placeholder}
-// //             value={value}
-// //             onChange={onChange}
-// //         />
-// //     );
-// // }
 
 export default InputField;
