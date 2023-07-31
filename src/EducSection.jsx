@@ -15,19 +15,42 @@ const EducSection = () => {
         setNeedAddBtn(value);
     };
 
+    const handleOnDelete = (id) => {
+        setEducTiles((prevTiles) => prevTiles.filter((tile) => tile.props.id !== id));
+    };
+
     if (educTiles.length === 0) {
-        setEducTiles([<EducTile key={uuidv4()} onSubmit={handleOnChildSubmit} />]);
+        setEducTiles([
+            <EducTile
+                key={uuidv4()}
+                id={uuidv4()}
+                onSubmit={handleOnChildSubmit}
+                onDelete={handleOnDelete}
+            />,
+        ]);
     }
 
     const handleAddBtn = () => {
-        setEducTiles([...educTiles, <EducTile key={uuidv4()} onSubmit={handleOnChildSubmit} />]);
+        setEducTiles((prevTiles) => [
+            ...prevTiles,
+            <EducTile
+                key={uuidv4()}
+                id={uuidv4()}
+                onSubmit={handleOnChildSubmit}
+                onDelete={handleOnDelete}
+            />,
+        ]);
         setNeedAddBtn(false);
     };
 
     return (
         <div id="EducSection" className="section">
             {educTiles.map((tile) => {
-                return <div key={tile.key}>{tile}</div>;
+                return (
+                    <div key={tile.key} id="educ-tile" className="tile">
+                        {tile}
+                    </div>
+                );
             })}
             {needAddBtn && <Button className="add-btn" onClick={handleAddBtn} />}
         </div>

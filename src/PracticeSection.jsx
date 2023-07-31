@@ -15,7 +15,7 @@ const PracticeSection = () => {
         setNeedAddBtn(value);
     };
 
-    const handleAddClick = () => {
+    const handleAddBtn = () => {
         setPracticeTiles((prevTiles) => [
             ...prevTiles,
             <PracticeTile
@@ -52,7 +52,7 @@ const PracticeSection = () => {
                     </div>
                 );
             })}
-            {needAddBtn && <Button className="add-btn" onClick={handleAddClick} />}
+            {needAddBtn && <Button className="add-btn" onClick={handleAddBtn} />}
         </div>
     );
 };

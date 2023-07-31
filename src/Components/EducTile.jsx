@@ -4,10 +4,11 @@ import React, { useState } from 'react';
 import InputField from './InputField';
 import Button from './Button';
 
-const EducTile = ({ onSubmit }) => {
+const EducTile = ({ onSubmit, onDelete, id }) => {
     const [isSubmitted, setSubmitted] = useState(false);
     const [schoolValue, setSchoolValue] = useState('');
     const [titleValue, setTitleValue] = useState('');
+    const [isMouseOver, setIsMouseOver] = useState(false);
 
     const handleOnSubmit = () => {
         setSubmitted(true);
@@ -25,12 +26,28 @@ const EducTile = ({ onSubmit }) => {
         setSubmitted(false);
     };
     return (
-        <div id="educ-tile" className="tile">
+        <div
+            onMouseEnter={() => {
+                setIsMouseOver(true);
+            }}
+            onMouseLeave={() => {
+                setIsMouseOver(false);
+            }}>
             {isSubmitted ? (
                 <>
                     <p>{schoolValue}</p>
                     <p>{titleValue}</p>
-                    <Button className="edit-btn" onClick={handleOnEdit} />
+                    {isMouseOver && (
+                        <div className="tile-btn-wrapper">
+                            <Button className="edit-btn-30" onClick={handleOnEdit} />
+                            <Button
+                                className="delete-btn"
+                                onClick={() => {
+                                    onDelete(id);
+                                }}
+                            />
+                        </div>
+                    )}
                 </>
             ) : (
                 <>

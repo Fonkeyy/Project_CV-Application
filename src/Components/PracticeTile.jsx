@@ -10,7 +10,7 @@ const PracticeTile = ({ onSubmit, onDelete, id }) => {
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [companyValue, setCompanyValue] = useState('');
     const [titleValue, setTitleValue] = useState('');
-    const [onOver, setOnOver] = useState(false);
+    const [isMouseOver, setIsMouseOver] = useState(false);
 
     const handleOnClickDelete = () => {
         onDelete(id);
@@ -38,13 +38,13 @@ const PracticeTile = ({ onSubmit, onDelete, id }) => {
     };
 
     return (
-        <div onMouseLeave={() => setOnOver(false)} onMouseEnter={() => setOnOver(true)}>
+        <div onMouseLeave={() => setIsMouseOver(false)} onMouseEnter={() => setIsMouseOver(true)}>
             {isSubmitted ? (
                 <>
                     <p className="companyValue-submitted">{companyValue}</p>
                     <p className="titleValue-submitted">{titleValue}</p>
 
-                    {onOver && (
+                    {isMouseOver && (
                         <div className="tile-btn-wrapper">
                             <Button className="edit-btn-30" onClick={handleEdit} />
                             <Button className="delete-btn" onClick={handleOnClickDelete} />
