@@ -16,18 +16,42 @@ const PracticeSection = () => {
     };
 
     const handleAddClick = () => {
-        setPracticeTiles([...practiceTiles, <PracticeTile key={uuidv4()} onSubmit={handleOnChildSubmit} />]);
+        setPracticeTiles((prevTiles) => [
+            ...prevTiles,
+            <PracticeTile
+                key={uuidv4()}
+                id={uuidv4()}
+                onSubmit={handleOnChildSubmit}
+                onDelete={handleOnDelete}
+            />,
+        ]);
         setNeedAddBtn(false);
     };
 
+    const handleOnDelete = (tileId) => {
+        console.log(tileId);
+        setPracticeTiles((prevTiles) => prevTiles.filter((tile) => tile.props.id !== tileId));
+    };
+
     if (practiceTiles.length === 0) {
-        setPracticeTiles([<PracticeTile key={uuidv4()} onSubmit={handleOnChildSubmit} />]);
+        setPracticeTiles([
+            <PracticeTile
+                key={uuidv4()}
+                id={uuidv4()}
+                onSubmit={handleOnChildSubmit}
+                onDelete={handleOnDelete}
+            />,
+        ]);
     }
 
     return (
         <div id="Practice-section" className="section">
             {practiceTiles.map((practiceTile) => {
-                return <div key={practiceTile.key}>{practiceTile}</div>;
+                return (
+                    <div key={practiceTile.key} id="Practice-tile" className="tile">
+                        {practiceTile}
+                    </div>
+                );
             })}
             {needAddBtn && <Button className="add-btn" onClick={handleAddClick} />}
         </div>

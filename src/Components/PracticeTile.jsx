@@ -6,15 +6,18 @@ import Button from './Button';
 
 import '../CSS/Components/PracticeTile.css';
 
-const PracticeTile = ({ onSubmit }) => {
+const PracticeTile = ({ onSubmit, onDelete, id }) => {
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [companyValue, setCompanyValue] = useState('');
     const [titleValue, setTitleValue] = useState('');
+    const [onOver, setOnOver] = useState(false);
+
+    const handleOnClickDelete = () => {
+        onDelete(id);
+    };
 
     const handleOnChange = (event) => {
         const target = event.target;
-        console.log(target.id);
-        console.log(target.value);
 
         target.id === 'company-name' && setCompanyValue(target.value);
         target.id === 'job-title' && setTitleValue(target.value);
@@ -31,12 +34,13 @@ const PracticeTile = ({ onSubmit }) => {
     };
 
     return (
-        <div id="Practice-tile" className="tile">
+        <div onMouseLeave={() => setOnOver(false)} onMouseEnter={() => setOnOver(true)}>
             {isSubmitted ? (
                 <>
                     <p className="companyValue-submitted">{companyValue}</p>
                     <p className="titleValue-submitted">{titleValue}</p>
                     <Button className="edit-btn-30" onClick={handleEdit} />
+                    {onOver && <Button className="delete-btn" onClick={handleOnClickDelete} />}
                 </>
             ) : (
                 <>
