@@ -1,18 +1,26 @@
 /* eslint-disable react/prop-types */
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
+
 import InputField from './InputField';
 import Button from './Button';
+import TileBtnWrapper from './TileBtnWrapper';
+
+import '../CSS/Components/EducTile.css';
 
 const EducTile = ({ onSubmit, onDelete, id }) => {
-    const [isSubmitted, setSubmitted] = useState(false);
+    const [isSubmitted, setIsSubmitted] = useState(false);
     const [schoolValue, setSchoolValue] = useState('');
     const [titleValue, setTitleValue] = useState('');
     const [isMouseOver, setIsMouseOver] = useState(false);
 
     const handleOnSubmit = () => {
-        setSubmitted(true);
-        onSubmit(true);
+        if (schoolValue !== '' && titleValue !== '') {
+            setIsSubmitted(true);
+            onSubmit(true);
+        }
+        schoolValue === '' && alert('Please enter school name before submitting');
+        titleValue === '' && alert('Please enter title name before submitting');
     };
 
     const handleOnChange = (event) => {
@@ -23,8 +31,9 @@ const EducTile = ({ onSubmit, onDelete, id }) => {
     };
 
     const handleOnEdit = () => {
-        setSubmitted(false);
+        setIsSubmitted(false);
     };
+
     return (
         <div
             onMouseEnter={() => {
@@ -35,25 +44,16 @@ const EducTile = ({ onSubmit, onDelete, id }) => {
             }}>
             {isSubmitted ? (
                 <>
-                    <p>{schoolValue}</p>
-                    <p>{titleValue}</p>
-                    {isMouseOver && (
-                        <div className="tile-btn-wrapper">
-                            <Button className="edit-btn-30" onClick={handleOnEdit} />
-                            <Button
-                                className="delete-btn"
-                                onClick={() => {
-                                    onDelete(id);
-                                }}
-                            />
-                        </div>
-                    )}
+                    <p className="schoolValue-submitted">{schoolValue}</p>
+                    <p className="schoolTitle-submitted">{titleValue}</p>
+                    {isMouseOver && TileBtnWrapper({ handleOnEdit, onDelete, id })}
                 </>
             ) : (
                 <>
                     <InputField
                         id="school-name"
                         className="input-text"
+                        type="text"
                         placeholder="Enter school name"
                         value={schoolValue}
                         onChange={handleOnChange}
@@ -61,11 +61,12 @@ const EducTile = ({ onSubmit, onDelete, id }) => {
                     <InputField
                         id="title-name"
                         className="input-text"
+                        type="text"
                         placeholder="Enter title of study"
                         value={titleValue}
                         onChange={handleOnChange}
                     />
-                    <Button className="submit-btn" onClick={handleOnSubmit} />
+                    <Button className="submit-btn-30" onClick={handleOnSubmit} />
                 </>
             )}
         </div>

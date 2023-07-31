@@ -1,8 +1,10 @@
 /* eslint-disable react/prop-types */
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
+
 import InputField from './InputField';
 import Button from './Button';
+import TileBtnWrapper from './TileBtnWrapper';
 
 import '../CSS/Components/PracticeTile.css';
 
@@ -11,17 +13,6 @@ const PracticeTile = ({ onSubmit, onDelete, id }) => {
     const [companyValue, setCompanyValue] = useState('');
     const [titleValue, setTitleValue] = useState('');
     const [isMouseOver, setIsMouseOver] = useState(false);
-
-    const handleOnClickDelete = () => {
-        onDelete(id);
-    };
-
-    const handleOnChange = (event) => {
-        const target = event.target;
-
-        target.id === 'company-name' && setCompanyValue(target.value);
-        target.id === 'job-title' && setTitleValue(target.value);
-    };
 
     const handleOnSubmit = () => {
         if (companyValue !== '' && titleValue !== '') {
@@ -32,24 +23,33 @@ const PracticeTile = ({ onSubmit, onDelete, id }) => {
         titleValue === '' && alert('Please enter job title before submitting') && setIsSubmitted(false);
     };
 
-    const handleEdit = () => {
+    const handleOnChange = (event) => {
+        const target = event.target;
+
+        target.id === 'company-name' && setCompanyValue(target.value);
+        target.id === 'job-title' && setTitleValue(target.value);
+    };
+
+    const handleOnEdit = () => {
         setIsSubmitted(false);
         onSubmit(false);
+        // ! check the need of onSubmit
     };
 
     return (
-        <div onMouseLeave={() => setIsMouseOver(false)} onMouseEnter={() => setIsMouseOver(true)}>
+        <div
+            onMouseEnter={() => {
+                setIsMouseOver(true);
+            }}
+            onMouseLeave={() => {
+                setIsMouseOver(false);
+            }}>
             {isSubmitted ? (
                 <>
                     <p className="companyValue-submitted">{companyValue}</p>
                     <p className="titleValue-submitted">{titleValue}</p>
 
-                    {isMouseOver && (
-                        <div className="tile-btn-wrapper">
-                            <Button className="edit-btn-30" onClick={handleEdit} />
-                            <Button className="delete-btn" onClick={handleOnClickDelete} />
-                        </div>
-                    )}
+                    {isMouseOver && TileBtnWrapper({ handleOnEdit, onDelete, id })}
                 </>
             ) : (
                 <>

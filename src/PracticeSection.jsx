@@ -1,11 +1,11 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
-import '../src/CSS/PracticeSection.css';
 import PracticeTile from './Components/PracticeTile';
 import Button from './Components/Button';
 
-import { v4 as uuidv4 } from 'uuid';
+import '../src/CSS/PracticeSection.css';
 
 const PracticeSection = () => {
     const [practiceTiles, setPracticeTiles] = useState([]);
@@ -13,6 +13,10 @@ const PracticeSection = () => {
 
     const handleOnChildSubmit = (value) => {
         setNeedAddBtn(value);
+    };
+
+    const handleOnDelete = (tileId) => {
+        setPracticeTiles((prevTiles) => prevTiles.filter((tile) => tile.props.id !== tileId));
     };
 
     const handleAddBtn = () => {
@@ -26,10 +30,6 @@ const PracticeSection = () => {
             />,
         ]);
         setNeedAddBtn(false);
-    };
-
-    const handleOnDelete = (tileId) => {
-        setPracticeTiles((prevTiles) => prevTiles.filter((tile) => tile.props.id !== tileId));
     };
 
     if (practiceTiles.length === 0) {

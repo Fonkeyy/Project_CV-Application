@@ -1,11 +1,11 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
-import EducTile from './Components/EducTile';
-
 import { v4 as uuidv4 } from 'uuid';
 
-import '../src/CSS/EducSection.css';
+import EducTile from './Components/EducTile';
 import Button from './Components/Button';
+
+import '../src/CSS/EducSection.css';
 
 const EducSection = () => {
     const [needAddBtn, setNeedAddBtn] = useState(false);
@@ -19,17 +19,6 @@ const EducSection = () => {
         setEducTiles((prevTiles) => prevTiles.filter((tile) => tile.props.id !== id));
     };
 
-    if (educTiles.length === 0) {
-        setEducTiles([
-            <EducTile
-                key={uuidv4()}
-                id={uuidv4()}
-                onSubmit={handleOnChildSubmit}
-                onDelete={handleOnDelete}
-            />,
-        ]);
-    }
-
     const handleAddBtn = () => {
         setEducTiles((prevTiles) => [
             ...prevTiles,
@@ -42,6 +31,17 @@ const EducSection = () => {
         ]);
         setNeedAddBtn(false);
     };
+
+    if (educTiles.length === 0) {
+        setEducTiles([
+            <EducTile
+                key={uuidv4()}
+                id={uuidv4()}
+                onSubmit={handleOnChildSubmit}
+                onDelete={handleOnDelete}
+            />,
+        ]);
+    }
 
     return (
         <div id="EducSection" className="section">
