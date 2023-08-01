@@ -1,12 +1,12 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
 
-import InfoTile from './Components/InfoTile';
+import InfoSection from './Components/InfoSection';
 
 function ContactSection() {
     return (
         <div id="ContactSection">
-            <InfoTile />
+            <InfoSection />
             {/* < ? Form /> */}
         </div>
     );

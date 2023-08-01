@@ -18,7 +18,12 @@ function InfoComponent(props) {
                 value={props.value}
                 onChange={props.onChange}
             />
-            <Button className="delete-btn" onClick={props.onClick} />
+            <Button
+                className="delete-btn"
+                onClick={() => {
+                    props.onDelete(props.id);
+                }}
+            />
         </>
     );
 }
