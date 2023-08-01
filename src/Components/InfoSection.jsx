@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
+
 import InfoComponent from './InfoComponent';
 import Button from './Button';
+
+// ! check why after 1 key press it stops writing
 
 const initialFields = [
     { id: 'tel', label: 'Phone Number', type: 'tel', placeholder: 'Enter your phone', value: '' },
@@ -12,7 +16,7 @@ const initialFields = [
 const InfoSection = () => {
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [fields, setFields] = useState(initialFields);
-    const [isOvered, setIsOvered] = useState(false);
+    const [isHovered, setIsHovered] = useState(false);
 
     const handleOnChange = (event) => {
         const { id, value } = event.target;
@@ -32,33 +36,32 @@ const InfoSection = () => {
             {isSubmitted ? (
                 <div
                     onMouseEnter={() => {
-                        setIsOvered(true);
+                        setIsHovered(true);
                     }}
                     onMouseLeave={() => {
-                        setIsOvered(false);
+                        setIsHovered(false);
                     }}>
                     {fields.map((field) => (
-                        <div key={field.id}>
+                        <div key={uuidv4()}>
                             <p>{field.label}</p>
                             <p>{field.value}</p>
                         </div>
                     ))}
-                    {isOvered && <Button className="edit-btn" onClick={() => setIsSubmitted(false)} />}
+                    {isHovered && <Button className="edit-btn" onClick={() => setIsSubmitted(false)} />}
                 </div>
             ) : (
                 <>
                     {fields.map((field) => (
-                        <div key={field.id}>
-                            <InfoComponent
-                                label={field.label}
-                                id={field.id}
-                                type={field.type}
-                                placeholder={field.placeholder}
-                                value={field.value}
-                                onChange={handleOnChange}
-                                onDelete={handleDelete}
-                            />
-                        </div>
+                        <InfoComponent
+                            key={uuidv4()}
+                            label={field.label}
+                            id={field.id}
+                            type={field.type}
+                            placeholder={field.placeholder}
+                            value={field.value}
+                            onChange={handleOnChange}
+                            onDelete={handleDelete}
+                        />
                     ))}
                     <Button className="submit-btn" onClick={handleSubmit} />
                 </>

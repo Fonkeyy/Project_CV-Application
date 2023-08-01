@@ -2,12 +2,13 @@
 import React from 'react';
 
 import InfoSection from './Components/InfoSection';
+import ContactForm from './Components/ContactForm';
 
 function ContactSection() {
     return (
         <div id="ContactSection">
             <InfoSection />
-            {/* < ? Form /> */}
+            <ContactForm />
         </div>
     );
 }
