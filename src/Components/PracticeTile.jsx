@@ -33,7 +33,6 @@ const PracticeTile = ({ onSubmit, onDelete, id }) => {
     const handleOnEdit = () => {
         setIsSubmitted(false);
         onSubmit(false);
-        // ! check the need of onSubmit
     };
 
     return (

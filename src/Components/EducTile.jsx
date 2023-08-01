@@ -32,6 +32,7 @@ const EducTile = ({ onSubmit, onDelete, id }) => {
 
     const handleOnEdit = () => {
         setIsSubmitted(false);
+        onSubmit(false);
     };
 
     return (
