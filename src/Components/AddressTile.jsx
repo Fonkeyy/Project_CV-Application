@@ -13,7 +13,7 @@ function AddressTile() {
     return (
         <div className="px-10 py-6">
             {InputFields.map((field, index) => (
-                <div key={index} className="flex flex-col xl:flex-row mb-2">
+                <div key={index} className="">
                     <InputField label={field.label} placeholder={field.placeholder} />
                 </div>
             ))}

@@ -15,7 +15,7 @@ const PracticeSection = () => {
         setNeedAddBtn(value);
     };
 
-    const handleOnDelete = (tileId) => {
+    const handleDelete = (tileId) => {
         setPracticeTiles((prevTiles) => prevTiles.filter((tile) => tile.props.id !== tileId));
     };
 
@@ -26,7 +26,7 @@ const PracticeSection = () => {
                 key={uuidv4()}
                 id={uuidv4()}
                 onSubmit={handleOnChildSubmit}
-                onDelete={handleOnDelete}
+                onDelete={handleDelete}
             />,
         ]);
         setNeedAddBtn(false);
@@ -38,7 +38,7 @@ const PracticeSection = () => {
                 key={uuidv4()}
                 id={uuidv4()}
                 onSubmit={handleOnChildSubmit}
-                onDelete={handleOnDelete}
+                onDelete={handleDelete}
             />,
         ]);
     }

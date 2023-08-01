@@ -15,31 +15,21 @@ const EducSection = () => {
         setNeedAddBtn(value);
     };
 
-    const handleOnDelete = (id) => {
+    const handleDelete = (id) => {
         setEducTiles((prevTiles) => prevTiles.filter((tile) => tile.props.id !== id));
     };
 
     const handleAddBtn = () => {
         setEducTiles((prevTiles) => [
             ...prevTiles,
-            <EducTile
-                key={uuidv4()}
-                id={uuidv4()}
-                onSubmit={handleOnChildSubmit}
-                onDelete={handleOnDelete}
-            />,
+            <EducTile key={uuidv4()} id={uuidv4()} onSubmit={handleOnChildSubmit} onDelete={handleDelete} />,
         ]);
         setNeedAddBtn(false);
     };
 
     if (educTiles.length === 0) {
         setEducTiles([
-            <EducTile
-                key={uuidv4()}
-                id={uuidv4()}
-                onSubmit={handleOnChildSubmit}
-                onDelete={handleOnDelete}
-            />,
+            <EducTile key={uuidv4()} id={uuidv4()} onSubmit={handleOnChildSubmit} onDelete={handleDelete} />,
         ]);
     }
 
