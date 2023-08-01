@@ -7,7 +7,7 @@ import InfoComponent from './InfoComponent';
 import Button from './Button';
 
 const InfoTile = () => {
-    const [inputFields, setInputFields] = useState([]);
+    const [InfoComponent, setInfoComponent] = useState([]);
     const [isSubmitted, setIsSubmitted] = useState(false);
 
     const [phoneValue, setPhoneValue] = useState('');
@@ -40,48 +40,62 @@ const InfoTile = () => {
         // setInputFields((prevFields) => prevFields.filter((field) => field.id !== id));
     };
 
+    setInfoComponent(
+        <>
+            [
+            <InfoComponent
+                label="Phone Number"
+                id={uuidv4()}
+                type="tel"
+                placeholder="Enter your phone"
+                value={phoneValue}
+                onChange={handleOnChange}
+                onClick={handleDelete}
+            />
+            <InfoComponent
+                label="Email"
+                id={uuidv4()}
+                type="email"
+                placeholder="Enter your email"
+                value={emailValue}
+                onChange={handleOnChange}
+                onClick={handleDelete}
+            />
+            <InfoComponent
+                label="Github"
+                id={uuidv4()}
+                type="url"
+                placeholder="Enter your Github"
+                value={githubValue}
+                onChange={handleOnChange}
+                onClick={handleDelete}
+            />
+            <InfoComponent
+                label="Website"
+                id={uuidv4()}
+                type="url"
+                placeholder="Enter your website"
+                value={websiteValue}
+                onChange={handleOnChange}
+                onClick={handleDelete}
+            />
+            ]
+        </>
+    );
+
     return (
         <>
             {isSubmitted ? (
                 <></>
             ) : (
                 <>
-                    <InfoComponent
-                        label="Phone Number"
-                        id={uuidv4()}
-                        type="tel"
-                        placeholder="Enter your phone"
-                        value={phoneValue}
-                        onChange={handleOnChange}
-                        onClick={handleDelete}
-                    />
-                    <InfoComponent
-                        label="Email"
-                        id={uuidv4()}
-                        type="email"
-                        placeholder="Enter your email"
-                        value={emailValue}
-                        onChange={handleOnChange}
-                        onClick={handleDelete}
-                    />
-                    <InfoComponent
-                        label="Github"
-                        id={uuidv4()}
-                        type="url"
-                        placeholder="Enter your Github"
-                        value={githubValue}
-                        onChange={handleOnChange}
-                        onClick={handleDelete}
-                    />
-                    <InfoComponent
-                        label="Website"
-                        id={uuidv4()}
-                        type="url"
-                        placeholder="Enter your website"
-                        value={websiteValue}
-                        onChange={handleOnChange}
-                        onClick={handleDelete}
-                    />
+                    {InfoComponent.map((item) => {
+                        return (
+                            <div key={item.key} className="">
+                                {item}
+                            </div>
+                        );
+                    })}
                     <Button
                         className="submit-btn"
                         onClick={() => {
