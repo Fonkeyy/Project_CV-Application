@@ -3,72 +3,88 @@
 import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
-import InputField from './InputField';
+import InfoComponent from './InfoComponent';
 import Button from './Button';
 
 const InfoTile = () => {
-    const initialInputFields = [
-        { label: 'Phone Number:', placeholder: 'Enter your phone number', id: uuidv4() },
-        { label: 'Email:', placeholder: 'Enter your email', id: uuidv4() },
-        { label: 'Github:', placeholder: 'Enter your Github', id: uuidv4() },
-        { label: 'Website:', placeholder: 'Enter your website', id: uuidv4() },
-        { label: 'Address:', placeholder: 'Enter your address', id: uuidv4() },
-    ];
-
-    const [inputFields, setInputFields] = useState(initialInputFields);
+    const [inputFields, setInputFields] = useState([]);
     const [isSubmitted, setIsSubmitted] = useState(false);
 
     const [phoneValue, setPhoneValue] = useState('');
     const [emailValue, setEmailValue] = useState('');
     const [githubValue, setGithubValue] = useState('');
     const [websiteValue, setWebsiteValue] = useState('');
-    const [addressValue, setAddressValue] = useState('');
-
-    const updateValues = () => {};
 
     const handleOnChange = (event) => {
         const target = event.target;
+        console.log(target);
 
-        target.label === 'Phone Number' && setPhoneValue(target.value);
-        target.label === 'Email' && setEmailValue(target.value);
-        target.label === 'Github' && setGithubValue(target.value);
-        target.label === 'Website' && setWebsiteValue(target.value);
-        target.label === 'Address' && setAddressValue(target.value);
+        switch (target.placeholder) {
+            case 'Enter your phone':
+                setPhoneValue(target.value);
+                break;
+            case 'Enter your email':
+                setEmailValue(target.value);
+                break;
+            case 'Enter your Github':
+                setGithubValue(target.value);
+                break;
+            case 'Enter your website':
+                setWebsiteValue(target.value);
+                break;
+        }
     };
 
-    const handleDelete = (id) => {
-        setInputFields((prevFields) => prevFields.filter((field) => field.id !== id));
+    const handleDelete = (event) => {
+        console.log(event);
+        // setInputFields((prevFields) => prevFields.filter((field) => field.id !== id));
     };
 
     return (
         <>
             {isSubmitted ? (
-                <>
-                    {inputFields.map((field) => {
-                        return (
-                            <p key={field.id}>
-                                 {target.label === 'Phone Number' && return {field.label} : {phoneValue}}
-                             
-                            </p>
-                        );
-                    })}
-                </>
+                <></>
             ) : (
                 <>
-                    {inputFields.map((field) => (
-                        <div key={field.id} id={field.id} className="">
-                            <InputField
-                                label={field.label}
-                                placeholder={field.placeholder}
-                                onChange={handleOnChange}
-                            />
-                            <Button className="delete-btn" onClick={() => handleDelete(field.id)} />
-                        </div>
-                    ))}
+                    <InfoComponent
+                        label="Phone Number"
+                        id={uuidv4()}
+                        type="tel"
+                        placeholder="Enter your phone"
+                        value={phoneValue}
+                        onChange={handleOnChange}
+                        onClick={handleDelete}
+                    />
+                    <InfoComponent
+                        label="Email"
+                        id={uuidv4()}
+                        type="email"
+                        placeholder="Enter your email"
+                        value={emailValue}
+                        onChange={handleOnChange}
+                        onClick={handleDelete}
+                    />
+                    <InfoComponent
+                        label="Github"
+                        id={uuidv4()}
+                        type="url"
+                        placeholder="Enter your Github"
+                        value={githubValue}
+                        onChange={handleOnChange}
+                        onClick={handleDelete}
+                    />
+                    <InfoComponent
+                        label="Website"
+                        id={uuidv4()}
+                        type="url"
+                        placeholder="Enter your website"
+                        value={websiteValue}
+                        onChange={handleOnChange}
+                        onClick={handleDelete}
+                    />
                     <Button
                         className="submit-btn"
                         onClick={() => {
-                            updateValues();
                             setIsSubmitted(true);
                         }}
                     />
