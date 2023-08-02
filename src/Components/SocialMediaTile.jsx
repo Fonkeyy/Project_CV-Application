@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
-import SocialButton from './SocialMediaBtn';
+import SocialButton from './SocialButton';
 import Button from './Button';
 
 const initialSocialButtons = [

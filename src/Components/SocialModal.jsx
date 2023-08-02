@@ -3,13 +3,14 @@
 import React, { useState } from 'react';
 import { socialMediaList } from '../socialMediaList';
 
-const SocialModal = ({ onSubmit }) => {
+const SocialModal = ({ onSubmit, onSelected }) => {
     const [selectedSocial, setSelectedSocial] = useState(null);
 
     const handleSocialSelect = (event) => {
         const selectedSocialId = event.target.value;
         const selectedSocialMedia = socialMediaList.find((media) => media.id === selectedSocialId);
         setSelectedSocial(selectedSocialMedia);
+        onSelected(selectedSocialMedia);
     };
 
     const handleUrlChange = (event) => {
@@ -22,7 +23,6 @@ const SocialModal = ({ onSubmit }) => {
             onSubmit(true);
 
             socialMediaList.find((media) => media.id === selectedSocial.id).url = selectedSocial.url;
-            console.log(socialMediaList);
         }
     };
 
