@@ -23,24 +23,23 @@ const SocialMediaTile = () => {
     };
 
     const handleDelete = (selectedSocial) => {
+        // ! delete all same social
         setSocialBtns((prevBtns) => prevBtns.filter((btn) => btn.id !== selectedSocial.id));
     };
 
     return (
         <div className="social-btns-wrapper">
-            {socialBtns.map((item, index) => {
-                return (
-                    <SocialButton
-                        key={uuidv4()}
-                        id={item.id}
-                        index={index}
-                        className={item.className}
-                        onSubmit={handleOnSubmit}
-                        onDelete={handleDelete}
-                    />
-                );
-            })}
-            <SocialAddButton key={`add-btn-${btnCount}`} className="add-btn" onSubmit={handleOnSubmit} />
+            {socialBtns.map((item) => (
+                <SocialButton
+                    key={uuidv4()}
+                    socialData={item}
+                    id={item.id}
+                    className={item.className}
+                    onSubmit={handleOnSubmit}
+                    onDelete={handleDelete}
+                />
+            ))}
+            <SocialAddButton key={btnCount} className="add-btn" onSubmit={handleOnSubmit} />
         </div>
     );
 };

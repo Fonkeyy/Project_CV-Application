@@ -3,11 +3,11 @@
 import React, { useState } from 'react';
 import SocialModal from './SocialModal';
 
-const SocialAddButton = (props) => {
+const SocialAddButton = ({ onSubmit }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedSocial, setSelectedSocial] = useState(null);
 
-    const handleOnClick = () => {
+    const handleAddClick = () => {
         setIsModalOpen(true);
     };
 
@@ -15,14 +15,10 @@ const SocialAddButton = (props) => {
         setIsModalOpen(false);
     };
 
-    const handleOnSelected = (selectedSocial) => {
-        console.log(selectedSocial);
-        setSelectedSocial(selectedSocial);
-    };
-
-    const handleOnSubmit = () => {
+    const handleOnSubmit = (selectedSocial) => {
         closeModal();
-        props.onSubmit(selectedSocial);
+        setSelectedSocial(selectedSocial);
+        onSubmit(selectedSocial);
     };
 
     return (
@@ -31,11 +27,11 @@ const SocialAddButton = (props) => {
                 <button
                     id={selectedSocial.id}
                     className={selectedSocial.className}
-                    onClick={handleOnClick}></button>
+                    onClick={handleAddClick}></button>
             ) : (
-                <button id={props.id} className={props.className} onClick={handleOnClick}></button>
+                <button id="add-btn" className="add-btn" onClick={handleAddClick}></button>
             )}
-            {isModalOpen && <SocialModal onSubmit={handleOnSubmit} onSelected={handleOnSelected} />}
+            {isModalOpen && <SocialModal onSubmit={handleOnSubmit} />}
         </>
     );
 };

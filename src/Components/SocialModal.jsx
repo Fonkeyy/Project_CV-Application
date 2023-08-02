@@ -3,14 +3,13 @@
 import React, { useState } from 'react';
 import { socialMediaList } from '../socialMediaList';
 
-const SocialModal = ({ onSubmit, onSelected }) => {
+const SocialModal = ({ onSubmit }) => {
     const [selectedSocial, setSelectedSocial] = useState(null);
 
     const handleSocialSelect = (event) => {
         const selectedSocialId = event.target.value;
         const selectedSocialMedia = socialMediaList.find((media) => media.id === selectedSocialId);
         setSelectedSocial(selectedSocialMedia);
-        onSelected(selectedSocialMedia);
     };
 
     const handleUrlChange = (event) => {
@@ -20,9 +19,7 @@ const SocialModal = ({ onSubmit, onSelected }) => {
 
     const handleSubmit = () => {
         if (selectedSocial?.url) {
-            onSubmit(true);
-
-            socialMediaList.find((media) => media.id === selectedSocial.id).url = selectedSocial.url;
+            onSubmit(selectedSocial);
         }
     };
 
@@ -31,9 +28,9 @@ const SocialModal = ({ onSubmit, onSelected }) => {
             <div className="social-modal-content">
                 <select className="social-list" onChange={handleSocialSelect}>
                     <option value="">Select a social media platform</option>
-                    {socialMediaList.map((social) => (
-                        <option key={social.id} className={social.id} value={social.id}>
-                            {social.name}
+                    {socialMediaList.map((item) => (
+                        <option key={item.id} className={item.id} value={item.id}>
+                            {item.name}
                         </option>
                     ))}
                 </select>

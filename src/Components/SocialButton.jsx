@@ -2,26 +2,22 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
 
-import { socialMediaList } from '../socialMediaList';
-
-const SocialButton = (props) => {
+const SocialButton = ({ socialData, onSubmit, onDelete }) => {
     const [selectedSocial, setSelectedSocial] = useState(null);
     const [url, setUrl] = useState('');
 
-    const handleOnClick = (event) => {
-        const target = event.target;
-        const selectedSocial = socialMediaList.find((item) => item.id === target.id);
-
-        setSelectedSocial(selectedSocial);
+    const handleOnClick = () => {
+        setSelectedSocial(socialData);
     };
 
     const handleOnDelete = () => {
-        props.onDelete(selectedSocial);
+        onDelete(socialData);
     };
 
     const handleOnSubmit = () => {
-        selectedSocial.url = url;
+        socialData.url = url;
         setSelectedSocial(false);
+        onSubmit(socialData);
     };
 
     const handleOnChange = (event) => {
@@ -32,13 +28,13 @@ const SocialButton = (props) => {
         <>
             {selectedSocial ? (
                 <>
-                    <button id={props.id} className={props.className}></button>
+                    <button id={socialData.id} className={socialData.className}></button>
                     <input onChange={handleOnChange} />
                     <button className="submit-btn" onClick={handleOnSubmit}></button>
                     <button className="delete-btn" onClick={handleOnDelete}></button>
                 </>
             ) : (
-                <button id={props.id} className={props.className} onClick={handleOnClick}></button>
+                <button id={socialData.id} className={socialData.className} onClick={handleOnClick}></button>
             )}
         </>
     );
