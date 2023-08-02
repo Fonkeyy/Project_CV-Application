@@ -1,6 +1,7 @@
-/* eslint-disable react/prop-types */
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+
 import SocialModal from './SocialModal';
 
 const SocialAddButton = ({ onSubmit }) => {
@@ -36,4 +37,7 @@ const SocialAddButton = ({ onSubmit }) => {
     );
 };
 
+SocialAddButton.propTypes = {
+    onSubmit: PropTypes.func.isRequired, // Expecting a function
+};
 export default SocialAddButton;
