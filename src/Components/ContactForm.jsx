@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
-import { v4 as uuidv4 } from 'uuid';
 
 import Button from './Button';
 import InputField from './InputField';
@@ -36,7 +35,7 @@ const ContactForm = () => {
                 <>
                     {fields.map((field) => (
                         <InputField
-                            key={uuidv4()}
+                            key={field.id}
                             id={field.id}
                             placeholder={field.placeholder}
                             type={field.type}

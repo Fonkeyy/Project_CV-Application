@@ -4,8 +4,6 @@ import { v4 as uuidv4 } from 'uuid';
 import InfoComponent from './InfoComponent';
 import Button from './Button';
 
-// ! check why after 1 key press it stops writing
-
 const initialFields = [
     { id: 'tel', label: 'Phone Number', type: 'tel', placeholder: 'Enter your phone', value: '' },
     { id: 'email', label: 'Email', type: 'email', placeholder: 'Enter your email', value: '' },
@@ -53,7 +51,7 @@ const InfoSection = () => {
                 <>
                     {fields.map((field) => (
                         <InfoComponent
-                            key={uuidv4()}
+                            key={field.id}
                             label={field.label}
                             id={field.id}
                             type={field.type}
