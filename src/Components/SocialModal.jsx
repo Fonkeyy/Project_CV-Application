@@ -8,22 +8,29 @@ const SocialModal = ({ onSubmit }) => {
     const [selectedElement, setSelectedElement] = useState(null);
 
     const handleSocialSelect = (event) => {
+        // * Get the selected element id from the select list with event.target
         const selectedElementId = event.target.value;
+        // * Find the corresponding element in socialMediaList
         const selectedElementMedia = socialMediaList.find((media) => media.id === selectedElementId);
+        // * Set it to useState
         setSelectedElement(selectedElementMedia);
     };
 
+    // * On input change set url of selected element to input value
     const handleUrlChange = (event) => {
         const url = event.target.value;
         setSelectedElement((prevSocial) => ({ ...prevSocial, url: url }));
     };
 
+    // * If there is a selected element and an url send selected element to parent component through prop {on submit}
     const handleSubmit = () => {
         if (selectedElement?.url) {
             onSubmit(selectedElement);
         }
     };
 
+    // * Render list of social medias with mapping through socialMediaList
+    // * When an element is selected render an input text for url
     return (
         <div className="social-modal">
             <div className="social-modal-content">
