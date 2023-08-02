@@ -1,32 +1,41 @@
 // eslint-disable-next-line no-unused-vars
+
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 const SocialButton = ({ socialData, onSubmit, onDelete }) => {
-    const [selectedSocial, setSelectedSocial] = useState(null);
+    const [element, setElement] = useState(null);
     const [url, setUrl] = useState('');
 
     const handleOnClick = () => {
-        setSelectedSocial(socialData);
-    };
-
-    const handleOnDelete = () => {
-        onDelete(socialData);
-    };
-
-    const handleOnSubmit = () => {
-        socialData.url = url;
-        setSelectedSocial(false);
-        onSubmit(socialData);
+        // * Set element to the object passed as prop
+        setElement(socialData);
     };
 
     const handleOnChange = (event) => {
+        // * Set url to input value
         setUrl(event.target.value);
     };
 
+    const handleOnDelete = () => {
+        // * Send element to parent component through prop {onDelete}
+        onDelete(socialData);
+        setElement(null);
+    };
+
+    const handleOnSubmit = () => {
+        // * Set social object url to useState url
+        socialData.url = url;
+        setElement(null);
+        // * Send element to parent component through prop {onSubmit}
+        onSubmit(socialData);
+    };
+
+    // * If the social button is clicked render input for url + submit and delete buttons
+    // * Else render the logo
     return (
         <>
-            {selectedSocial ? (
+            {element ? (
                 <>
                     <button id={socialData.id} className={socialData.className}></button>
                     <input onChange={handleOnChange} />

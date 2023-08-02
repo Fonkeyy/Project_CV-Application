@@ -10,16 +10,16 @@ const SocialMediaTile = () => {
     const initialSocialButtons = socialMediaList.slice(0, 3);
     const [socialBtns, setSocialBtns] = useState(initialSocialButtons);
 
-    const handleOnSubmit = (selectedSocial) => {
-        if (selectedSocial) {
-            // * Update the list with the selected element
-            setSocialBtns((prevBtns) => [...prevBtns, selectedSocial]);
+    const handleOnSubmit = (selectedElement) => {
+        if (selectedElement) {
+            // * Update the list with the selected element get from argument of prop {onSubmit}
+            setSocialBtns((prevBtns) => [...prevBtns, selectedElement]);
         }
     };
 
-    const handleDelete = (selectedSocial) => {
+    const handleDelete = (selectedElement) => {
         // * Delete selected element from the list
-        setSocialBtns((prevBtns) => prevBtns.filter((btn) => btn !== selectedSocial));
+        setSocialBtns((prevBtns) => prevBtns.filter((btn) => btn !== selectedElement));
     };
 
     return (
@@ -30,7 +30,7 @@ const SocialMediaTile = () => {
                     key={index}
                     socialData={item} // * Store element itself in a prop
                     className={item.className}
-                    onSubmit={handleOnSubmit}
+                    onSubmit={handleOnSubmit} // * Get the selectedElement as argument of the prop {onSubmit} passed to child
                     onDelete={handleDelete}
                 />
             ))}

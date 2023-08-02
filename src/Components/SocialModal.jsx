@@ -5,22 +5,22 @@ import PropTypes from 'prop-types';
 import { socialMediaList } from '../socialMediaList';
 
 const SocialModal = ({ onSubmit }) => {
-    const [selectedSocial, setSelectedSocial] = useState(null);
+    const [selectedElement, setSelectedElement] = useState(null);
 
     const handleSocialSelect = (event) => {
-        const selectedSocialId = event.target.value;
-        const selectedSocialMedia = socialMediaList.find((media) => media.id === selectedSocialId);
-        setSelectedSocial(selectedSocialMedia);
+        const selectedElementId = event.target.value;
+        const selectedElementMedia = socialMediaList.find((media) => media.id === selectedElementId);
+        setSelectedElement(selectedElementMedia);
     };
 
     const handleUrlChange = (event) => {
         const url = event.target.value;
-        setSelectedSocial((prevSocial) => ({ ...prevSocial, url: url }));
+        setSelectedElement((prevSocial) => ({ ...prevSocial, url: url }));
     };
 
     const handleSubmit = () => {
-        if (selectedSocial?.url) {
-            onSubmit(selectedSocial);
+        if (selectedElement?.url) {
+            onSubmit(selectedElement);
         }
     };
 
@@ -35,13 +35,13 @@ const SocialModal = ({ onSubmit }) => {
                         </option>
                     ))}
                 </select>
-                {selectedSocial && (
+                {selectedElement && (
                     <div>
                         <label>url: </label>
                         <input
-                            id={selectedSocial.id}
+                            id={selectedElement.id}
                             type="url"
-                            value={selectedSocial.url || ''}
+                            value={selectedElement.url || ''}
                             onChange={handleUrlChange}
                         />
                         <button className="submit-btn" onClick={handleSubmit}></button>
