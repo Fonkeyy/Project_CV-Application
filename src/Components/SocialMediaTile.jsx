@@ -5,6 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 import SocialButton from './SocialButton';
 import { socialMediaList } from '../socialMediaList';
+import SocialAddButton from './SocialAddBtn';
 
 const SocialMediaTile = () => {
     const initialSocialButtons = socialMediaList.slice(0, 3);
@@ -21,19 +22,25 @@ const SocialMediaTile = () => {
         console.log(socialBtns);
     };
 
+    const handleDelete = (selectedSocial) => {
+        setSocialBtns((prevBtns) => prevBtns.filter((btn) => btn.id !== selectedSocial.id));
+    };
+
     return (
         <div className="social-btns-wrapper">
-            {socialBtns.map((item) => {
+            {socialBtns.map((item, index) => {
                 return (
                     <SocialButton
                         key={uuidv4()}
                         id={item.id}
+                        index={index}
                         className={item.className}
                         onSubmit={handleOnSubmit}
+                        onDelete={handleDelete}
                     />
                 );
             })}
-            <SocialButton key={`add-btn-${btnCount}`} className="add-btn" onSubmit={handleOnSubmit} />
+            <SocialAddButton key={`add-btn-${btnCount}`} className="add-btn" onSubmit={handleOnSubmit} />
         </div>
     );
 };
