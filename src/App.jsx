@@ -8,6 +8,7 @@ import PracticeSection from './PracticeSection';
 import ContactSection from './ContactSection';
 
 import '../src/CSS/App.css';
+import SocialMediaTile from './Components/SocialMediaTile';
 
 function App() {
     return (
@@ -16,6 +17,7 @@ function App() {
             <PracticeSection />
             <EducSection />
             <ContactSection />
+            <SocialMediaTile />
         </div>
     );
 }
