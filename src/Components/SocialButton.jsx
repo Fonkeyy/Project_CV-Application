@@ -20,6 +20,11 @@ const SocialButton = (props) => {
         setSelectedSocial(selectedSocial);
     };
 
+    const handleOnSubmit = () => {
+        closeModal();
+        props.onSubmit(selectedSocial);
+    };
+
     return (
         <>
             {selectedSocial ? (
@@ -30,7 +35,7 @@ const SocialButton = (props) => {
             ) : (
                 <button id={props.id} className={props.className} onClick={handleOnClick}></button>
             )}
-            {isModalOpen && <SocialModal onSubmit={closeModal} onSelected={handleOnSelected} />}
+            {isModalOpen && <SocialModal onSubmit={handleOnSubmit} onSelected={handleOnSelected} />}
         </>
     );
 };

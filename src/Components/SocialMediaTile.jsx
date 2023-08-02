@@ -4,27 +4,36 @@ import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
 import SocialButton from './SocialButton';
-import Button from './Button';
-
-const initialSocialButtons = [
-    { id: 'linkedin', className: 'linkedin social-btn' },
-    { id: 'twitter', className: 'twitter social-btn' },
-    { id: 'facebook', className: 'facebook social-btn' },
-];
+import { socialMediaList } from '../socialMediaList';
 
 const SocialMediaTile = () => {
+    const initialSocialButtons = socialMediaList.slice(0, 3);
+    const [btnCount, setBtnCount] = useState(0);
+
     const [socialBtns, setSocialBtns] = useState(initialSocialButtons);
 
-    const handleAddClick = () => {
-        setSocialBtns((prevBtns) => [...prevBtns, {}]);
+    const handleOnSubmit = (selectedSocial) => {
+        if (selectedSocial) {
+            setSocialBtns((prevBtns) => [...prevBtns, selectedSocial]);
+            setBtnCount((prevCount) => prevCount + 1);
+        }
+
+        console.log(socialBtns);
     };
 
     return (
         <div className="social-btns-wrapper">
             {socialBtns.map((item) => {
-                return <SocialButton key={uuidv4()} id={item.id} className={item.className} />;
+                return (
+                    <SocialButton
+                        key={uuidv4()}
+                        id={item.id}
+                        className={item.className}
+                        onSubmit={handleOnSubmit}
+                    />
+                );
             })}
-            <Button className="add-btn" onClick={handleAddClick} />
+            <SocialButton key={`add-btn-${btnCount}`} className="add-btn" onSubmit={handleOnSubmit} />
         </div>
     );
 };
