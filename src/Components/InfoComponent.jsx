@@ -1,10 +1,9 @@
-/* eslint-disable react/prop-types */
-// eslint-disable-next-line no-unused-vars
+import PropTypes from 'prop-types';
 
 import InputField from './InputField';
+import Button from './Button';
 
 import '../CSS/Components/InputField.css';
-import Button from './Button';
 
 function InfoComponent(props) {
     return (
@@ -13,7 +12,7 @@ function InfoComponent(props) {
             <InputField
                 id={props.id}
                 className={props.className}
-                type={props.type}
+                type={props.inputType}
                 placeholder={props.placeholder}
                 value={props.value}
                 onChange={props.onChange}
@@ -27,5 +26,16 @@ function InfoComponent(props) {
         </>
     );
 }
+
+InfoComponent.propTypes = {
+    label: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+    className: PropTypes.string.isRequired,
+    inputType: PropTypes.string.isRequired,
+    placeholder: PropTypes.string.isRequired,
+    value: PropTypes.string.isRequired,
+    onChange: PropTypes.func.isRequired,
+    onDelete: PropTypes.func.isRequired,
+};
 
 export default InfoComponent;

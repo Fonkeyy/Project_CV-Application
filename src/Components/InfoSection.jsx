@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -16,19 +17,25 @@ const InfoSection = () => {
     const [fields, setFields] = useState(initialFields);
     const [isMouseOver, setIsMouseOver] = useState(false);
 
+    // * On input change set input value to the corresponding field
     const handleChange = (event) => {
         const { id, value } = event.target;
         setFields((prevFields) => prevFields.map((field) => (field.id === id ? { ...field, value } : field)));
     };
 
+    // * On delete delete the corresponding field
     const handleDelete = (id) => {
         setFields((prevFields) => prevFields.filter((field) => field.id !== id));
     };
 
+    // * On submit set is submitted to true
     const handleSubmit = () => {
         setIsSubmitted(true);
     };
 
+    // * If is submitted, map through field list and display label + value
+    // * When mouse is over display edit button
+    // * If not submitted, map through field list and display each field with corresponding props + submit button
     return (
         <>
             {isSubmitted ? (
@@ -55,7 +62,7 @@ const InfoSection = () => {
                             label={field.label}
                             id={field.id}
                             className="ToADD"
-                            type={field.type}
+                            inputType={field.type}
                             placeholder={field.placeholder}
                             value={field.value}
                             onChange={handleChange}

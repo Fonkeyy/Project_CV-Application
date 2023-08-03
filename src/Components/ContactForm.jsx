@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
 
@@ -18,15 +17,19 @@ const ContactForm = () => {
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [fields, setFields] = useState(initialFields);
 
+    // * On input change set input value to the corresponding field
     const handleChange = (event) => {
         const { id, value } = event.target;
         setFields((prevFields) => prevFields.map((field) => (field.id === id ? { ...field, value } : field)));
     };
 
+    // * On submit set is submitted to true
     const handleSubmit = () => {
         setIsSubmitted(true);
     };
 
+    // * If is submitted display confirmation message
+    // * If not submitted, map through list and display each field with corresponding props + submit button
     return (
         <div>
             {isSubmitted ? (
