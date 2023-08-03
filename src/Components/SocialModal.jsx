@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import { socialMediaList } from '../socialMediaList';
+import InputField from './InputField';
 
 const SocialModal = ({ onSubmit }) => {
     const [selectedElement, setSelectedElement] = useState(null);
@@ -44,13 +45,14 @@ const SocialModal = ({ onSubmit }) => {
                 </select>
                 {selectedElement && (
                     <div>
-                        <label>url: </label>
-                        <input
+                        <InputField
                             id={selectedElement.id}
                             type="url"
+                            placeholder={'Enter the URL'}
                             value={selectedElement.url || ''}
                             onChange={handleUrlChange}
                         />
+
                         <button className="submit-btn" onClick={handleSubmit}></button>
                     </div>
                 )}
@@ -60,6 +62,6 @@ const SocialModal = ({ onSubmit }) => {
 };
 
 SocialModal.propTypes = {
-    onSubmit: PropTypes.func.isRequired, // Expecting a function
+    onSubmit: PropTypes.func.isRequired,
 };
 export default SocialModal;

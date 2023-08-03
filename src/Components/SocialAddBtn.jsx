@@ -45,6 +45,6 @@ const SocialAddButton = ({ onSubmit }) => {
 };
 
 SocialAddButton.propTypes = {
-    onSubmit: PropTypes.func.isRequired, // Expecting a function
+    onSubmit: PropTypes.func.isRequired,
 };
 export default SocialAddButton;

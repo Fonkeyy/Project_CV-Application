@@ -1,19 +1,12 @@
-/* eslint-disable react/prop-types */
-// eslint-disable-next-line no-unused-vars
-import { useState } from 'react';
+import PropTypes from 'prop-types';
+
 import '../CSS/Components/InputField.css';
 
-// ! Check if its really usefull => <input
 function InputField(props) {
-    // const [value, setValue] = useState('');
-
-    // const handleInputChange = (event) => {
-    //     setValue(event.target.value);
-    // };
     return (
         <input
             id={props.id}
-            className={props.className}
+            className="input-text"
             type={props.type}
             placeholder={props.placeholder}
             value={props.value}
@@ -21,5 +14,14 @@ function InputField(props) {
         />
     );
 }
+
+InputField.propTypes = {
+    id: PropTypes.string,
+    className: PropTypes.string,
+    type: PropTypes.string.isRequired,
+    placeholder: PropTypes.string,
+    value: PropTypes.string,
+    onChange: PropTypes.func.isRequired,
+};
 
 export default InputField;

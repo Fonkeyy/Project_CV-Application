@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import InputField from './InputField';
 
 const SocialButton = ({ socialData, onSubmit, onDelete }) => {
     const [element, setElement] = useState(null);
@@ -38,7 +39,7 @@ const SocialButton = ({ socialData, onSubmit, onDelete }) => {
             {element ? (
                 <>
                     <button id={socialData.id} className={socialData.className}></button>
-                    <input onChange={handleOnChange} />
+                    <InputField type="url" placeholder={'Enter the URL'} onChange={handleOnChange} />
                     <button className="submit-btn" onClick={handleOnSubmit}></button>
                     <button className="delete-btn" onClick={handleOnDelete}></button>
                 </>
@@ -50,10 +51,10 @@ const SocialButton = ({ socialData, onSubmit, onDelete }) => {
 };
 
 SocialButton.propTypes = {
-    socialData: PropTypes.object.isRequired, // For example, expecting an object
-    className: PropTypes.string.isRequired, // Expecting a string
-    onSubmit: PropTypes.func.isRequired, // Expecting a function
-    onDelete: PropTypes.func.isRequired, // Expecting a function
+    socialData: PropTypes.object.isRequired,
+    className: PropTypes.string.isRequired,
+    onSubmit: PropTypes.func.isRequired,
+    onDelete: PropTypes.func.isRequired,
 };
 
 export default SocialButton;
