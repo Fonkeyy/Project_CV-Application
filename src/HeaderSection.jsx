@@ -3,19 +3,19 @@ import React from 'react';
 
 import '../src/CSS/HeaderSection.css';
 import '../src/CSS/App.css';
-import FormComponent from './Components/FormComponent';
+import HeaderComponent from './Components/HeaderComponent';
 
 function HeaderSection() {
     return (
         <div id="Header">
-            <FormComponent
+            <HeaderComponent
                 id="full-name"
                 className="header-form Form-component"
                 inputClassName="input-text"
                 placeholder="Full Name"
             />
 
-            <FormComponent
+            <HeaderComponent
                 id="title"
                 className="header-form Form-component"
                 inputClassName="input-text"
