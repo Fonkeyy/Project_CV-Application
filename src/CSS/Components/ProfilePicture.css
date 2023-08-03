@@ -1,0 +1,19 @@
+#profile-picture-container {
+    position: absolute;
+    width: var(--pp-size);
+    height: var(--pp-size);
+    background-color: transparent;
+    bottom: calc(0px - var(--pp-size) / 2);
+    left: calc(50% - calc(var(--pp-size) / 2));
+}
+
+#profile-picture {
+    background: url('../assets/img/profile-picture.jpg');
+    width: var(--pp-size);
+    height: var(--pp-size);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 50%;
+    outline: 10px solid white;
+}

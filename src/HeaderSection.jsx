@@ -4,6 +4,7 @@ import React from 'react';
 import '../src/CSS/HeaderSection.css';
 import '../src/CSS/App.css';
 import HeaderComponent from './Components/HeaderComponent';
+import ProfilePicture from './Components/ProfilePicture';
 
 function HeaderSection() {
     return (
@@ -14,17 +15,13 @@ function HeaderSection() {
                 inputClassName="input-text"
                 placeholder="Full Name"
             />
-
             <HeaderComponent
                 id="title"
                 className="header-form Form-component"
                 inputClassName="input-text"
                 placeholder="Title"
             />
-
-            <div id="profile-picture-container">
-                <div id="profile-picture"></div>
-            </div>
+            <ProfilePicture />
         </div>
     );
 }
