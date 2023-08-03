@@ -6,9 +6,9 @@ import HeaderSection from './HeaderSection';
 import EducSection from './EducSection';
 import PracticeSection from './PracticeSection';
 import ContactSection from './ContactSection';
+import SocialMediaTile from './Components/SocialMediaTile';
 
 import '../src/CSS/App.css';
-import SocialMediaTile from './Components/SocialMediaTile';
 
 function App() {
     return (
