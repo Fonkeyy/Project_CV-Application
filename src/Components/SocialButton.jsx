@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import InputField from './InputField';
+import Button from './Button';
 
 const SocialButton = ({ socialData, onSubmit, onDelete }) => {
     const [element, setElement] = useState(null);
@@ -38,13 +39,13 @@ const SocialButton = ({ socialData, onSubmit, onDelete }) => {
         <>
             {element ? (
                 <>
-                    <button id={socialData.id} className={socialData.className}></button>
+                    <Button id={socialData.id} className={socialData.className} />
                     <InputField type="url" placeholder={'Enter the URL'} onChange={handleChange} />
-                    <button className="submit-btn" onClick={handleSubmit}></button>
-                    <button className="delete-btn" onClick={handleDelete}></button>
+                    <Button className="submit-btn" onClick={handleSubmit} />
+                    <Button className="delete-btn" onClick={handleDelete} />
                 </>
             ) : (
-                <button id={socialData.id} className={socialData.className} onClick={handleOnClick}></button>
+                <Button id={socialData.id} className={socialData.className} onClick={handleOnClick} />
             )}
         </>
     );

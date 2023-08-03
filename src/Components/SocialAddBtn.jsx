@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import SocialModal from './SocialModal';
+import Button from './Button';
 
 const SocialAddButton = ({ onSubmit }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -32,12 +33,13 @@ const SocialAddButton = ({ onSubmit }) => {
     return (
         <>
             {selectedElement ? (
-                <button
+                <Button
                     id={selectedElement.id}
                     className={selectedElement.className}
-                    onClick={handleAddClick}></button>
+                    onClick={handleAddClick}
+                />
             ) : (
-                <button id="add-btn" className="add-btn" onClick={handleAddClick}></button>
+                <Button id="add-btn" className="add-btn" onClick={handleAddClick} />
             )}
             {isModalOpen && <SocialModal onSubmit={handleSubmit} />}
         </>

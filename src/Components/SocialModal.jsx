@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 import { socialMediaList } from '../socialMediaList';
 import InputField from './InputField';
+import Button from './Button';
 
 const SocialModal = ({ onSubmit }) => {
     const [selectedElement, setSelectedElement] = useState(null);
@@ -53,7 +54,7 @@ const SocialModal = ({ onSubmit }) => {
                             onChange={handleUrlChange}
                         />
 
-                        <button className="submit-btn" onClick={handleSubmit}></button>
+                        <Button className="submit-btn" onClick={handleSubmit} />
                     </div>
                 )}
             </div>
