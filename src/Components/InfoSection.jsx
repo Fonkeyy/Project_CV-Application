@@ -14,7 +14,7 @@ const initialFields = [
 const InfoSection = () => {
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [fields, setFields] = useState(initialFields);
-    const [isHovered, setIsHovered] = useState(false);
+    const [isMouseOver, setIsMouseOver] = useState(false);
 
     const handleOnChange = (event) => {
         const { id, value } = event.target;
@@ -34,10 +34,10 @@ const InfoSection = () => {
             {isSubmitted ? (
                 <div
                     onMouseEnter={() => {
-                        setIsHovered(true);
+                        setIsMouseOver(true);
                     }}
                     onMouseLeave={() => {
-                        setIsHovered(false);
+                        setIsMouseOver(false);
                     }}>
                     {fields.map((field) => (
                         <div key={uuidv4()}>
@@ -45,7 +45,7 @@ const InfoSection = () => {
                             <p>{field.value}</p>
                         </div>
                     ))}
-                    {isHovered && <Button className="edit-btn" onClick={() => setIsSubmitted(false)} />}
+                    {isMouseOver && <Button className="edit-btn" onClick={() => setIsSubmitted(false)} />}
                 </div>
             ) : (
                 <>
@@ -54,6 +54,7 @@ const InfoSection = () => {
                             key={field.id}
                             label={field.label}
                             id={field.id}
+                            className="ToADD"
                             type={field.type}
                             placeholder={field.placeholder}
                             value={field.value}

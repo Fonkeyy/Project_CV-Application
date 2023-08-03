@@ -14,7 +14,7 @@ const EducTile = ({ onSubmit, onDelete, id }) => {
     const [titleValue, setTitleValue] = useState('');
     const [isMouseOver, setIsMouseOver] = useState(false);
 
-    const handleOnSubmit = () => {
+    const handleSubmit = () => {
         if (schoolValue !== '' && titleValue !== '') {
             setIsSubmitted(true);
             onSubmit(true);
@@ -30,7 +30,7 @@ const EducTile = ({ onSubmit, onDelete, id }) => {
         target.id === 'title-name' && setTitleValue(target.value);
     };
 
-    const handleOnEdit = () => {
+    const handleEdit = () => {
         setIsSubmitted(false);
         onSubmit(false);
     };
@@ -47,7 +47,7 @@ const EducTile = ({ onSubmit, onDelete, id }) => {
                 <>
                     <p className="schoolValue-submitted">{schoolValue}</p>
                     <p className="schoolTitle-submitted">{titleValue}</p>
-                    {isMouseOver && TileBtnWrapper({ handleOnEdit, onDelete, id })}
+                    {isMouseOver && TileBtnWrapper({ handleEdit, onDelete, id })}
                 </>
             ) : (
                 <>
@@ -67,7 +67,7 @@ const EducTile = ({ onSubmit, onDelete, id }) => {
                         value={titleValue}
                         onChange={handleOnChange}
                     />
-                    <Button className="submit-btn-30" onClick={handleOnSubmit} />
+                    <Button className="submit-btn-30" onClick={handleSubmit} />
                 </>
             )}
         </div>

@@ -14,7 +14,7 @@ const PracticeTile = ({ onSubmit, onDelete, id }) => {
     const [titleValue, setTitleValue] = useState('');
     const [isMouseOver, setIsMouseOver] = useState(false);
 
-    const handleOnSubmit = () => {
+    const handleSubmit = () => {
         if (companyValue !== '' && titleValue !== '') {
             setIsSubmitted(true);
             onSubmit(true);
@@ -30,7 +30,7 @@ const PracticeTile = ({ onSubmit, onDelete, id }) => {
         target.id === 'job-title' && setTitleValue(target.value);
     };
 
-    const handleOnEdit = () => {
+    const handleEdit = () => {
         setIsSubmitted(false);
         onSubmit(false);
     };
@@ -48,7 +48,7 @@ const PracticeTile = ({ onSubmit, onDelete, id }) => {
                     <p className="companyValue-submitted">{companyValue}</p>
                     <p className="titleValue-submitted">{titleValue}</p>
 
-                    {isMouseOver && TileBtnWrapper({ handleOnEdit, onDelete, id })}
+                    {isMouseOver && TileBtnWrapper({ handleEdit, onDelete, id })}
                 </>
             ) : (
                 <>
@@ -68,7 +68,7 @@ const PracticeTile = ({ onSubmit, onDelete, id }) => {
                         value={companyValue}
                         onChange={handleOnChange}
                     />
-                    <Button className="submit-btn-30" onClick={handleOnSubmit} />
+                    <Button className="submit-btn-30" onClick={handleSubmit} />
                 </>
             )}
         </div>

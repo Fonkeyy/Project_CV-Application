@@ -6,7 +6,7 @@ import Button from './Button';
 function TileBtnWrapper(props) {
     return (
         <div className="tile-btn-wrapper">
-            <Button className="edit-btn-30" onClick={props.handleOnEdit} />
+            <Button className="edit-btn-30" onClick={props.handleEdit} />
             <Button
                 className="delete-btn"
                 onClick={() => {

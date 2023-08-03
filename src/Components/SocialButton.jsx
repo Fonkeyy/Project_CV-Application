@@ -18,13 +18,13 @@ const SocialButton = ({ socialData, onSubmit, onDelete }) => {
         setUrl(event.target.value);
     };
 
-    const handleOnDelete = () => {
+    const handleDelete = () => {
         // * Send element to parent component through prop {onDelete}
         onDelete(socialData);
         setElement(null);
     };
 
-    const handleOnSubmit = () => {
+    const handleSubmit = () => {
         // * Set social object url to useState url
         socialData.url = url;
         setElement(null);
@@ -40,8 +40,8 @@ const SocialButton = ({ socialData, onSubmit, onDelete }) => {
                 <>
                     <button id={socialData.id} className={socialData.className}></button>
                     <InputField type="url" placeholder={'Enter the URL'} onChange={handleOnChange} />
-                    <button className="submit-btn" onClick={handleOnSubmit}></button>
-                    <button className="delete-btn" onClick={handleOnDelete}></button>
+                    <button className="submit-btn" onClick={handleSubmit}></button>
+                    <button className="delete-btn" onClick={handleDelete}></button>
                 </>
             ) : (
                 <button id={socialData.id} className={socialData.className} onClick={handleOnClick}></button>

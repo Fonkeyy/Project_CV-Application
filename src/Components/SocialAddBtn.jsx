@@ -17,7 +17,7 @@ const SocialAddButton = ({ onSubmit }) => {
         setIsModalOpen(false);
     };
 
-    const handleOnSubmit = (selectedElement) => {
+    const handleSubmit = (selectedElement) => {
         // * OnClick on submit button:
         // * Set isModalOpen to true => close modal
         // * Update selectedElement
@@ -39,7 +39,7 @@ const SocialAddButton = ({ onSubmit }) => {
             ) : (
                 <button id="add-btn" className="add-btn" onClick={handleAddClick}></button>
             )}
-            {isModalOpen && <SocialModal onSubmit={handleOnSubmit} />}
+            {isModalOpen && <SocialModal onSubmit={handleSubmit} />}
         </>
     );
 };
