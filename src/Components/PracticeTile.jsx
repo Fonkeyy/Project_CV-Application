@@ -1,6 +1,6 @@
-/* eslint-disable react/prop-types */
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
 import InputField from './InputField';
 import Button from './Button';
@@ -14,6 +14,8 @@ const PracticeTile = ({ onSubmit, onDelete, id }) => {
     const [titleValue, setTitleValue] = useState('');
     const [isMouseOver, setIsMouseOver] = useState(false);
 
+    // * On submit if values are not empty set isSubmitted to true and pass the info to parent component
+    // * If they are empty, alert
     const handleSubmit = () => {
         if (companyValue !== '' && titleValue !== '') {
             setIsSubmitted(true);
@@ -23,13 +25,15 @@ const PracticeTile = ({ onSubmit, onDelete, id }) => {
         titleValue === '' && alert('Please enter job title before submitting') && setIsSubmitted(false);
     };
 
-    const handleOnChange = (event) => {
+    // * On change identify which input has been changed, update the right state accordingly
+    const handleChange = (event) => {
         const target = event.target;
 
         target.id === 'company-name' && setCompanyValue(target.value);
         target.id === 'job-title' && setTitleValue(target.value);
     };
 
+    // * On edit set isSubmitted to false and pass the info to parent component
     const handleEdit = () => {
         setIsSubmitted(false);
         onSubmit(false);
@@ -58,7 +62,7 @@ const PracticeTile = ({ onSubmit, onDelete, id }) => {
                         type="text"
                         placeholder="Job title"
                         value={titleValue}
-                        onChange={handleOnChange}
+                        onChange={handleChange}
                     />
                     <InputField
                         id="company-name"
@@ -66,13 +70,19 @@ const PracticeTile = ({ onSubmit, onDelete, id }) => {
                         type="text"
                         placeholder="Company name"
                         value={companyValue}
-                        onChange={handleOnChange}
+                        onChange={handleChange}
                     />
                     <Button className="submit-btn-30" onClick={handleSubmit} />
                 </>
             )}
         </div>
     );
+};
+
+PracticeTile.propTypes = {
+    onSubmit: PropTypes.func.isRequired,
+    onDelete: PropTypes.func.isRequired,
+    id: PropTypes.string.isRequired,
 };
 
 export default PracticeTile;

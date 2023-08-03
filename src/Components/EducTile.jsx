@@ -23,7 +23,7 @@ const EducTile = ({ onSubmit, onDelete, id }) => {
         titleValue === '' && alert('Please enter title name before submitting');
     };
 
-    const handleOnChange = (event) => {
+    const handleChange = (event) => {
         const target = event.target;
 
         target.id === 'school-name' && setSchoolValue(target.value);
@@ -57,7 +57,7 @@ const EducTile = ({ onSubmit, onDelete, id }) => {
                         type="text"
                         placeholder="Enter school name"
                         value={schoolValue}
-                        onChange={handleOnChange}
+                        onChange={handleChange}
                     />
                     <InputField
                         id="title-name"
@@ -65,7 +65,7 @@ const EducTile = ({ onSubmit, onDelete, id }) => {
                         type="text"
                         placeholder="Enter title of study"
                         value={titleValue}
-                        onChange={handleOnChange}
+                        onChange={handleChange}
                     />
                     <Button className="submit-btn-30" onClick={handleSubmit} />
                 </>

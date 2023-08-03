@@ -16,7 +16,7 @@ const InfoSection = () => {
     const [fields, setFields] = useState(initialFields);
     const [isMouseOver, setIsMouseOver] = useState(false);
 
-    const handleOnChange = (event) => {
+    const handleChange = (event) => {
         const { id, value } = event.target;
         setFields((prevFields) => prevFields.map((field) => (field.id === id ? { ...field, value } : field)));
     };
@@ -58,7 +58,7 @@ const InfoSection = () => {
                             type={field.type}
                             placeholder={field.placeholder}
                             value={field.value}
-                            onChange={handleOnChange}
+                            onChange={handleChange}
                             onDelete={handleDelete}
                         />
                     ))}

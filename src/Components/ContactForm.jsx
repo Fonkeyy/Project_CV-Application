@@ -18,7 +18,7 @@ const ContactForm = () => {
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [fields, setFields] = useState(initialFields);
 
-    const handleOnChange = (event) => {
+    const handleChange = (event) => {
         const { id, value } = event.target;
         setFields((prevFields) => prevFields.map((field) => (field.id === id ? { ...field, value } : field)));
     };
@@ -41,7 +41,7 @@ const ContactForm = () => {
                             placeholder={field.placeholder}
                             type={field.type}
                             value={field.value}
-                            onChange={handleOnChange}
+                            onChange={handleChange}
                         />
                     ))}
                     <Button className="submit-btn" onClick={handleSubmit} />

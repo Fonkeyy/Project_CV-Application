@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
-
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+
 import InputField from './InputField';
 
 const SocialButton = ({ socialData, onSubmit, onDelete }) => {
@@ -13,7 +13,7 @@ const SocialButton = ({ socialData, onSubmit, onDelete }) => {
         setElement(socialData);
     };
 
-    const handleOnChange = (event) => {
+    const handleChange = (event) => {
         // * Set url to input value
         setUrl(event.target.value);
     };
@@ -39,7 +39,7 @@ const SocialButton = ({ socialData, onSubmit, onDelete }) => {
             {element ? (
                 <>
                     <button id={socialData.id} className={socialData.className}></button>
-                    <InputField type="url" placeholder={'Enter the URL'} onChange={handleOnChange} />
+                    <InputField type="url" placeholder={'Enter the URL'} onChange={handleChange} />
                     <button className="submit-btn" onClick={handleSubmit}></button>
                     <button className="delete-btn" onClick={handleDelete}></button>
                 </>
