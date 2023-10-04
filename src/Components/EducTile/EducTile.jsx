@@ -2,26 +2,26 @@
 import React from 'react';
 
 import PropTypes from 'prop-types';
-import TileComponent from './TileComponent';
+import TileComponent from '../TileComponent/TileComponent';
 
-import '../CSS/Components/EducTile.css';
+import './EducTile.css';
 
-const PracticeTile = ({ onSubmit, onDelete, id }) => {
+const EducTile = ({ onSubmit, onDelete, id }) => {
     return (
         <TileComponent
             onSubmit={onSubmit}
             onDelete={onDelete}
             id={id}
-            field1Name="Company name"
-            field2Name="Job title"
+            field1Name="School name"
+            field2Name="Degree title"
         />
     );
 };
 
-PracticeTile.propTypes = {
+EducTile.propTypes = {
     onSubmit: PropTypes.func.isRequired,
     onDelete: PropTypes.func.isRequired,
     id: PropTypes.string.isRequired,
 };
 
-export default PracticeTile;
+export default EducTile;

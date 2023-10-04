@@ -2,9 +2,9 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import { socialMediaList } from '../socialMediaList';
-import InputField from './InputField';
-import Button from './Button';
+import { socialMediaList } from '../../socialMediaList';
+import InputField from '../InputField/InputField';
+import Button from '../Button/Button';
 
 const SocialModal = ({ onSubmit }) => {
     const [selectedElement, setSelectedElement] = useState(null);

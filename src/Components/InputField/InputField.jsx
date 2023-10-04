@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-import '../CSS/Components/InputField.css';
+import './InputField.css';
 
 function InputField(props) {
     return (

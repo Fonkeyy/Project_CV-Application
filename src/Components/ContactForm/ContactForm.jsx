@@ -1,10 +1,10 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
 
-import Button from './Button';
-import InputField from './InputField';
+import Button from '../Button/Button';
+import InputField from '../InputField/InputField';
 
-import '../CSS/Components/ContactForm.css';
+import './ContactForm.css';
 
 const initialFields = [
     { id: 'name', type: 'text', placeholder: 'Name', value: '' },

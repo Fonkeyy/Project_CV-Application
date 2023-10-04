@@ -1,8 +1,8 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
 
-import PracticeTile from './Components/PracticeTile';
-import SectionComponent from './Components/SectionComponent';
+import PracticeTile from './Components/PracticeTile/PracticeTile';
+import SectionComponent from './Components/SectionComponent/SectionComponent';
 
 import '../src/CSS/EducSection.css';
 

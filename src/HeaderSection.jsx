@@ -1,10 +1,7 @@
-// eslint-disable-next-line no-unused-vars
-import React from 'react';
-
 import '../src/CSS/HeaderSection.css';
-import '../src/CSS/App.css';
-import HeaderComponent from './Components/HeaderComponent';
-import ProfilePicture from './Components/ProfilePicture';
+import '../src/App.css';
+import HeaderComponent from './Components/HeaderComponent/HeaderComponent';
+import ProfilePicture from './Components/ProfilePicture/ProfilePicture';
 
 function HeaderSection() {
     return (

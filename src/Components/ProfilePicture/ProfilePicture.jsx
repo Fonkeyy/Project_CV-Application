@@ -1,9 +1,9 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
 
-import Button from './Button';
+import Button from '../Button/Button';
 
-import '../CSS/Components/ProfilePicture.css';
+import './ProfilePicture.css';
 
 const ProfilePicture = () => {
     const [url, setUrl] = useState('');

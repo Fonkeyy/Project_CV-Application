@@ -2,8 +2,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import InputField from './InputField';
-import Button from './Button';
+import InputField from '../InputField/InputField';
+import Button from '../Button/Button';
 
 const SocialButton = ({ socialData, onSubmit, onDelete }) => {
     const [element, setElement] = useState(null);

@@ -1,15 +1,14 @@
-// eslint-disable-next-line no-unused-vars
-import React, { useState } from 'react';
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import Button from './Button';
-import InputField from './InputField';
+import Button from '../Button/Button';
+import InputField from '../InputField/InputField';
 
-import '../CSS/Components/HeaderComponent.css';
+import './HeaderComponent.css';
 
 const HeaderComponent = ({ id, className, inputClassName, placeholder }) => {
     const [inputValue, setInputValue] = useState('');
-    const [submitted, setSubmitted] = useState(false);
+    const [isSubmitted, setIsSubmitted] = useState(false);
     const [isMouseOver, setIsMouseOver] = useState(false);
 
     // * On input change set new state value
@@ -17,25 +16,25 @@ const HeaderComponent = ({ id, className, inputClassName, placeholder }) => {
         setInputValue(event.target.value);
     };
 
-    // * On submit if there is an input value set submitted to true, else alert and ask for value
+    // * On submit if there is an input value set isSubmitted to true, else alert and ask for value
     const handleSubmit = () => {
-        inputValue && setSubmitted(true);
+        inputValue && setIsSubmitted(true);
         !inputValue && alert('Please enter value before submitting');
     };
 
-    // * On edit set submitted to true
+    // * On edit set isSubmitted to true
     const handleEdit = () => {
-        setSubmitted(false);
+        setIsSubmitted(false);
     };
 
-    // * If submitted show input value and show edit button on mouse over
+    // * If isSubmitted show input value and show edit button on mouse over
     // * If not show input field with submit button
     return (
         <div
             className={className}
             onMouseEnter={() => setIsMouseOver(true)}
             onMouseLeave={() => setIsMouseOver(false)}>
-            {submitted ? (
+            {isSubmitted ? (
                 <>
                     <div className="header-text">{inputValue}</div>
                     {isMouseOver && <Button className="edit-btn" onClick={handleEdit} />}

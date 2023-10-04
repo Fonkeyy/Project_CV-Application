@@ -1,9 +1,9 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
 
-import SocialButton from './SocialButton';
-import { socialMediaList } from '../socialMediaList';
-import SocialAddButton from './SocialAddBtn';
+import SocialButton from '../SocialButton/SocialButton';
+import { socialMediaList } from '../../socialMediaList';
+import SocialAddButton from '../SocialAddBtn/SocialAddBtn';
 
 const SocialMediaTile = () => {
     // * Initialize the useState of social buttons list with the 3 first social medias of socialMediaList

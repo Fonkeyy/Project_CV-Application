@@ -1,14 +1,10 @@
-// import { useState } from 'react';
-// eslint-disable-next-line no-unused-vars
-import React from 'react';
-
 import HeaderSection from './HeaderSection';
 import EducSection from './EducSection';
 import PracticeSection from './PracticeSection';
 import ContactSection from './ContactSection';
-import SocialMediaTile from './Components/SocialMediaTile';
+import SocialMediaTile from './Components/SocialMediaTile/SocialMediaTile';
 
-import '../src/CSS/App.css';
+import '../src/App.css';
 
 function App() {
     return (

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
 
-import Button from './Button';
+import Button from '../Button/Button';
 
 const SectionComponent = ({ TileComponent, sectionId, sectionClass }) => {
     const [tiles, setTiles] = useState([]);

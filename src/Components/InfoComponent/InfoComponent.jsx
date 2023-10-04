@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 
-import InputField from './InputField';
-import Button from './Button';
+import InputField from '../InputField/InputField';
+import Button from '../Button/Button';
 
-import '../CSS/Components/InputField.css';
+import '../InputField/InputField.css';
 
 function InfoComponent(props) {
     return (

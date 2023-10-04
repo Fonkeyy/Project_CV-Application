@@ -2,8 +2,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import SocialModal from './SocialModal';
-import Button from './Button';
+import SocialModal from '../SocialModal/SocialModal';
+import Button from '../Button/Button';
 
 const SocialAddButton = ({ onSubmit }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);

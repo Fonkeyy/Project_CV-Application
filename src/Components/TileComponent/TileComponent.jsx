@@ -1,10 +1,9 @@
-// eslint-disable-next-line no-unused-vars
-import React, { useState } from 'react';
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import InputField from './InputField';
-import Button from './Button';
-import TileBtnWrapper from './TileBtnWrapper';
+import InputField from '../InputField/InputField';
+import Button from '../Button/Button';
+import TileBtnWrapper from '../TileBtnWrapper/TileBtnWrapper';
 
 const currentDate = new Date();
 // *Get the year and month parts
