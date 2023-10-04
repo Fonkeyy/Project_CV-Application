@@ -1,4 +1,4 @@
-import HeaderSection from './HeaderSection';
+import HeaderSection from './Components/HeaderSection/HeaderSection';
 import EducSection from './EducSection';
 import PracticeSection from './PracticeSection';
 import ContactSection from './ContactSection';

@@ -2,11 +2,10 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import Button from '../Button/Button';
-import InputField from '../InputField/InputField';
 
-import './HeaderComponent.css';
+import styles from '../HeaderSection/HeaderSection.module.css';
 
-const HeaderComponent = ({ id, className, inputClassName, placeholder }) => {
+const HeaderComponent = ({ id, className, placeholder }) => {
     const [inputValue, setInputValue] = useState('');
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [isMouseOver, setIsMouseOver] = useState(false);
@@ -31,25 +30,26 @@ const HeaderComponent = ({ id, className, inputClassName, placeholder }) => {
     // * If not show input field with submit button
     return (
         <div
-            className={className}
+            className={styles.header_component}
             onMouseEnter={() => setIsMouseOver(true)}
             onMouseLeave={() => setIsMouseOver(false)}>
             {isSubmitted ? (
                 <>
-                    <div className="header-text">{inputValue}</div>
-                    {isMouseOver && <Button className="edit-btn" onClick={handleEdit} />}
+                    <div className={styles.header_text}>{inputValue}</div>
+                    {isMouseOver && <Button className={styles.edit_btn} onClick={handleEdit} />}
                 </>
             ) : (
                 <>
-                    <InputField
+                    <label htmlFor={id}>{id}</label>
+                    <input
                         type="text"
+                        name={id}
                         id={id}
                         className={className}
-                        inputClassName={inputClassName}
                         placeholder={placeholder}
                         value={inputValue}
-                        onChange={handleInputChange}
-                    />
+                        onChange={handleInputChange}></input>
+
                     <Button className="submit-btn" onClick={handleSubmit} />
                 </>
             )}
@@ -59,8 +59,7 @@ const HeaderComponent = ({ id, className, inputClassName, placeholder }) => {
 
 HeaderComponent.propTypes = {
     id: PropTypes.string,
-    className: PropTypes.string.isRequired,
-    inputClassName: PropTypes.string.isRequired,
+    className: PropTypes.string,
     placeholder: PropTypes.string,
     onChange: PropTypes.func,
 };
