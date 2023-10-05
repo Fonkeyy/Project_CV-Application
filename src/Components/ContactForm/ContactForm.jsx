@@ -1,15 +1,14 @@
-// eslint-disable-next-line no-unused-vars
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 import Button from '../Button/Button';
 import InputField from '../InputField/InputField';
 
-import './ContactForm.css';
+import styles from './ContactForm.module.css';
 
 const initialFields = [
-    { id: 'name', type: 'text', placeholder: 'John Doe', value: '' },
-    { id: 'phone', type: 'tel', placeholder: '+33601020304 ', value: '' },
-    { id: 'email', type: 'mail', placeholder: 'john-doe@gmail.com', value: '' },
+    { id: 'name', type: 'text', placeholder: 'Your name', value: '' },
+    { id: 'phone', type: 'tel', placeholder: 'Your number ', value: '' },
+    { id: 'email', type: 'mail', placeholder: 'Your Email', value: '' },
     { id: 'message', type: 'textarea', placeholder: 'Write your message here...', value: '' },
 ];
 
@@ -31,7 +30,7 @@ const ContactForm = () => {
     // * If is submitted display confirmation message
     // * If not submitted, map through list and display each field with corresponding props + submit button
     return (
-        <div>
+        <div className={styles.contact_form}>
             {isSubmitted ? (
                 <p className="message-sent">Your message has been sent</p>
             ) : (
@@ -47,7 +46,7 @@ const ContactForm = () => {
                             onChange={handleChange}
                         />
                     ))}
-                    <Button className="submit_btn submit_sm" onClick={handleSubmit} />
+                    <Button className="send_btn" onClick={handleSubmit} />
                 </>
             )}
         </div>

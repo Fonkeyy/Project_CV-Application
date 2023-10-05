@@ -42,7 +42,7 @@ const SocialButton = ({ socialData, onSubmit, onDelete }) => {
                     <Button id={socialData.id} className={socialData.className} />
                     <InputField type="url" placeholder={'Enter the URL'} onChange={handleChange} />
                     <Button className="submit_btn submit_m" onClick={handleSubmit} />
-                    <Button className="delete-btn" onClick={handleDelete} />
+                    <Button className="delete_btn" onClick={handleDelete} />
                 </>
             ) : (
                 <Button id={socialData.id} className={socialData.className} onClick={handleOnClick} />

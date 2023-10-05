@@ -1,0 +1,20 @@
+.contact_form {
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    place-items: center;
+    gap: 1rem;
+}
+
+.contact_form input {
+    /* font-size: 1.2rem; */
+}
+
+.contact_form input[type='textarea'] {
+    /* width: 12rem;
+    height: 8rem; */
+}
+
+/* .contact_form textarea {
+    width: 200px;
+} */

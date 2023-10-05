@@ -1,7 +1,7 @@
 .submit_btn {
     border: 2px solid black;
     border-radius: 50%;
-    transition: background-image 0.2s ease-in-out, scale 0.2s ease-in-out, border 0.2s ease-in-out;
+    transition: background-image 0.2s ease-in-out, border 0.2s ease-in-out;
 }
 
 .submit_m {
@@ -19,8 +19,7 @@
 .submit_btn:hover {
     background: center url('../../assets/SVG/checkColor.svg');
     border: 2px solid lightgreen;
-    scale: 1.1;
-    transition: background-image 0.2s ease-in-out, scale 0.2s ease-in-out, border 0.2s ease-in-out;
+    transition: background-image 0.2s ease-in-out, border 0.2s ease-in-out;
     /* ?transform: rotate('20deg'); */
 }
 
@@ -48,8 +47,27 @@
     border-radius: 50%;
 }
 
-.delete-btn {
+.delete_btn {
     background: center url('../../assets/SVG/delete.svg');
     width: 30px;
     height: 30px;
+}
+
+.delete_btn:hover {
+    background: center url('../../assets/SVG/deleteColor.svg');
+    transition: background-image 0.2s ease-in-out;
+}
+
+.send_btn {
+    background: center no-repeat url('../../assets/SVG/send.svg');
+    width: 30px;
+    height: 30px;
+    border: 2px solid black;
+    border-radius: 50%;
+}
+
+.send_btn:hover {
+    background: center url('../../assets/SVG/sendColor.svg');
+    border: 2px solid lightgreen;
+    transition: background-image 0.2s ease-in-out, border 0.2s ease-in-out;
 }

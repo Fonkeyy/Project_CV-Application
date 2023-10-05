@@ -10,7 +10,7 @@ function TileBtnWrapper({ id, handleEdit, onDelete }) {
         <div className="tile-btn-wrapper">
             <Button className="edit_btn-30" onClick={handleEdit} />
             <Button
-                className="delete-btn"
+                className="delete_btn"
                 onClick={() => {
                     onDelete(id);
                 }}
