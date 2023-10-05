@@ -33,7 +33,7 @@
     background: center url('../../assets/SVG/edit.svg');
 }
 
-.edit_btn-30 {
+.edit_btn_sm {
     width: 30px;
     height: 30px;
     background: center url('../../assets/SVG/edit30.svg');

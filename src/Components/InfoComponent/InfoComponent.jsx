@@ -4,11 +4,12 @@ import InputField from '../InputField/InputField';
 import Button from '../Button/Button';
 
 import '../InputField/InputField.css';
+import styles from './InfoComponent.module.css';
 
 function InfoComponent(props) {
     return (
-        <>
-            <label>{props.label} : </label>
+        <div className={styles.info_component_container}>
+            <label htmlFor={props.id}>{props.label} : </label>
             <InputField
                 id={props.id}
                 className={props.className}
@@ -23,7 +24,7 @@ function InfoComponent(props) {
                     props.onDelete(props.id);
                 }}
             />
-        </>
+        </div>
     );
 }
 

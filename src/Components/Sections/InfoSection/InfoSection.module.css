@@ -1,0 +1,22 @@
+.info_section {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    gap: 0.5rem;
+    place-content: center;
+}
+
+@media screen and (min-width: 1000px) {
+    .info_section {
+        display: grid;
+        width: fit-content;
+        gap: 1rem;
+        margin: auto;
+
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .info_section button:last-of-type {
+        grid-column-start: span 4;
+    }
+}
