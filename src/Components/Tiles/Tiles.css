@@ -3,7 +3,7 @@
     flex-direction: column;
     gap: 0.5rem;
     place-items: center;
-    border: 1px solid black;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     padding: 1rem;
     width: 35vw;
 }

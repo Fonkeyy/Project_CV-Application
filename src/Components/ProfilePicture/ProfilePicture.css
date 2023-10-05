@@ -1,24 +1,26 @@
-#profile-picture-container {
+#profile_picture_container {
     position: absolute;
     width: var(--pp-size);
-    height: var(--pp-size);
+    height: calc(var(--pp-size) + 3rem);
     background-color: transparent;
-    bottom: calc(0px - var(--pp-size) / 2);
+    bottom: calc(0px - calc(var(--pp-size) + 6rem) / 2);
     left: calc(50% - calc(var(--pp-size) / 2));
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
 
-#profile-picture {
-    background: url('../assets/img/profile-picture.jpg');
+#profile_picture {
     width: var(--pp-size);
     height: var(--pp-size);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     border-radius: 50%;
-    outline: 10px solid white;
+    outline: 10px solid var(--bg-color);
 }
 
-.add-profile-picture {
+.add_profile_picture {
     position: absolute;
     width: 40px;
     height: 40px;

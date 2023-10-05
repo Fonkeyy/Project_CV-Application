@@ -33,7 +33,7 @@ const SocialMediaTile = () => {
                     onDelete={handleDelete}
                 />
             ))}
-            <SocialAddButton key={socialBtns.length} className="add-btn" onSubmit={handleSubmit} />
+            <SocialAddButton key={socialBtns.length} className="add_btn" onSubmit={handleSubmit} />
         </div>
     );
 };

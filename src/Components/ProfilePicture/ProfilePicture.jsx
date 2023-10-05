@@ -6,7 +6,9 @@ import Button from '../Button/Button';
 import './ProfilePicture.css';
 
 const ProfilePicture = () => {
-    const [url, setUrl] = useState('');
+    const [url, setUrl] = useState(
+        'https://www.perfocal.com/blog/content/images/size/w960/2021/01/Perfocal_17-11-2019_TYWFAQ_100_standard-3.jpg'
+    );
     const [isMouseOver, setIsMouseOver] = useState(false);
     const [isEditClick, setIsEditClick] = useState(false);
 
@@ -25,15 +27,15 @@ const ProfilePicture = () => {
         setIsMouseOver(false);
     };
 
-    // * Add url to profile-picture style, manage button appearance depending on file already added or not
+    // * Add url to profile_picture style, manage button appearance depending on file already added or not
     return (
         <div
-            id="profile-picture-container"
+            id="profile_picture_container"
             onMouseEnter={() => setIsMouseOver(true)}
             onMouseLeave={() => setIsMouseOver(false)}>
-            <div id="profile-picture" style={{ backgroundImage: `url(${url})` }}></div>
-            {isMouseOver && url && <Button className="edit-btn add-profile-picture" onClick={handleEdit} />}
-            {isMouseOver && !url && <Button className="add-btn add-profile-picture" onClick={handleEdit} />}
+            <div id="profile_picture" style={{ backgroundImage: `url(${url})` }}></div>
+            {isMouseOver && url && <Button className="edit_btn add_profile_picture" onClick={handleEdit} />}
+            {isMouseOver && !url && <Button className="add_btn add_profile_picture" onClick={handleEdit} />}
             {isEditClick && <input type="file" onChange={handleFileChange} />}
         </div>
     );

@@ -52,7 +52,7 @@ const InfoSection = () => {
                             <p>{field.value}</p>
                         </div>
                     ))}
-                    {isMouseOver && <Button className="edit-btn" onClick={() => setIsSubmitted(false)} />}
+                    {isMouseOver && <Button className="edit_btn" onClick={() => setIsSubmitted(false)} />}
                 </div>
             ) : (
                 <>
@@ -69,7 +69,7 @@ const InfoSection = () => {
                             onDelete={handleDelete}
                         />
                     ))}
-                    <Button className="submit-btn" onClick={handleSubmit} />
+                    <Button className="submit_btn" onClick={handleSubmit} />
                 </>
             )}
         </>

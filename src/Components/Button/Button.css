@@ -1,33 +1,39 @@
-.submit-btn {
+.submit_btn {
     width: 40px;
     height: 40px;
+    border: 2px solid black;
+    border-radius: 50%;
     background: center url('../../assets/SVG/check.svg');
+    transition: background-image 0.2s ease-in-out, scale 0.2s ease-in-out, border 0.2s ease-in-out;
 }
 
-.submit-btn-30 {
+.submit_btn_30 {
     width: 30px;
     height: 30px;
     background: center url('../../assets/SVG/check30.svg');
 }
 
-.submit-btn:hover {
+.submit_btn:hover {
     background: center url('../../assets/SVG/checkColor.svg');
+    border: 2px solid lightgreen;
+    scale: 1.1;
+    transition: background-image 0.2s ease-in-out, scale 0.2s ease-in-out, border 0.2s ease-in-out;
     /* ?transform: rotate('20deg'); */
 }
 
-.edit-btn {
+.edit_btn {
     width: 50px;
     height: 50px;
     background: center url('../../assets/SVG/edit.svg');
 }
 
-.edit-btn-30 {
+.edit_btn-30 {
     width: 30px;
     height: 30px;
     background: center url('../../assets/SVG/edit30.svg');
 }
 
-.add-btn {
+.add_btn {
     background: center url('../../assets/SVG/add.svg');
     width: 30px;
     height: 30px;

@@ -8,7 +8,7 @@ import Button from '../Button/Button';
 function TileBtnWrapper({ id, handleEdit, onDelete }) {
     return (
         <div className="tile-btn-wrapper">
-            <Button className="edit-btn-30" onClick={handleEdit} />
+            <Button className="edit_btn-30" onClick={handleEdit} />
             <Button
                 className="delete-btn"
                 onClick={() => {

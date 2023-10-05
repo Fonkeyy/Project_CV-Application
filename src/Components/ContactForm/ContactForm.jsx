@@ -47,7 +47,7 @@ const ContactForm = () => {
                             onChange={handleChange}
                         />
                     ))}
-                    <Button className="submit-btn" onClick={handleSubmit} />
+                    <Button className="submit_btn" onClick={handleSubmit} />
                 </>
             )}
         </div>

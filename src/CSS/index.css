@@ -1,4 +1,8 @@
 :root {
+    @font-face {
+        font-family: 'Roboto';
+        src: url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+    }
     --pp-size: 250px;
     --primary_text_color: rgb(30, 30, 30);
     --bg-color: rgb(237, 239, 245);

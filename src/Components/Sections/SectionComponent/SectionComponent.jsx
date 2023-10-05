@@ -52,7 +52,7 @@ const SectionComponent = ({ TileComponent }) => {
             {tiles.map((tile) => {
                 return <div key={tile.key}>{tile}</div>;
             })}
-            {needAddBtn && <Button className="add-btn" onClick={handleAddBtn} />}
+            {needAddBtn && <Button className="add_btn" onClick={handleAddBtn} />}
         </>
     );
 };
