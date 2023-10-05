@@ -4,6 +4,11 @@
     --bg-color: rgb(237, 239, 245);
 }
 
+button {
+    border: none;
+    cursor: pointer;
+}
+
 label {
     position: absolute;
     width: 1px;

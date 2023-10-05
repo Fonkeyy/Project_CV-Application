@@ -5,14 +5,10 @@ import '../Section.css';
 
 const PracticeSection = () => {
     return (
-        <div className="section">
+        <section>
             <h2>Professional Experience</h2>
-            <SectionComponent
-                TileComponent={PracticeTile}
-                sectionId="PracticeSection"
-                sectionClass="practice-section"
-            />
-        </div>
+            <SectionComponent TileComponent={PracticeTile} />
+        </section>
     );
 };
 

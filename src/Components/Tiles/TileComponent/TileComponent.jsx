@@ -52,24 +52,25 @@ const TileComponent = ({ onSubmit, onDelete, id, field1Name, field2Name }) => {
     };
 
     return (
-        <div
-            onMouseEnter={() => {
-                setIsMouseOver(true);
-            }}
-            onMouseLeave={() => {
-                setIsMouseOver(false);
-            }}>
+        <>
             {isSubmitted ? (
-                <>
+                <div
+                    className="tile"
+                    onMouseEnter={() => {
+                        setIsMouseOver(true);
+                    }}
+                    onMouseLeave={() => {
+                        setIsMouseOver(false);
+                    }}>
                     <p className="value1-submitted">{value1}</p>
                     <p className="value2-submitted">{value2}</p>
                     <p className="date-submitted">{value3}</p>
                     <p className="date-submitted">{value4}</p>
 
                     {isMouseOver && TileBtnWrapper({ handleEdit, onDelete, id })}
-                </>
+                </div>
             ) : (
-                <>
+                <div className="tile">
                     <InputField
                         id="input1"
                         className="input_text"
@@ -101,9 +102,9 @@ const TileComponent = ({ onSubmit, onDelete, id, field1Name, field2Name }) => {
                         value={value4}
                         onChange={handleChange}></input>
                     <Button className="submit-btn-30" onClick={handleSubmit} />
-                </>
+                </div>
             )}
-        </div>
+        </>
     );
 };
 

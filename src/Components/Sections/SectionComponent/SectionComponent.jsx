@@ -3,9 +3,9 @@ import { v4 as uuidv4 } from 'uuid';
 import PropTypes from 'prop-types';
 
 import Button from '../../Button/Button';
-import styles from './SectionComponent.module.css';
+import '../../Tiles/Tiles.css';
 
-const SectionComponent = ({ TileComponent, sectionId, sectionClass }) => {
+const SectionComponent = ({ TileComponent }) => {
     const [tiles, setTiles] = useState([]);
     const [needAddBtn, setNeedAddBtn] = useState(false);
 
@@ -48,23 +48,17 @@ const SectionComponent = ({ TileComponent, sectionId, sectionClass }) => {
     // * Create Section and map through array of tiles to render them
     // * Display AddBtn when needed
     return (
-        <div id={sectionId} className={`${styles.section} ${sectionClass}`}>
+        <>
             {tiles.map((tile) => {
-                return (
-                    <div key={tile.key} className={styles.tile}>
-                        {tile}
-                    </div>
-                );
+                return <div key={tile.key}>{tile}</div>;
             })}
             {needAddBtn && <Button className="add-btn" onClick={handleAddBtn} />}
-        </div>
+        </>
     );
 };
 
 SectionComponent.propTypes = {
     TileComponent: PropTypes.func.isRequired,
-    sectionId: PropTypes.string.isRequired,
-    sectionClass: PropTypes.string.isRequired,
 };
 
 export default SectionComponent;

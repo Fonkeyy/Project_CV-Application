@@ -5,10 +5,10 @@ import './EducSection.css';
 
 const EducSection = () => {
     return (
-        <div className="section">
+        <section>
             <h2>Education</h2>
-            <SectionComponent TileComponent={EducTile} sectionId="EducSection" sectionClass="educ-section" />
-        </div>
+            <SectionComponent TileComponent={EducTile} />
+        </section>
     );
 };
 

@@ -2,10 +2,10 @@ import ContactForm from '../../ContactForm/ContactForm';
 
 function ContactSection() {
     return (
-        <div className="section">
+        <section>
             <h2>Contact Me</h2>
             <ContactForm />
-        </div>
+        </section>
     );
 }
 

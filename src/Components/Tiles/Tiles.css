@@ -1,8 +1,21 @@
 .tile {
     display: flex;
     flex-direction: column;
+    gap: 0.5rem;
+    place-items: center;
     border: 1px solid black;
     padding: 1rem;
-    width: 50vw;
-    color: black;
+    width: 35vw;
+}
+
+.tile .input_text::placeholder {
+    text-align: center;
+}
+
+@media screen and (min-width: 1000px) {
+    .tile {
+        flex-direction: row;
+        /* place-content: center; */
+        /* justify-content: space-evenly; */
+    }
 }
