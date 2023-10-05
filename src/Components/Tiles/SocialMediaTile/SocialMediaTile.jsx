@@ -22,7 +22,7 @@ const SocialMediaTile = () => {
     };
 
     return (
-        <div className="social-btns-wrapper">
+        <div className="social_btns-wrapper">
             {socialBtns.map((item, index) => (
                 <SocialButton
                     // * For each element in the list display a SocialButton

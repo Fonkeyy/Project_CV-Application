@@ -1,0 +1,24 @@
+.social_btn {
+    width: 50px;
+    height: 50px;
+}
+
+.facebook {
+    background: url(../assets/SVG/social-media/facebook.svg);
+}
+
+.twitter {
+    background: url(../assets/SVG/social-media/twitter.svg);
+}
+
+.instagram {
+    background: url(../assets/SVG/social-media/instagram.svg);
+}
+
+.linkedin {
+    background: url(../assets/SVG/social-media/linkedin.svg);
+}
+
+.github {
+    background: url(../assets/SVG/social-media/github.svg);
+}

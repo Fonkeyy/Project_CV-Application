@@ -89,19 +89,19 @@ const TileComponent = ({ onSubmit, onDelete, id, field1Name, field2Name }) => {
                     />
                     <input
                         id="input3"
-                        className="input-date"
+                        className="input_date"
                         type="month"
                         placeholder="Start date"
                         value={value3}
                         onChange={handleChange}></input>
                     <input
                         id="input4"
-                        className="input-date"
+                        className="input_date"
                         type="month"
                         placeholder="End date"
                         value={value4}
                         onChange={handleChange}></input>
-                    <Button className="submit_btn-30" onClick={handleSubmit} />
+                    <Button className="submit_btn submit_sm" onClick={handleSubmit} />
                 </div>
             )}
         </>

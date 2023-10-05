@@ -15,7 +15,9 @@
 @media screen and (min-width: 1000px) {
     .tile {
         flex-direction: row;
-        /* place-content: center; */
+        place-items: center;
+        place-content: center;
         /* justify-content: space-evenly; */
+        min-width: fit-content;
     }
 }

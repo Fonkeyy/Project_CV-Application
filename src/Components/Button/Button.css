@@ -1,13 +1,16 @@
 .submit_btn {
-    width: 40px;
-    height: 40px;
     border: 2px solid black;
     border-radius: 50%;
-    background: center url('../../assets/SVG/check.svg');
     transition: background-image 0.2s ease-in-out, scale 0.2s ease-in-out, border 0.2s ease-in-out;
 }
 
-.submit_btn_30 {
+.submit_m {
+    width: 40px;
+    height: 40px;
+    background: center url('../../assets/SVG/check.svg');
+}
+
+.submit_sm {
     width: 30px;
     height: 30px;
     background: center url('../../assets/SVG/check30.svg');
@@ -19,6 +22,10 @@
     scale: 1.1;
     transition: background-image 0.2s ease-in-out, scale 0.2s ease-in-out, border 0.2s ease-in-out;
     /* ?transform: rotate('20deg'); */
+}
+
+.submit_sm:hover {
+    background: center url('../../assets/SVG/checkColor30.svg');
 }
 
 .edit_btn {

@@ -8,6 +8,22 @@
     --bg-color: rgb(237, 239, 245);
 }
 
+* {
+    font-family: Roboto, Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    place-content: center;
+    width: fit-content;
+    gap: 2rem;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+    margin: 2rem 2rem;
+    padding: 0rem 0rem 2rem;
+}
+
 button {
     border: none;
     cursor: pointer;

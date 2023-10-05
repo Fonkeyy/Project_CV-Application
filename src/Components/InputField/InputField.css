@@ -1,11 +1,14 @@
 .input_text {
     background: transparent;
     border: none;
-    border-bottom: 1px solid white;
     color: var(--primary-text-color);
 }
 
 .input_text::placeholder {
     color: var(--primary-text-color);
     border: none;
+}
+
+.input_date {
+    min-width: fit-content;
 }

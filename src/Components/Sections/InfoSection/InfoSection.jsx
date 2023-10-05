@@ -69,7 +69,7 @@ const InfoSection = () => {
                             onDelete={handleDelete}
                         />
                     ))}
-                    <Button className="submit_btn" onClick={handleSubmit} />
+                    <Button className="submit_btn submit_m" onClick={handleSubmit} />
                 </>
             )}
         </>
