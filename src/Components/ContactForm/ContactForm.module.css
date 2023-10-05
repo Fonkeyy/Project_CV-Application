@@ -6,15 +6,22 @@
     gap: 1rem;
 }
 
-.contact_form input {
-    /* font-size: 1.2rem; */
+.contact_form textarea {
+    height: 6rem;
 }
+@media screen and (min-width: 1000px) {
+    .contact_form {
+        display: grid;
 
-.contact_form input[type='textarea'] {
-    /* width: 12rem;
-    height: 8rem; */
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .contact_form textarea {
+        width: 100%;
+        grid-column-start: span 3;
+    }
+
+    .contact_form button {
+        grid-column-start: span 3;
+    }
 }
-
-/* .contact_form textarea {
-    width: 200px;
-} */

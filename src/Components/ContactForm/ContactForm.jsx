@@ -8,8 +8,7 @@ import styles from './ContactForm.module.css';
 const initialFields = [
     { id: 'name', type: 'text', placeholder: 'Your name', value: '' },
     { id: 'phone', type: 'tel', placeholder: 'Your number ', value: '' },
-    { id: 'email', type: 'mail', placeholder: 'Your Email', value: '' },
-    { id: 'message', type: 'textarea', placeholder: 'Write your message here...', value: '' },
+    { id: 'email', type: 'mail', placeholder: 'your-Email@send.com', value: '' },
 ];
 
 const ContactForm = () => {
@@ -46,6 +45,8 @@ const ContactForm = () => {
                             onChange={handleChange}
                         />
                     ))}
+                    <label htmlFor="message"></label>
+                    <textarea id="message" placeholder="Write your message here..."></textarea>
                     <Button className="send_btn" onClick={handleSubmit} />
                 </>
             )}
