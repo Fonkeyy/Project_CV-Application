@@ -50,7 +50,11 @@ const SectionComponent = ({ TileComponent }) => {
     return (
         <>
             {tiles.map((tile) => {
-                return <div key={tile.key}>{tile}</div>;
+                return (
+                    <div key={tile.key} className="tiles_container">
+                        {tile}
+                    </div>
+                );
             })}
             {needAddBtn && <Button className="add_btn" onClick={handleAddBtn} />}
         </>
