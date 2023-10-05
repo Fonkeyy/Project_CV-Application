@@ -10,12 +10,12 @@ const HeaderSection = () => {
             <div className={styles.header_content}>
                 <HeaderComponent
                     id="full_name"
-                    className={`${styles.input_text} ${styles.full_name}`}
+                    inputClassName={`${styles.input_text} ${styles.full_name}`}
                     placeholder="John Doe"
                 />
                 <HeaderComponent
                     id="title"
-                    className={`${styles.input_text} ${styles.title}`}
+                    inputClassName={`${styles.input_text} ${styles.title}`}
                     placeholder="Web Developer"
                 />
             </div>

@@ -5,7 +5,7 @@ import Button from '../Button/Button';
 
 import styles from '../HeaderSection/HeaderSection.module.css';
 
-const HeaderComponent = ({ id, className, placeholder }) => {
+const HeaderComponent = ({ id, inputClassName, placeholder }) => {
     const [inputValue, setInputValue] = useState('');
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [isMouseOver, setIsMouseOver] = useState(false);
@@ -45,7 +45,7 @@ const HeaderComponent = ({ id, className, placeholder }) => {
                         type="text"
                         name={id}
                         id={id}
-                        className={className}
+                        className={inputClassName}
                         placeholder={placeholder}
                         value={inputValue}
                         onChange={handleInputChange}></input>
@@ -59,7 +59,7 @@ const HeaderComponent = ({ id, className, placeholder }) => {
 
 HeaderComponent.propTypes = {
     id: PropTypes.string,
-    className: PropTypes.string,
+    inputClassName: PropTypes.string,
     placeholder: PropTypes.string,
     onChange: PropTypes.func,
 };

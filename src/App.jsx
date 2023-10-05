@@ -1,6 +1,6 @@
 import HeaderSection from './Components/HeaderSection/HeaderSection';
 import EducSection from './EducSection';
-import PracticeSection from './PracticeSection';
+import PracticeSection from './Components/PracticeSection/PracticeSection';
 import ContactSection from './ContactSection';
 import SocialMediaTile from './Components/SocialMediaTile/SocialMediaTile';
 

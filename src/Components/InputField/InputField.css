@@ -9,7 +9,3 @@
     color: white;
     border: none;
 }
-
-.input-text:focus {
-    outline: none;
-}
