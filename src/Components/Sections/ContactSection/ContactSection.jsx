@@ -1,8 +1,8 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
 
-import InfoSection from './Components/InfoSection/InfoSection';
-import ContactForm from './Components/ContactForm/ContactForm';
+import InfoSection from '../InfoSection/InfoSection';
+import ContactForm from '../../ContactForm/ContactForm';
 
 function ContactSection() {
     return (

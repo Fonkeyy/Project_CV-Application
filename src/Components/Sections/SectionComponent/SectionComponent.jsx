@@ -1,9 +1,9 @@
-// eslint-disable-next-line no-unused-vars
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import PropTypes from 'prop-types';
 
-import Button from '../Button/Button';
+import Button from '../../Button/Button';
+import styles from './SectionComponent.module.css';
 
 const SectionComponent = ({ TileComponent, sectionId, sectionClass }) => {
     const [tiles, setTiles] = useState([]);
@@ -48,10 +48,10 @@ const SectionComponent = ({ TileComponent, sectionId, sectionClass }) => {
     // * Create Section and map through array of tiles to render them
     // * Display AddBtn when needed
     return (
-        <div id={sectionId} className={`section ${sectionClass}`}>
+        <div id={sectionId} className={`${styles.section} ${sectionClass}`}>
             {tiles.map((tile) => {
                 return (
-                    <div key={tile.key} className="tile">
+                    <div key={tile.key} className={styles.tile}>
                         {tile}
                     </div>
                 );

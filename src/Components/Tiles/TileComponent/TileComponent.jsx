@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import InputField from '../InputField/InputField';
-import Button from '../Button/Button';
-import TileBtnWrapper from '../TileBtnWrapper/TileBtnWrapper';
+import InputField from '../../InputField/InputField';
+import Button from '../../Button/Button';
+import TileBtnWrapper from '../../TileBtnWrapper/TileBtnWrapper';
+
+// import styles from '../InputField/InputField.module.css';
 
 const currentDate = new Date();
 // *Get the year and month parts
@@ -70,7 +72,7 @@ const TileComponent = ({ onSubmit, onDelete, id, field1Name, field2Name }) => {
                 <>
                     <InputField
                         id="input1"
-                        className="input-text"
+                        className="input_text"
                         type="text"
                         placeholder={field1Name}
                         value={value1}
@@ -78,7 +80,7 @@ const TileComponent = ({ onSubmit, onDelete, id, field1Name, field2Name }) => {
                     />
                     <InputField
                         id="input2"
-                        className="input-text"
+                        className="input_text"
                         type="text"
                         placeholder={field2Name}
                         value={value2}

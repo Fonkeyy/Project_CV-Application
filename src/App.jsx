@@ -1,8 +1,8 @@
-import HeaderSection from './Components/HeaderSection/HeaderSection';
-import EducSection from './EducSection';
-import PracticeSection from './Components/PracticeSection/PracticeSection';
-import ContactSection from './ContactSection';
-import SocialMediaTile from './Components/SocialMediaTile/SocialMediaTile';
+import HeaderSection from './Components/Sections/HeaderSection/HeaderSection';
+import EducSection from './Components/Sections/EducSection/EducSection';
+import PracticeSection from './Components/Sections/PracticeSection/PracticeSection';
+import ContactSection from './Components/Sections/ContactSection/ContactSection';
+import SocialMediaTile from './Components/Tiles/SocialMediaTile/SocialMediaTile';
 
 import '../src/App.css';
 

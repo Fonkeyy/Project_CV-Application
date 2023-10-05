@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import Button from '../Button/Button';
 
-import styles from '../HeaderSection/HeaderSection.module.css';
+import styles from '../Sections/HeaderSection/HeaderSection.module.css';
 
 const HeaderComponent = ({ id, inputClassName, placeholder }) => {
     const [inputValue, setInputValue] = useState('');

@@ -1,7 +1,7 @@
-import HeaderComponent from '../HeaderComponent/HeaderComponent';
-import ProfilePicture from '../ProfilePicture/ProfilePicture';
+import HeaderComponent from '../../HeaderComponent/HeaderComponent';
+import ProfilePicture from '../../ProfilePicture/ProfilePicture';
 
-import '../../App.css';
+import '../../../App.css';
 import styles from './HeaderSection.module.css';
 
 const HeaderSection = () => {

@@ -1,17 +1,18 @@
 import PropTypes from 'prop-types';
 
-import './InputField.css';
-
 function InputField(props) {
     return (
-        <input
-            id={props.id}
-            className={props.className}
-            type={props.type}
-            placeholder={props.placeholder}
-            value={props.value}
-            onChange={props.onChange}
-        />
+        <>
+            <label htmlFor={props.id}>{props.id}</label>
+            <input
+                id={props.id}
+                className={props.className}
+                type={props.type}
+                placeholder={props.placeholder}
+                value={props.value}
+                onChange={props.onChange}
+            />
+        </>
     );
 }
 

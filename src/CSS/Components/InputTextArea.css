@@ -1,10 +1,10 @@
-.Input-text-area {
+.input_text-area {
     background: transparent;
     height: 50px;
     color: white;
     border: 1px solid black;
 }
 
-.Input-text-area::placeholder {
+.input_text-area::placeholder {
     color: white;
 }

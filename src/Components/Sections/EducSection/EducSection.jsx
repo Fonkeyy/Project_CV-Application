@@ -1,10 +1,10 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
 
-import EducTile from './Components/EducTile/EducTile';
-import SectionComponent from './Components/SectionComponent/SectionComponent';
+import EducTile from '../../Tiles/EducTile/EducTile';
+import SectionComponent from '../SectionComponent/SectionComponent';
 
-import '../src/CSS/EducSection.css';
+import './EducSection.css';
 
 const EducSection = () => {
     return <SectionComponent TileComponent={EducTile} sectionId="EducSection" sectionClass="educ-section" />;

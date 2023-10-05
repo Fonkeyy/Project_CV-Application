@@ -1,7 +1,7 @@
-import PracticeTile from '../PracticeTile/PracticeTile';
+import PracticeTile from '../../Tiles/PracticeTile/PracticeTile';
 import SectionComponent from '../SectionComponent/SectionComponent';
 
-import './PracticeSection.css';
+import '../Section.css';
 
 const PracticeSection = () => {
     return (
