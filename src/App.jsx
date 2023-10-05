@@ -5,15 +5,21 @@ import ContactSection from './Components/Sections/ContactSection/ContactSection'
 import SocialMediaTile from './Components/Tiles/SocialMediaTile/SocialMediaTile';
 
 import '../src/App.css';
+import InfoSection from './Components/Sections/InfoSection/InfoSection';
 
 function App() {
     return (
         <div className="App">
             <HeaderSection />
-            <PracticeSection />
-            <EducSection />
-            <ContactSection />
-            <SocialMediaTile />
+            <main>
+                <PracticeSection />
+                <EducSection />
+                <ContactSection />
+            </main>
+            <footer>
+                <InfoSection />
+                <SocialMediaTile />
+            </footer>
         </div>
     );
 }

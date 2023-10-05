@@ -7,9 +7,9 @@ import InputField from '../InputField/InputField';
 import './ContactForm.css';
 
 const initialFields = [
-    { id: 'name', type: 'text', placeholder: 'Name', value: '' },
-    { id: 'phone', type: 'tel', placeholder: 'Phone ', value: '' },
-    { id: 'email', type: 'mail', placeholder: 'E-mail', value: '' },
+    { id: 'name', type: 'text', placeholder: 'John Doe', value: '' },
+    { id: 'phone', type: 'tel', placeholder: '+33601020304 ', value: '' },
+    { id: 'email', type: 'mail', placeholder: 'john-doe@gmail.com', value: '' },
     { id: 'message', type: 'textarea', placeholder: 'Write your message here...', value: '' },
 ];
 

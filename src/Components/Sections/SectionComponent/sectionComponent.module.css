@@ -1,8 +1,0 @@
-.tile {
-    display: flex;
-    flex-direction: column;
-    border: 1px solid black;
-    padding: 1rem;
-    width: 50vw;
-    color: black;
-}
