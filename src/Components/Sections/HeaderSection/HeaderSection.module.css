@@ -29,11 +29,15 @@ header::before {
 }
 
 .header_component {
+    position: relative;
     display: flex;
-    place-items: center;
-    place-content: center;
-    /* gap: 2rem; */
-    border: 1px solid black;
+    align-items: center;
+    justify-content: center;
+}
+
+.header_component button {
+    position: absolute;
+    right: 0;
 }
 
 .input_text {
@@ -45,17 +49,17 @@ header::before {
 
 .full_name {
     color: white;
-    font-size: clamp(35px, 8vw, 60px);
+    font-size: clamp(35px, 8vw, 50px);
 }
 .full_name::placeholder {
     color: white;
 }
 
 .title {
-    color: rgb(139, 152, 170);
+    color: var(--secondary-text-color);
     font-size: clamp(25px, 6vw, 30px);
 }
 
 .title::placeholder {
-    color: rgb(139, 152, 170);
+    color: var(--secondary-text-color);
 }

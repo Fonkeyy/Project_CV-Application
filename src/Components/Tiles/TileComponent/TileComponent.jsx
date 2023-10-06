@@ -101,7 +101,7 @@ const TileComponent = ({ onSubmit, onDelete, id, field1Name, field2Name }) => {
                         placeholder="End date"
                         value={value4}
                         onChange={handleChange}></input>
-                    <Button className="submit_btn submit_sm" onClick={handleSubmit} />
+                    <Button className="submit_btn submit_btn" onClick={handleSubmit} />
                 </div>
             )}
         </>

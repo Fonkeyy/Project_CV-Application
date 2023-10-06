@@ -50,7 +50,7 @@ const HeaderComponent = ({ id, inputClassName, placeholder }) => {
                         value={inputValue}
                         onChange={handleInputChange}></input>
 
-                    <Button className="submit_btn submit_m" onClick={handleSubmit} />
+                    <Button className="submit_btn submit_btn" onClick={handleSubmit} />
                 </>
             )}
         </div>

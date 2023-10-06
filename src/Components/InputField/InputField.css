@@ -1,11 +1,11 @@
 .input_text {
     background: transparent;
     border: none;
-    color: var(--primary-text-color);
+    /* color: var(--primary-text-color); */
 }
 
 .input_text::placeholder {
-    color: var(--primary-text-color);
+    /* color: var(--primary-text-color); */
     border: none;
 }
 

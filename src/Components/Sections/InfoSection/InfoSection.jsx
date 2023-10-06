@@ -73,7 +73,7 @@ const InfoSection = () => {
                         ))}
                     </>
                 )}
-                <Button className="submit_btn submit_sm" onClick={handleSubmit} />
+                <Button className="submit_btn submit_btn" onClick={handleSubmit} />
             </div>
         </>
     );

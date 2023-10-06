@@ -1,56 +1,37 @@
 .submit_btn {
-    border: 2px solid black;
+    background: center url('../../assets/SVG/check.svg');
+    width: 25px;
+    height: 25px;
+    border: 2px solid var(--secondary-text-color);
     border-radius: 50%;
     transition: background-image 0.2s ease-in-out, border 0.2s ease-in-out;
 }
 
-.submit_m {
-    width: 40px;
-    height: 40px;
-    background: center url('../../assets/SVG/check.svg');
-}
-
-.submit_sm {
-    width: 30px;
-    height: 30px;
-    background: center url('../../assets/SVG/check30.svg');
-}
-
 .submit_btn:hover {
     background: center url('../../assets/SVG/checkColor.svg');
-    border: 2px solid lightgreen;
+    border: 2px solid var(--green_btn);
     transition: background-image 0.2s ease-in-out, border 0.2s ease-in-out;
     /* ?transform: rotate('20deg'); */
 }
 
-.submit_sm:hover {
-    background: center url('../../assets/SVG/checkColor30.svg');
-}
-
 .edit_btn {
-    width: 50px;
-    height: 50px;
     background: center url('../../assets/SVG/edit.svg');
-}
-
-.edit_btn_sm {
-    width: 30px;
-    height: 30px;
-    background: center url('../../assets/SVG/edit30.svg');
+    width: 25px;
+    height: 25px;
 }
 
 .add_btn {
     background: center url('../../assets/SVG/add.svg');
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     border: 1px solid white;
     border-radius: 50%;
 }
 
 .delete_btn {
     background: center url('../../assets/SVG/delete.svg');
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
 }
 
 .delete_btn:hover {
@@ -60,15 +41,16 @@
 
 .send_btn {
     background: center no-repeat url('../../assets/SVG/send.svg');
-    width: 30px;
-    height: 30px;
-    border: 2px solid black;
+    width: 25px;
+    height: 25px;
+    border: 2px solid var(--secondary-text-color);
     border-radius: 50%;
+    padding: 0.8rem;
 }
 
 .send_btn:hover {
     background: center url('../../assets/SVG/sendColor.svg');
-    border: 2px solid lightgreen;
+    border: 2px solid var(--green_btn);
     transition: background-image 0.2s ease-in-out, border 0.2s ease-in-out;
 }
 

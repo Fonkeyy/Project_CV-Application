@@ -1,11 +1,14 @@
 :root {
     --pp-size: 250px;
-    --primary_text_color: rgb(30, 30, 30);
+    --primary-text-color: rgb(60, 72, 107);
+    --secondary-text-color: rgb(71, 74, 78);
     --bg-color: rgb(237, 239, 245);
+    --green_btn: #03c988;
 }
 
 * {
     font-family: Roboto, Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    color: var(--primary-text-color);
 }
 
 body {
@@ -48,6 +51,11 @@ label {
     overflow: hidden;
     clip: rect(0, 0, 0, 0);
     border: 0;
+}
+
+textarea::placeholder,
+input::placeholder {
+    color: var(--secondary-text-color);
 }
 
 footer {

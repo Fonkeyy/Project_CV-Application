@@ -44,7 +44,7 @@ const SocialButton = ({ socialData, onSubmit, onDelete }) => {
                 <div className={styles.btn_wrapper}>
                     <Button id={socialData.id} className={socialData.className} />
                     <InputField type="url" placeholder={'Enter the URL'} onChange={handleChange} />
-                    <Button className="submit_btn submit_sm" onClick={handleSubmit} />
+                    <Button className="submit_btn submit_btn" onClick={handleSubmit} />
                     <Button className="delete_btn" onClick={handleDelete} />
                 </div>
             ) : (
