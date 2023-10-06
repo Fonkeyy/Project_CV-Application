@@ -3,7 +3,8 @@
     --primary-text-color: rgb(60, 72, 107);
     --secondary-text-color: rgb(71, 74, 78);
     --bg-color: rgb(237, 239, 245);
-    --green_btn: #03c988;
+    --grey-btn: rgb(147, 163, 186);
+    --green-btn: #03c988;
 }
 
 * {

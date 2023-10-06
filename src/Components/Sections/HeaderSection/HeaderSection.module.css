@@ -56,10 +56,10 @@ header::before {
 }
 
 .title {
-    color: var(--secondary-text-color);
+    color: var(--grey-btn);
     font-size: clamp(25px, 6vw, 30px);
 }
 
 .title::placeholder {
-    color: var(--secondary-text-color);
+    color: var(--grey-btn);
 }

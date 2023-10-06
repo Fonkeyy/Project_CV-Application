@@ -2,14 +2,14 @@
     background: center url('../../assets/SVG/check.svg');
     width: 25px;
     height: 25px;
-    border: 2px solid var(--secondary-text-color);
+    border: 2px solid var(--grey-btn);
     border-radius: 50%;
     transition: background-image 0.2s ease-in-out, border 0.2s ease-in-out;
 }
 
 .submit_btn:hover {
     background: center url('../../assets/SVG/checkColor.svg');
-    border: 2px solid var(--green_btn);
+    border: 2px solid var(--green-btn);
     transition: background-image 0.2s ease-in-out, border 0.2s ease-in-out;
     /* ?transform: rotate('20deg'); */
 }
@@ -50,7 +50,7 @@
 
 .send_btn:hover {
     background: center url('../../assets/SVG/sendColor.svg');
-    border: 2px solid var(--green_btn);
+    border: 2px solid var(--green-btn);
     transition: background-image 0.2s ease-in-out, border 0.2s ease-in-out;
 }
 
