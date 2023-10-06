@@ -38,7 +38,7 @@ const ContactForm = () => {
                         <InputField
                             key={field.id}
                             id={field.id}
-                            className="TOADD"
+                            className={styles.input_text}
                             placeholder={field.placeholder}
                             type={field.type}
                             value={field.value}

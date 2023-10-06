@@ -10,7 +10,6 @@
 
 body {
     background-color: var(--bg-color);
-
     overflow-x: hidden;
 }
 
@@ -19,10 +18,11 @@ main {
     flex-direction: column;
     place-items: center;
     place-content: center;
+    gap: 2rem;
 }
 
 section {
-    gap: 2rem;
+    gap: 1rem;
     display: flex;
     flex-direction: column;
     place-items: center;
@@ -31,8 +31,7 @@ section {
     box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
 
     width: 80vw;
-    margin: 0rem 2rem 2rem;
-    padding: 0rem 5rem 2rem 5rem;
+    padding: 0rem 0rem 2rem;
 }
 
 button {
@@ -59,4 +58,10 @@ footer {
     place-items: center;
 
     padding-top: 3rem;
+}
+
+@media screen and (min-width: 1000px) {
+    section {
+        padding: 0rem 0rem 3rem;
+    }
 }
