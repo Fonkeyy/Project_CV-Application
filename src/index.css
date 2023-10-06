@@ -47,3 +47,11 @@ label {
     clip: rect(0, 0, 0, 0);
     border: 0;
 }
+
+footer {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    place-content: center;
+    place-items: center;
+}

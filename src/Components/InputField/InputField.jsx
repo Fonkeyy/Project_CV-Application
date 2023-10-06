@@ -18,7 +18,7 @@ function InputField(props) {
 
 InputField.propTypes = {
     id: PropTypes.string,
-    className: PropTypes.string.isRequired,
+    className: PropTypes.string,
     type: PropTypes.string.isRequired,
     placeholder: PropTypes.string,
     value: PropTypes.string,

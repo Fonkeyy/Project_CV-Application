@@ -71,3 +71,35 @@
     border: 2px solid lightgreen;
     transition: background-image 0.2s ease-in-out, border 0.2s ease-in-out;
 }
+
+.social_btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    transition: scale 0.2s ease-in-out;
+}
+
+.social_btn:hover {
+    scale: 1.1;
+    transition: scale 0.2s ease-in-out;
+}
+
+.facebook {
+    background: url(../../assets/SVG/social-media/facebook.svg);
+}
+
+.twitter {
+    background: url(../../assets/SVG/social-media/twitter.svg);
+}
+
+.instagram {
+    background: url(../../assets/SVG/social-media/instagram.svg);
+}
+
+.linkedin {
+    background: url(../../assets/SVG/social-media/linkedin.svg);
+}
+
+.github {
+    background: url(../../assets/SVG/social-media/github.svg);
+}
