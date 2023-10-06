@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 
 import Button from '../Button/Button';
 
-import './ProfilePicture.css';
+import styles from './ProfilePicture.module.css';
 
 const ProfilePicture = () => {
     const [url, setUrl] = useState(
@@ -30,12 +30,16 @@ const ProfilePicture = () => {
     // * Add url to profile_picture style, manage button appearance depending on file already added or not
     return (
         <div
-            id="profile_picture_container"
+            id={styles.profile_picture_container}
             onMouseEnter={() => setIsMouseOver(true)}
             onMouseLeave={() => setIsMouseOver(false)}>
-            <div id="profile_picture" style={{ backgroundImage: `url(${url})` }}></div>
-            {isMouseOver && url && <Button className="edit_btn add_profile_picture" onClick={handleEdit} />}
-            {isMouseOver && !url && <Button className="add_btn add_profile_picture" onClick={handleEdit} />}
+            <div id={styles.profile_picture} style={{ backgroundImage: `url(${url})` }}></div>
+            {isMouseOver && url && (
+                <Button className={`${'edit_btn'} ${styles.add_profile_picture}`} onClick={handleEdit} />
+            )}
+            {isMouseOver && !url && (
+                <Button className={`${'add_btn'} ${styles.add_profile_picture}`} onClick={handleEdit} />
+            )}
             {isEditClick && <input type="file" onChange={handleFileChange} />}
         </div>
     );

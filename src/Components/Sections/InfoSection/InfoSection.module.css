@@ -6,6 +6,14 @@
     place-content: center;
 }
 
+.info_section_submitted {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    place-content: center;
+    gap: 0.8rem;
+}
+
 @media screen and (min-width: 1000px) {
     .info_section {
         display: grid;
@@ -19,5 +27,10 @@
 
     .info_section button:last-of-type {
         grid-column-start: span 4;
+    }
+
+    .info_section_submitted {
+        flex-direction: row;
+        gap: 0.8rem;
     }
 }

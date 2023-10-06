@@ -39,42 +39,41 @@ const InfoSection = () => {
     // * If not submitted, map through field list and display each field with corresponding props + submit button
     return (
         <>
-            <div className={styles.info_section}>
-                {isSubmitted ? (
-                    <div
-                        onMouseEnter={() => {
-                            setIsMouseOver(true);
-                        }}
-                        onMouseLeave={() => {
-                            setIsMouseOver(false);
-                        }}>
-                        {fields.map((field) => (
-                            <div key={uuidv4()}>
-                                <p>{field.label}</p>
-                                <p>{field.value}</p>
-                            </div>
-                        ))}
-                        {isMouseOver && <Button className="edit_btn" onClick={() => setIsSubmitted(false)} />}
-                    </div>
-                ) : (
-                    <>
-                        {fields.map((field) => (
-                            <InfoComponent
-                                key={field.id}
-                                label={field.label}
-                                id={field.id}
-                                className="ToADD"
-                                inputType={field.type}
-                                placeholder={field.placeholder}
-                                value={field.value}
-                                onChange={handleChange}
-                                onDelete={handleDelete}
-                            />
-                        ))}
-                    </>
-                )}
-                <Button className="submit_btn " onClick={handleSubmit} />
-            </div>
+            {isSubmitted ? (
+                <div
+                    className={styles.info_section_submitted}
+                    onMouseEnter={() => {
+                        setIsMouseOver(true);
+                    }}
+                    onMouseLeave={() => {
+                        setIsMouseOver(false);
+                    }}>
+                    {fields.map((field) => (
+                        <div key={uuidv4()}>
+                            <label>{field.label}</label>
+                            <p>{field.value}</p>
+                        </div>
+                    ))}
+                    {isMouseOver && <Button className="edit_btn" onClick={() => setIsSubmitted(false)} />}
+                </div>
+            ) : (
+                <div className={styles.info_section}>
+                    {fields.map((field) => (
+                        <InfoComponent
+                            key={field.id}
+                            label={field.label}
+                            id={field.id}
+                            className="ToADD"
+                            inputType={field.type}
+                            placeholder={field.placeholder}
+                            value={field.value}
+                            onChange={handleChange}
+                            onDelete={handleDelete}
+                        />
+                    ))}
+                </div>
+            )}
+            <Button className="submit_btn " onClick={handleSubmit} />
         </>
     );
 };
