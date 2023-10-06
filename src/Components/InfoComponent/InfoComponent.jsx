@@ -31,7 +31,7 @@ function InfoComponent(props) {
 InfoComponent.propTypes = {
     label: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired,
-    className: PropTypes.string.isRequired,
+    className: PropTypes.string,
     inputType: PropTypes.string.isRequired,
     placeholder: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired,

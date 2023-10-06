@@ -85,3 +85,10 @@
 .github {
     background: url(../../assets/SVG/social-media/github.svg);
 }
+
+.valid_btn {
+    padding: 1rem;
+    color: white;
+    background-color: var(--green-btn);
+    border-radius: 15px;
+}

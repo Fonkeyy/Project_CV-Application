@@ -51,7 +51,13 @@ const InfoSection = () => {
                     {fields.map((field) => (
                         <div key={uuidv4()}>
                             <label>{field.label}</label>
-                            <p>{field.value}</p>
+                            {field.type === 'url' ? (
+                                <a href={`http://${field.value}`} target="_blank" rel="noreferrer">
+                                    {field.value}
+                                </a>
+                            ) : (
+                                <p>{field.value}</p>
+                            )}
                         </div>
                     ))}
                     {isMouseOver && <Button className="edit_btn" onClick={() => setIsSubmitted(false)} />}
@@ -63,7 +69,6 @@ const InfoSection = () => {
                             key={field.id}
                             label={field.label}
                             id={field.id}
-                            className="ToADD"
                             inputType={field.type}
                             placeholder={field.placeholder}
                             value={field.value}
