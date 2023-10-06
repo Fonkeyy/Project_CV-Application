@@ -43,7 +43,7 @@
     background: center no-repeat url('../../assets/SVG/send.svg');
     width: 25px;
     height: 25px;
-    border: 2px solid var(--secondary-text-color);
+    border: 2px solid var(--grey-btn);
     border-radius: 50%;
     padding: 0.8rem;
 }

@@ -10,6 +10,8 @@
 * {
     font-family: Roboto, Helvetica, Arial, Verdana, Tahoma, sans-serif;
     color: var(--primary-text-color);
+    margin: 0;
+    padding: 0;
 }
 
 body {
@@ -26,7 +28,7 @@ main {
 }
 
 section {
-    gap: 1rem;
+    gap: 2rem;
     display: flex;
     flex-direction: column;
     place-items: center;

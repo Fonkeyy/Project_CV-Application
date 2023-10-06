@@ -17,8 +17,38 @@
     text-align: center;
 }
 
+.tile_submitted {
+    display: flex;
+    place-content: center;
+    place-items: center;
+    gap: 2rem;
+    background-color: rgb(245, 245, 245);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 1rem;
+}
+
+.date_wrapper {
+    place-self: flex-start;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.value_wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.value_wrapper p:first-of-type {
+    font-weight: bold;
+}
+
 @media screen and (min-width: 1000px) {
     .tile {
         flex-direction: row;
+    }
+
+    .value_wrapper {
+        flex-direction: row;
+        gap: 1rem;
     }
 }

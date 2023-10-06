@@ -44,7 +44,6 @@ header::before {
     background: transparent;
     border: none;
     text-align: center;
-    width: min-content;
 }
 
 .full_name {

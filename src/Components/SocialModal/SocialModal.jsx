@@ -54,7 +54,7 @@ const SocialModal = ({ onSubmit }) => {
                             onChange={handleUrlChange}
                         />
 
-                        <Button className="submit_btn submit_m" onClick={handleSubmit} />
+                        <Button className="submit_btn " onClick={handleSubmit} />
                     </div>
                 )}
             </div>

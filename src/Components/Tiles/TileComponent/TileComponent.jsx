@@ -6,6 +6,7 @@ import Button from '../../Button/Button';
 import TileBtnWrapper from '../../TileBtnWrapper/TileBtnWrapper';
 
 // import styles from '../InputField/InputField.module.css';
+import '../Tiles.css';
 
 const currentDate = new Date();
 // *Get the year and month parts
@@ -55,17 +56,22 @@ const TileComponent = ({ onSubmit, onDelete, id, field1Name, field2Name }) => {
         <>
             {isSubmitted ? (
                 <div
-                    className="tile"
+                    className="tile_submitted"
                     onMouseEnter={() => {
                         setIsMouseOver(true);
                     }}
                     onMouseLeave={() => {
                         setIsMouseOver(false);
                     }}>
-                    <p className="value1-submitted">{value1}</p>
-                    <p className="value2-submitted">{value2}</p>
-                    <p className="date-submitted">{value3}</p>
-                    <p className="date-submitted">{value4}</p>
+                    <div className="date_wrapper">
+                        <p className="date-submitted">{value3}</p>
+                        <span>-</span>
+                        <p className="date-submitted"> {value4}</p>
+                    </div>
+                    <div className="value_wrapper">
+                        <p className="value1-submitted">{value1}</p>
+                        <p className="value2-submitted">{value2}</p>
+                    </div>
 
                     {isMouseOver && TileBtnWrapper({ handleEdit, onDelete, id })}
                 </div>
@@ -101,7 +107,7 @@ const TileComponent = ({ onSubmit, onDelete, id, field1Name, field2Name }) => {
                         placeholder="End date"
                         value={value4}
                         onChange={handleChange}></input>
-                    <Button className="submit_btn submit_btn" onClick={handleSubmit} />
+                    <Button className="submit_btn " onClick={handleSubmit} />
                 </div>
             )}
         </>
