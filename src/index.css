@@ -56,6 +56,11 @@ label {
     border: 0;
 }
 
+input,
+textarea {
+    padding: 0.4rem;
+}
+
 textarea::placeholder,
 input::placeholder {
     color: var(--secondary-text-color);
@@ -64,11 +69,11 @@ input::placeholder {
 footer {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1rem;
     place-content: center;
     place-items: center;
 
-    padding-top: 3rem;
+    padding: 3rem 0rem;
 }
 
 @media screen and (min-width: 1000px) {

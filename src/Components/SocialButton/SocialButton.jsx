@@ -6,7 +6,6 @@ import InputField from '../InputField/InputField';
 import Button from '../Button/Button';
 
 import '../Button/Button.css';
-import styles from './SocialButton.module.css';
 
 const SocialButton = ({ socialData, onSubmit, onDelete }) => {
     const [element, setElement] = useState(null);
@@ -41,12 +40,12 @@ const SocialButton = ({ socialData, onSubmit, onDelete }) => {
     return (
         <>
             {element ? (
-                <div className={styles.btn_wrapper}>
+                <>
                     <Button id={socialData.id} className={socialData.className} />
                     <InputField type="url" placeholder={'Enter the URL'} onChange={handleChange} />
                     <Button className="submit_btn " onClick={handleSubmit} />
                     <Button className="delete_btn" onClick={handleDelete} />
-                </div>
+                </>
             ) : (
                 <Button id={socialData.id} className={socialData.className} onClick={handleOnClick} />
             )}

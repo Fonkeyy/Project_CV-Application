@@ -56,23 +56,24 @@ const TileComponent = ({ onSubmit, onDelete, id, field1Name, field2Name }) => {
         <>
             {isSubmitted ? (
                 <div
-                    className="tile_submitted"
+                    className="tile_submitted_container"
                     onMouseEnter={() => {
                         setIsMouseOver(true);
                     }}
                     onMouseLeave={() => {
                         setIsMouseOver(false);
                     }}>
-                    <div className="date_wrapper">
-                        <p className="date-submitted">{value3}</p>
-                        <span>-</span>
-                        <p className="date-submitted"> {value4}</p>
+                    <div className="tile_submitted">
+                        <div className="date_wrapper">
+                            <p className="date-submitted">{value3}</p>
+                            <span>-</span>
+                            <p className="date-submitted"> {value4}</p>
+                        </div>
+                        <div className="value_wrapper">
+                            <p className="value1-submitted">{value1}</p>
+                            <p className="value2-submitted">{value2}</p>
+                        </div>
                     </div>
-                    <div className="value_wrapper">
-                        <p className="value1-submitted">{value1}</p>
-                        <p className="value2-submitted">{value2}</p>
-                    </div>
-
                     {isMouseOver && TileBtnWrapper({ handleEdit, onDelete, id })}
                 </div>
             ) : (

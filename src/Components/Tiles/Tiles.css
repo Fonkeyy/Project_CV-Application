@@ -13,29 +13,38 @@
     padding: 1rem;
 }
 
-.tile .input_text::placeholder {
-    text-align: center;
+.tile_submitted_container {
+    display: flex;
+    place-items: center;
+    place-content: center;
+    gap: 1rem;
 }
 
 .tile_submitted {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
     place-content: center;
     place-items: center;
-    gap: 2rem;
     background-color: rgb(245, 245, 245);
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     padding: 1rem;
 }
 
 .date_wrapper {
-    place-self: flex-start;
     display: flex;
-    gap: 0.5rem;
+    flex-direction: column;
+    gap: 0rem;
+    font-size: 0.9rem;
+}
+
+.date_wrapper span {
+    text-align: center;
 }
 
 .value_wrapper {
     display: flex;
     flex-direction: column;
+    gap: 0.5rem;
 }
 
 .value_wrapper p:first-of-type {
@@ -47,8 +56,20 @@
         flex-direction: row;
     }
 
-    .value_wrapper {
+    .tile_submitted {
+        display: grid;
+        grid-template-columns: 1fr 2.5fr;
+    }
+    .date_wrapper {
         flex-direction: row;
-        gap: 1rem;
+        place-items: start;
+        place-content: start;
+        gap: 0.3rem;
+    }
+    .value_wrapper {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-evenly;
+        gap: 0rem;
     }
 }

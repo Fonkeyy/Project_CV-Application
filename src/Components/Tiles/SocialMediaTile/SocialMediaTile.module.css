@@ -1,4 +1,5 @@
 .btn_wrapper {
+    margin-top: 1.5rem;
     display: grid;
     grid-template-columns: auto;
     place-items: center;

@@ -1,3 +1,5 @@
-add delete btn when hovering tiles
 fix tile moving when hovering
 add textarea for practiceTile
+add on click edit for mobile
+style socialModal
+add edit btn on social btn when hover

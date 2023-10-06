@@ -1,0 +1,4 @@
+.tile_btn_wrapper {
+    display: flex;
+    gap: 0.8rem;
+}
