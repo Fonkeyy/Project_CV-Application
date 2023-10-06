@@ -9,7 +9,7 @@ import InfoSection from './Components/Sections/InfoSection/InfoSection';
 
 function App() {
     return (
-        <div className="App">
+        <>
             <HeaderSection />
             <main>
                 <PracticeSection />
@@ -20,7 +20,7 @@ function App() {
                 <InfoSection />
                 <SocialMediaTile />
             </footer>
-        </div>
+        </>
     );
 }
 

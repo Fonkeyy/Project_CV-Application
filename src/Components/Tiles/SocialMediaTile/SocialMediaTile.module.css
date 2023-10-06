@@ -1,8 +1,13 @@
 .btn_wrapper {
-    display: flex;
-
-    gap: 3rem;
+    display: grid;
+    grid-template-columns: auto;
+    place-items: center;
+    column-gap: 3rem;
+    row-gap: 1rem;
 }
 
+.btn_wrapper button:last-of-type {
+    grid-column-start: span 4;
+}
 .add_btn_container {
 }

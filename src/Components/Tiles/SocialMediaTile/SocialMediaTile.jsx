@@ -8,7 +8,7 @@ import styles from './SocialMediaTile.module.css';
 
 const SocialMediaTile = () => {
     // * Initialize the useState of social buttons list with the 3 first social medias of socialMediaList
-    const initialSocialButtons = socialMediaList.slice(0, 3);
+    const initialSocialButtons = socialMediaList.slice(0, 4);
     const [socialBtns, setSocialBtns] = useState(initialSocialButtons);
 
     const handleSubmit = (selectedElement) => {
@@ -35,10 +35,10 @@ const SocialMediaTile = () => {
                         onDelete={handleDelete}
                     />
                 ))}
-            </div>
-            <div className={styles.add_btn_container}>
                 <SocialAddButton key={socialBtns.length} className="add_btn" onSubmit={handleSubmit} />
             </div>
+            {/* <div className={styles.add_btn_container}>
+            </div> */}
         </>
     );
 };
