@@ -5,19 +5,13 @@ import ContactSection from './Components/Sections/ContactSection/ContactSection'
 import SocialMediaTile from './Components/Tiles/SocialMediaTile/SocialMediaTile';
 
 import InfoSection from './Components/Sections/InfoSection/InfoSection';
-import { useEffect, useState } from 'react';
-
-import { ValidContext } from './contexts/validContext';
+import ValidBtn from './Components/ValidBtn';
+import { ValidProvider } from './contexts/validContext';
 
 function App() {
-    const [isValidated, setIsValidated] = useState(false);
-
-    useEffect(() => {
-        console.log(isValidated);
-    }, [isValidated]);
     return (
         <>
-            <ValidContext.Provider value={isValidated}>
+            <ValidProvider>
                 <HeaderSection />
                 <main>
                     <PracticeSection />
@@ -27,11 +21,9 @@ function App() {
                 <footer>
                     <InfoSection />
                     {/* <SocialMediaTile /> */}
-                    <button className="valid_btn" onClick={() => setIsValidated(!isValidated)}>
-                        Validate Resume
-                    </button>
+                    <ValidBtn />
                 </footer>
-            </ValidContext.Provider>
+            </ValidProvider>
         </>
     );
 }
