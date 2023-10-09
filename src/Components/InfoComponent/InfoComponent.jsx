@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import InputField from '../InputField/InputField';
 import Button from '../Button/Button';
 
-import '../InputField/InputField.css';
 import styles from './InfoComponent.module.css';
 
 function InfoComponent(props) {

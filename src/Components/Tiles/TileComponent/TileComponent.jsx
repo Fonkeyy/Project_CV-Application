@@ -41,10 +41,10 @@ const TileComponent = ({ onSubmit, onDelete, id, field1Name, field2Name }) => {
     const handleChange = (event) => {
         const target = event.target;
 
-        target.id === 'input1' && setValue1(target.value);
-        target.id === 'input2' && setValue2(target.value);
-        target.id === 'input3' && setValue3(target.value);
-        target.id === 'input4' && setValue4(target.value);
+        target.id === field1Name && setValue1(target.value);
+        target.id === field2Name && setValue2(target.value);
+        target.id === 'date-start' && setValue3(target.value);
+        target.id === 'date-end' && setValue4(target.value);
     };
 
     // * On edit set isSubmitted to false and pass the info to parent component
@@ -96,21 +96,25 @@ const TileComponent = ({ onSubmit, onDelete, id, field1Name, field2Name }) => {
                     ) : (
                         <div className="tile">
                             <InputField
-                                id="input1"
+                                id={field1Name}
                                 type="text"
                                 placeholder={field1Name}
                                 value={value1}
                                 onChange={handleChange}
                             />
                             <InputField
-                                id="input2"
+                                id={field2Name}
                                 type="text"
                                 placeholder={field2Name}
                                 value={value2}
                                 onChange={handleChange}
                             />
-                            <input id="input3" type="month" value={value3} onChange={handleChange}></input>
-                            <input id="input4" type="month" value={value4} onChange={handleChange}></input>
+                            <input
+                                id="date-start"
+                                type="month"
+                                value={value3}
+                                onChange={handleChange}></input>
+                            <input id="date-end" type="month" value={value4} onChange={handleChange}></input>
                             <Button className="submit_btn " onClick={handleSubmit} />
                         </div>
                     )}

@@ -1,17 +1,20 @@
 import PropTypes from 'prop-types';
 import TileComponent from '../TileComponent/TileComponent';
 
-import '../EducTile/EducTile.css';
+import '../Tiles.css';
 
 const PracticeTile = ({ onSubmit, onDelete, id }) => {
     return (
-        <TileComponent
-            onSubmit={onSubmit}
-            onDelete={onDelete}
-            id={id}
-            field1Name="Company name"
-            field2Name="Job title"
-        />
+        <>
+            <TileComponent
+                onSubmit={onSubmit}
+                onDelete={onDelete}
+                id={id}
+                field1Name="Company"
+                field2Name="Title"
+            />
+            <textarea className="textarea"></textarea>
+        </>
     );
 };
 

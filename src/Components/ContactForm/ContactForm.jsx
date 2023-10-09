@@ -4,7 +4,6 @@ import Button from '../Button/Button';
 import InputField from '../InputField/InputField';
 
 import styles from './ContactForm.module.css';
-import '../InputField/InputField.css';
 
 const initialFields = [
     { id: 'name', type: 'text', placeholder: 'Your name', value: '' },
