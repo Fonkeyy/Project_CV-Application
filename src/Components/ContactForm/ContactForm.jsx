@@ -31,14 +31,13 @@ const ContactForm = () => {
     return (
         <div className={styles.contact_form}>
             {isSubmitted ? (
-                <p className="message-sent">Your message has been sent</p>
+                <p>Your message has been sent</p>
             ) : (
                 <>
                     {fields.map((field) => (
                         <InputField
                             key={field.id}
                             id={field.id}
-                            className="input_text"
                             placeholder={field.placeholder}
                             type={field.type}
                             value={field.value}

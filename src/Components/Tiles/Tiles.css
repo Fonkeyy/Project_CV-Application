@@ -14,6 +14,11 @@
     border-radius: 8px;
 }
 
+.tile input,
+textarea {
+    width: clamp(100px, 40vw, 300px);
+}
+
 .tile_submitted_container {
     display: flex;
     place-items: center;
@@ -53,24 +58,43 @@
 }
 
 .textarea {
-    color: red;
+    height: 5rem;
 }
 
 @media screen and (min-width: 1000px) {
     .tile {
-        flex-direction: row;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
     }
 
+    .tile textarea {
+        grid-column-start: span 4;
+        width: 98%;
+    }
+
+    .tile input,
+    textarea {
+        width: 8rem;
+    }
+
+    .tile button {
+        grid-column-start: span 4;
+    }
     .tile_submitted {
         display: grid;
         grid-template-columns: 1fr 2.5fr;
     }
+
+    .tile_submitted textarea {
+    }
+
     .date_wrapper {
         flex-direction: row;
         place-items: start;
         place-content: start;
         gap: 0.3rem;
     }
+
     .value_wrapper {
         width: 100%;
         flex-direction: row;

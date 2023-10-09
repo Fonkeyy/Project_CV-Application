@@ -13,7 +13,6 @@ const PracticeTile = ({ onSubmit, onDelete, id }) => {
                 field1Name="Company"
                 field2Name="Title"
             />
-            <textarea className="textarea"></textarea>
         </>
     );
 };

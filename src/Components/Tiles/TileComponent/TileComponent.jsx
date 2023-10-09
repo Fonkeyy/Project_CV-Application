@@ -20,10 +20,13 @@ const todayDate = `${year}-${month}`;
 const TileComponent = ({ onSubmit, onDelete, id, field1Name, field2Name }) => {
     const { isValidated } = useContext(ValidContext);
     const [isSubmitted, setIsSubmitted] = useState(false);
+    const [isPracticeTile] = useState(field1Name === 'Company');
     const [value1, setValue1] = useState('');
     const [value2, setValue2] = useState('');
     const [value3, setValue3] = useState(todayDate);
     const [value4, setValue4] = useState(todayDate);
+    const [textareaValue, setTextAreaValue] = useState('');
+
     const [isMouseOver, setIsMouseOver] = useState(false);
 
     // * On submit if values are not empty set isSubmitted to true and pass the info to parent component
@@ -45,6 +48,7 @@ const TileComponent = ({ onSubmit, onDelete, id, field1Name, field2Name }) => {
         target.id === field2Name && setValue2(target.value);
         target.id === 'date-start' && setValue3(target.value);
         target.id === 'date-end' && setValue4(target.value);
+        target.id === 'textarea' && setTextAreaValue(target.value);
     };
 
     // * On edit set isSubmitted to false and pass the info to parent component
@@ -67,6 +71,7 @@ const TileComponent = ({ onSubmit, onDelete, id, field1Name, field2Name }) => {
                             <p>{value1}</p>
                             <p>{value2}</p>
                         </div>
+                        {isPracticeTile && <p>{textareaValue}</p>}
                     </div>
                 </div>
             ) : (
@@ -90,6 +95,7 @@ const TileComponent = ({ onSubmit, onDelete, id, field1Name, field2Name }) => {
                                     <p>{value1}</p>
                                     <p>{value2}</p>
                                 </div>
+                                {isPracticeTile && <p>{textareaValue}</p>}
                             </div>
                             {isMouseOver && TileBtnWrapper({ handleEdit, onDelete, id })}
                         </div>
@@ -115,6 +121,13 @@ const TileComponent = ({ onSubmit, onDelete, id, field1Name, field2Name }) => {
                                 value={value3}
                                 onChange={handleChange}></input>
                             <input id="date-end" type="month" value={value4} onChange={handleChange}></input>
+                            {isPracticeTile && (
+                                <textarea
+                                    id="textarea"
+                                    className="textarea"
+                                    onChange={handleChange}
+                                    placeholder="Describe your experience, missions..."></textarea>
+                            )}
                             <Button className="submit_btn " onClick={handleSubmit} />
                         </div>
                     )}
