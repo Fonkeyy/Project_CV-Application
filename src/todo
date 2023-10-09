@@ -1,10 +1,7 @@
 fix tile moving when hovering
-add textarea for practiceTile
-add on click edit for mobile
 style socialModal
 add edit btn on social btn when hover
 fix hover on send_btn
 center send btn
-fix classes TIle component
 add hover effect on + btn
 center edit/delete btn on tile hover

@@ -19,6 +19,7 @@ const InfoSection = () => {
     const { isValidated } = useContext(ValidContext);
 
     const [isSubmitted, setIsSubmitted] = useState(false);
+    const [isClicked, setIsClicked] = useState(false);
     const [fields, setFields] = useState(initialFields);
     const [isMouseOver, setIsMouseOver] = useState(false);
 
@@ -51,6 +52,9 @@ const InfoSection = () => {
                     }}
                     onMouseLeave={() => {
                         setIsMouseOver(false);
+                    }}
+                    onClick={() => {
+                        setIsClicked(!isClicked);
                     }}>
                     {fields.map((field) => (
                         <div key={uuidv4()}>
@@ -64,7 +68,9 @@ const InfoSection = () => {
                             )}
                         </div>
                     ))}
-                    {isMouseOver && <Button className="edit_btn" onClick={() => setIsSubmitted(false)} />}
+                    {!isValidated && (isMouseOver || isClicked) && (
+                        <Button className="edit_btn" onClick={() => setIsSubmitted(false)} />
+                    )}
                 </div>
             ) : (
                 <div className={styles.info_section}>
