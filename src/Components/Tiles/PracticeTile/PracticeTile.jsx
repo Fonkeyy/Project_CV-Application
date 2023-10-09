@@ -5,15 +5,13 @@ import '../Tiles.css';
 
 const PracticeTile = ({ onSubmit, onDelete, id }) => {
     return (
-        <>
-            <TileComponent
-                onSubmit={onSubmit}
-                onDelete={onDelete}
-                id={id}
-                field1Name="Company"
-                field2Name="Title"
-            />
-        </>
+        <TileComponent
+            onSubmit={onSubmit}
+            onDelete={onDelete}
+            id={id}
+            field1Name="Company"
+            field2Name="Title"
+        />
     );
 };
 

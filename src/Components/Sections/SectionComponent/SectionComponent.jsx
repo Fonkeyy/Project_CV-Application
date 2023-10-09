@@ -3,14 +3,19 @@ import { v4 as uuidv4 } from 'uuid';
 import PropTypes from 'prop-types';
 
 import Button from '../../Button/Button';
+
+import { ValidContext } from '../../../contexts/validContext';
+
 import '../../Tiles/Tiles.css';
+import { useContext } from 'react';
 
 const SectionComponent = ({ TileComponent }) => {
     const [tiles, setTiles] = useState([]);
-    const [needAddBtn, setNeedAddBtn] = useState(false);
+    const [isAddBtnNeeded, setIsAddBtnNeeded] = useState(false);
+    const { isValidated } = useContext(ValidContext);
 
     const handleOnChildSubmit = (value) => {
-        setNeedAddBtn(value);
+        setIsAddBtnNeeded(value);
     };
 
     const handleDelete = (tileId) => {
@@ -30,7 +35,7 @@ const SectionComponent = ({ TileComponent }) => {
                 onDelete={handleDelete}
             />,
         ]);
-        setNeedAddBtn(false);
+        setIsAddBtnNeeded(false);
     };
 
     // * Initialize the first TileComponent
@@ -56,7 +61,7 @@ const SectionComponent = ({ TileComponent }) => {
                     </div>
                 );
             })}
-            {needAddBtn && <Button className="add_btn" onClick={handleAddBtn} />}
+            {isAddBtnNeeded && !isValidated && <Button className="add_btn" onClick={handleAddBtn} />}
         </>
     );
 };

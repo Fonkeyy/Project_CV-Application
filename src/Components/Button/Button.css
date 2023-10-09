@@ -1,5 +1,5 @@
 .submit_btn {
-    background: center url('../../assets/SVG/check.svg');
+    background: center url('../../assets/SVG/buttons/check.svg');
     width: 25px;
     height: 25px;
     border: 2px solid var(--grey-btn);
@@ -11,19 +11,24 @@
     background: center url('../../assets/SVG/checkColor.svg');
     border: 2px solid var(--green-btn);
     scale: 1.05;
-
     transition: background-image 0.1s ease-in-out, border 0.1s ease-in-out, scale 0.1s ease-in-out;
-    /* ?transform: rotate('20deg'); */
 }
 
 .edit_btn {
-    background: center url('../../assets/SVG/edit.svg');
+    background: center no-repeat url('../../assets/SVG/buttons/edit.svg');
     width: 25px;
     height: 25px;
+    scale: 1;
+    transition: scale 0.1s ease-in-out;
+}
+
+.edit_btn:hover {
+    scale: 1.1;
+    transition: scale 0.1s ease-in-out;
 }
 
 .add_btn {
-    background: center url('../../assets/SVG/add.svg');
+    background: center url('../../assets/SVG/buttons/add.svg');
     width: 25px;
     height: 25px;
     border: 1px solid var(--grey-btn);
@@ -37,7 +42,7 @@
 }
 
 .delete_btn {
-    background: center url('../../assets/SVG/delete.svg');
+    background: center url('../../assets/SVG/buttons/delete.svg');
     width: 25px;
     height: 25px;
     scale: 1;
@@ -45,20 +50,20 @@
 }
 
 .delete_btn:hover {
-    background: center url('../../assets/SVG/deleteColor.svg');
+    background: center url('../../assets/SVG/buttons/deleteColor.svg');
     scale: 1.05;
     transition: background-image 0.1s ease-in-out, scale 0.1s ease-in-out;
 }
 
 .send_btn {
-    background: center no-repeat url('../../assets/SVG/send.svg');
+    background: center no-repeat url('../../assets/SVG/buttons/send.svg');
     width: 25px;
     height: 25px;
     border: 2px solid var(--grey-btn);
 }
 
 .send_btn:hover {
-    background: center no-repeat url('../../assets/SVG/sendColor.svg');
+    background: center no-repeat url('../../assets/SVG/buttons/sendColor.svg');
     border: 2px solid var(--green-btn);
     scale: 1.05;
     transition: background-image 0.1s ease-in-out, border 0.1s ease-in-out, scale 0.1s ease-in-out;

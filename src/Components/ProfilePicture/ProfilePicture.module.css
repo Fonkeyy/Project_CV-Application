@@ -26,4 +26,13 @@
     height: 40px;
     bottom: calc(50% - 20px);
     left: calc(50% - 20px);
+    border: 2px solid var(--bg-color);
+    background: center no-repeat url('../../assets/SVG//buttons/editPicture.svg');
+    scale: 1;
+    transition: scale 0.1s ease-in-out;
+}
+
+.add_profile_picture:hover {
+    scale: 1.1;
+    transition: scale 0.1s ease-in-out;
 }

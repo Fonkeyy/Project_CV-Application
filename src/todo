@@ -1,9 +1,5 @@
-fix tile moving when hovering
 style socialModal
 add edit btn on social btn when hover
-fix hover on send_btn
-center send btn
-add hover effect on + btn
-center edit/delete btn on tile hover
 move section folder out of component folder
 move tile folder out of component folder
+tiles should not render if empty

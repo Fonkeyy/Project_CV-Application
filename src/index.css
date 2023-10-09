@@ -14,6 +14,11 @@
     padding: 0;
 }
 
+*:focus-visible {
+    outline: 9px double black;
+    box-shadow: 0 0 0 6px white;
+}
+
 body {
     background-color: var(--bg-color);
     overflow-x: hidden;

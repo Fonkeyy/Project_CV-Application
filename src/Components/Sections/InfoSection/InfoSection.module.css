@@ -25,6 +25,10 @@
         grid-template-columns: repeat(4, 1fr);
     }
 
+    .info_section input {
+        width: fit-content;
+    }
+
     .info_section button:last-of-type {
         grid-column-start: span 4;
     }

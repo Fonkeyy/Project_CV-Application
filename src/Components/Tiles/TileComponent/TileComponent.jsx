@@ -61,7 +61,9 @@ const TileComponent = ({ onSubmit, onDelete, id, field1Name, field2Name }) => {
                             <p>{state.value1}</p>
                             <p>{state.value2}</p>
                         </div>
-                        {isPracticeTile && <p className="textareaValue">{state.textareaValue}</p>}
+                        {isPracticeTile && state.textareaValue && (
+                            <p className="textareaValue">{state.textareaValue}</p>
+                        )}
                     </div>
                 </div>
             ) : (
@@ -88,7 +90,9 @@ const TileComponent = ({ onSubmit, onDelete, id, field1Name, field2Name }) => {
                                     <p>{state.value1}</p>
                                     <p>{state.value2}</p>
                                 </div>
-                                {isPracticeTile && <p className="textareaValue">{state.textareaValue}</p>}
+                                {isPracticeTile && state.textareaValue && (
+                                    <p className="textareaValue">{state.textareaValue}</p>
+                                )}
                             </div>
                             {(state.isMouseOver || state.isClicked) &&
                                 TileBtnWrapper({ handleEdit, onDelete, id })}
