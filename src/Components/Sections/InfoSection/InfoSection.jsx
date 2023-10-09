@@ -41,7 +41,7 @@ const InfoSection = () => {
         <>
             {isSubmitted ? (
                 <div
-                    className={styles.info_section_submitted}
+                    className={`${styles.info_section}  ${styles.info_section_submitted}`}
                     onMouseEnter={() => {
                         setIsMouseOver(true);
                     }}

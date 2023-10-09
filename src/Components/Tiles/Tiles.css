@@ -1,12 +1,8 @@
-.tiles_container {
-    width: fit-content;
-}
-
 .tile {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    place-items: center;
+    align-items: center;
 
     background-color: rgb(245, 245, 245);
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -19,21 +15,10 @@ textarea {
     width: clamp(100px, 40vw, 300px);
 }
 
-.tile_submitted_container {
-    display: flex;
-    place-items: center;
-    place-content: center;
-    gap: 1rem;
-}
-
 .tile_submitted {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    place-content: center;
-    place-items: center;
-    background-color: rgb(245, 245, 245);
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    padding: 1rem;
+    row-gap: 1rem;
 }
 
 .date_wrapper {
@@ -41,10 +26,6 @@ textarea {
     flex-direction: column;
     gap: 0rem;
     font-size: 0.9rem;
-}
-
-.date_wrapper span {
-    text-align: center;
 }
 
 .value_wrapper {
@@ -59,6 +40,10 @@ textarea {
 
 .textarea {
     height: 5rem;
+}
+
+.textareaValue {
+    grid-column-start: span 2;
 }
 
 @media screen and (min-width: 1000px) {
@@ -79,13 +64,16 @@ textarea {
 
     .tile button {
         grid-column-start: span 4;
+        place-self: center;
     }
     .tile_submitted {
         display: grid;
-        grid-template-columns: 1fr 2.5fr;
+        grid-template-columns: 1fr 3fr;
     }
 
-    .tile_submitted textarea {
+    .textareaValue {
+        grid-column-start: span 3;
+        max-width: 800px;
     }
 
     .date_wrapper {

@@ -71,7 +71,7 @@ const TileComponent = ({ onSubmit, onDelete, id, field1Name, field2Name }) => {
                             <p>{value1}</p>
                             <p>{value2}</p>
                         </div>
-                        {isPracticeTile && <p>{textareaValue}</p>}
+                        {isPracticeTile && <p className="textareaValue">{textareaValue}</p>}
                     </div>
                 </div>
             ) : (
@@ -85,7 +85,7 @@ const TileComponent = ({ onSubmit, onDelete, id, field1Name, field2Name }) => {
                             onMouseLeave={() => {
                                 setIsMouseOver(false);
                             }}>
-                            <div className="tile_submitted">
+                            <div className={`${'tile'} ${'tile_submitted'}`}>
                                 <div className="date_wrapper">
                                     <p>{value3}</p>
                                     <span>-</span>
@@ -95,7 +95,7 @@ const TileComponent = ({ onSubmit, onDelete, id, field1Name, field2Name }) => {
                                     <p>{value1}</p>
                                     <p>{value2}</p>
                                 </div>
-                                {isPracticeTile && <p>{textareaValue}</p>}
+                                {isPracticeTile && <p className="textareaValue">{textareaValue}</p>}
                             </div>
                             {isMouseOver && TileBtnWrapper({ handleEdit, onDelete, id })}
                         </div>
