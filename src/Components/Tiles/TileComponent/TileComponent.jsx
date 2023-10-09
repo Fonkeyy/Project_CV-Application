@@ -59,9 +59,22 @@ const TileComponent = ({ onSubmit, onDelete, id, field1Name, field2Name }) => {
 
     return (
         <>
-            {isValidated ? (
-                <div className="tile_submitted_container">
-                    <div className="tile_submitted">
+            {isSubmitted ? (
+                <>
+                    {isValidated ? (
+                        <div className="tile_submitted_container"></div>
+                    ) : (
+                        <div
+                            className="tile_submitted_container"
+                            onMouseEnter={() => {
+                                setIsMouseOver(true);
+                            }}
+                            onMouseLeave={() => {
+                                setIsMouseOver(false);
+                            }}></div>
+                    )}
+
+                    <div className={`${'tile'} ${'tile_submitted'}`}>
                         <div className="date_wrapper">
                             <p>{value3}</p>
                             <span>-</span>
@@ -73,68 +86,115 @@ const TileComponent = ({ onSubmit, onDelete, id, field1Name, field2Name }) => {
                         </div>
                         {isPracticeTile && <p className="textareaValue">{textareaValue}</p>}
                     </div>
-                </div>
-            ) : (
-                <>
-                    {isSubmitted ? (
-                        <div
-                            className="tile_submitted_container"
-                            onMouseEnter={() => {
-                                setIsMouseOver(true);
-                            }}
-                            onMouseLeave={() => {
-                                setIsMouseOver(false);
-                            }}>
-                            <div className={`${'tile'} ${'tile_submitted'}`}>
-                                <div className="date_wrapper">
-                                    <p>{value3}</p>
-                                    <span>-</span>
-                                    <p> {value4}</p>
-                                </div>
-                                <div className="value_wrapper">
-                                    <p>{value1}</p>
-                                    <p>{value2}</p>
-                                </div>
-                                {isPracticeTile && <p className="textareaValue">{textareaValue}</p>}
-                            </div>
-                            {isMouseOver && TileBtnWrapper({ handleEdit, onDelete, id })}
-                        </div>
-                    ) : (
-                        <div className="tile">
-                            <InputField
-                                id={field1Name}
-                                type="text"
-                                placeholder={field1Name}
-                                value={value1}
-                                onChange={handleChange}
-                            />
-                            <InputField
-                                id={field2Name}
-                                type="text"
-                                placeholder={field2Name}
-                                value={value2}
-                                onChange={handleChange}
-                            />
-                            <input
-                                id="date-start"
-                                type="month"
-                                value={value3}
-                                onChange={handleChange}></input>
-                            <input id="date-end" type="month" value={value4} onChange={handleChange}></input>
-                            {isPracticeTile && (
-                                <textarea
-                                    id="textarea"
-                                    className="textarea"
-                                    onChange={handleChange}
-                                    placeholder="Describe your experience, missions..."></textarea>
-                            )}
-                            <Button className="submit_btn " onClick={handleSubmit} />
-                        </div>
-                    )}
+                    {isMouseOver && TileBtnWrapper({ handleEdit, onDelete, id })}
                 </>
+            ) : (
+                <div className="tile">
+                    <InputField
+                        id={field1Name}
+                        type="text"
+                        placeholder={field1Name}
+                        value={value1}
+                        onChange={handleChange}
+                    />
+                    <InputField
+                        id={field2Name}
+                        type="text"
+                        placeholder={field2Name}
+                        value={value2}
+                        onChange={handleChange}
+                    />
+                    <input id="date-start" type="month" value={value3} onChange={handleChange}></input>
+                    <input id="date-end" type="month" value={value4} onChange={handleChange}></input>
+                    {isPracticeTile && (
+                        <textarea
+                            id="textarea"
+                            className="textarea"
+                            onChange={handleChange}
+                            placeholder="Describe your experience, missions..."></textarea>
+                    )}
+                    <Button className="submit_btn " onClick={handleSubmit} />
+                </div>
             )}
         </>
     );
+
+    // <>
+    //     {isValidated ? (
+    //         <div className="tile_submitted_container">
+    //             <div className={`${'tile'} ${'tile_submitted'}`}>
+    //                 <div className="date_wrapper">
+    //                     <p>{value3}</p>
+    //                     <span>-</span>
+    //                     <p> {value4}</p>
+    //                 </div>
+    //                 <div className="value_wrapper">
+    //                     <p>{value1}</p>
+    //                     <p>{value2}</p>
+    //                 </div>
+    //                 {isPracticeTile && <p className="textareaValue">{textareaValue}</p>}
+    //             </div>
+    //         </div>
+    //     ) : (
+    //         <>
+    //             {isSubmitted ? (
+    //                 <div
+    //                     className="tile_submitted_container"
+    //                     onMouseEnter={() => {
+    //                         setIsMouseOver(true);
+    //                     }}
+    //                     onMouseLeave={() => {
+    //                         setIsMouseOver(false);
+    //                     }}>
+    //                     <div className={`${'tile'} ${'tile_submitted'}`}>
+    //                         <div className="date_wrapper">
+    //                             <p>{value3}</p>
+    //                             <span>-</span>
+    //                             <p> {value4}</p>
+    //                         </div>
+    //                         <div className="value_wrapper">
+    //                             <p>{value1}</p>
+    //                             <p>{value2}</p>
+    //                         </div>
+    //                         {isPracticeTile && <p className="textareaValue">{textareaValue}</p>}
+    //                     </div>
+    //                     {isMouseOver && TileBtnWrapper({ handleEdit, onDelete, id })}
+    //                 </div>
+    //             ) : (
+    //                 <div className="tile">
+    //                     <InputField
+    //                         id={field1Name}
+    //                         type="text"
+    //                         placeholder={field1Name}
+    //                         value={value1}
+    //                         onChange={handleChange}
+    //                     />
+    //                     <InputField
+    //                         id={field2Name}
+    //                         type="text"
+    //                         placeholder={field2Name}
+    //                         value={value2}
+    //                         onChange={handleChange}
+    //                     />
+    //                     <input
+    //                         id="date-start"
+    //                         type="month"
+    //                         value={value3}
+    //                         onChange={handleChange}></input>
+    //                     <input id="date-end" type="month" value={value4} onChange={handleChange}></input>
+    //                     {isPracticeTile && (
+    //                         <textarea
+    //                             id="textarea"
+    //                             className="textarea"
+    //                             onChange={handleChange}
+    //                             placeholder="Describe your experience, missions..."></textarea>
+    //                     )}
+    //                     <Button className="submit_btn " onClick={handleSubmit} />
+    //                 </div>
+    //             )}
+    //         </>
+    //     )}
+    // </>
 };
 
 TileComponent.propTypes = {

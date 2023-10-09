@@ -1,8 +1,10 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
 import InfoComponent from '../../InfoComponent/InfoComponent';
 import Button from '../../Button/Button';
+
+import { ValidContext } from '../../../contexts/validContext';
 
 import styles from './InfoSection.module.css';
 
@@ -14,6 +16,8 @@ const initialFields = [
 ];
 
 const InfoSection = () => {
+    const { isValidated } = useContext(ValidContext);
+
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [fields, setFields] = useState(initialFields);
     const [isMouseOver, setIsMouseOver] = useState(false);
@@ -78,7 +82,7 @@ const InfoSection = () => {
                     ))}
                 </div>
             )}
-            <Button className="submit_btn " onClick={handleSubmit} />
+            {!isValidated && <Button className="submit_btn " onClick={handleSubmit} />}
         </>
     );
 };

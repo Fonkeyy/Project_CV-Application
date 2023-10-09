@@ -7,3 +7,4 @@ fix hover on send_btn
 center send btn
 fix classes TIle component
 add hover effect on + btn
+center edit/delete btn on tile hover
