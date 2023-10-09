@@ -59,6 +59,10 @@ label {
 input,
 textarea {
     padding: 0.4rem;
+    background: transparent;
+    border: 1px solid var(--primary-text-color);
+    border-radius: 5px;
+    font-size: 0.9rem;
 }
 
 textarea::placeholder,

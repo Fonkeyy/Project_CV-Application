@@ -5,3 +5,5 @@ style socialModal
 add edit btn on social btn when hover
 fix hover on send_btn
 add border-radius everywhere
+center send btn
+fix classes TIle component
