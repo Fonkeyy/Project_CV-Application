@@ -5,7 +5,7 @@ import ContactSection from './Components/Sections/ContactSection/ContactSection'
 import SocialMediaTile from './Components/Tiles/SocialMediaTile/SocialMediaTile';
 
 import InfoSection from './Components/Sections/InfoSection/InfoSection';
-import ValidBtn from './Components/ValidBtn';
+import ValidateBtn from './Components/ValidateBtn';
 import { ValidProvider } from './contexts/validContext';
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
                 <footer>
                     <InfoSection />
                     {/* <SocialMediaTile /> */}
-                    <ValidBtn />
+                    <ValidateBtn />
                 </footer>
             </ValidProvider>
         </>
