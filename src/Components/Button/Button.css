@@ -3,14 +3,16 @@
     width: 25px;
     height: 25px;
     border: 2px solid var(--grey-btn);
-    border-radius: 50%;
-    transition: background-image 0.2s ease-in-out, border 0.2s ease-in-out;
+    scale: 1;
+    transition: background-image 0.1s ease-in-out, border 0.1s ease-in-out, scale 0.1s ease-in-out;
 }
 
 .submit_btn:hover {
     background: center url('../../assets/SVG/checkColor.svg');
     border: 2px solid var(--green-btn);
-    transition: background-image 0.2s ease-in-out, border 0.2s ease-in-out;
+    scale: 1.05;
+
+    transition: background-image 0.1s ease-in-out, border 0.1s ease-in-out, scale 0.1s ease-in-out;
     /* ?transform: rotate('20deg'); */
 }
 
@@ -24,19 +26,28 @@
     background: center url('../../assets/SVG/add.svg');
     width: 25px;
     height: 25px;
-    border: 1px solid white;
-    border-radius: 50%;
+    border: 1px solid var(--grey-btn);
+    scale: 1;
+    transition: scale 0.1s ease-in-out;
+}
+
+.add_btn:hover {
+    scale: 1.1;
+    transition: scale 0.1s ease-in-out;
 }
 
 .delete_btn {
     background: center url('../../assets/SVG/delete.svg');
     width: 25px;
     height: 25px;
+    scale: 1;
+    transition: scale 0.1s ease-in-out, background-image 0.1s ease-in-out;
 }
 
 .delete_btn:hover {
     background: center url('../../assets/SVG/deleteColor.svg');
-    transition: background-image 0.2s ease-in-out;
+    scale: 1.05;
+    transition: background-image 0.1s ease-in-out, scale 0.1s ease-in-out;
 }
 
 .send_btn {
@@ -44,26 +55,25 @@
     width: 25px;
     height: 25px;
     border: 2px solid var(--grey-btn);
-    border-radius: 50%;
-    padding: 0.8rem;
 }
 
 .send_btn:hover {
-    background: center url('../../assets/SVG/sendColor.svg');
+    background: center no-repeat url('../../assets/SVG/sendColor.svg');
     border: 2px solid var(--green-btn);
-    transition: background-image 0.2s ease-in-out, border 0.2s ease-in-out;
+    scale: 1.05;
+    transition: background-image 0.1s ease-in-out, border 0.1s ease-in-out, scale 0.1s ease-in-out;
 }
 
 .social_btn {
     width: 50px;
     height: 50px;
-    border-radius: 50%;
-    transition: scale 0.2s ease-in-out;
+
+    transition: scale 0.1s ease-in-out;
 }
 
 .social_btn:hover {
-    scale: 1.1;
-    transition: scale 0.2s ease-in-out;
+    scale: 1.05;
+    transition: scale 0.1s ease-in-out;
 }
 
 .facebook {

@@ -1,7 +1,7 @@
 import { ValidContext } from '../contexts/validContext';
 import { useContext } from 'react';
 
-export const ValidateBtn = () => {
+const ValidateBtn = () => {
     const { isValidated, toggleValid } = useContext(ValidContext);
 
     return (
@@ -10,3 +10,5 @@ export const ValidateBtn = () => {
         </button>
     );
 };
+
+export default ValidateBtn;
