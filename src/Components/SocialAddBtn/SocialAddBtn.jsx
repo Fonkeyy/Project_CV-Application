@@ -7,7 +7,6 @@ import Button from '../Button/Button';
 
 const SocialAddButton = ({ onSubmit }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [selectedElement, setSelectedElement] = useState(null);
 
     const handleAddClick = () => {
         // * OnClick set isModalOpen to true => modal open up in rendering
@@ -23,7 +22,6 @@ const SocialAddButton = ({ onSubmit }) => {
         // * Update selectedElement
         // * Pass selectedElement to parent component through prop {onSubmit}
         closeModal();
-        setSelectedElement(selectedElement);
         onSubmit(selectedElement);
     };
 
@@ -31,16 +29,11 @@ const SocialAddButton = ({ onSubmit }) => {
     // * Else render an add btn which open modal onClick
     return (
         <>
-            {selectedElement ? (
-                <Button
-                    id={selectedElement.id}
-                    className={selectedElement.className}
-                    onClick={handleAddClick}
-                />
+            {isModalOpen ? (
+                <SocialModal onSubmit={handleSubmit} />
             ) : (
                 <Button id="add_btn" className="add_btn" onClick={handleAddClick} />
             )}
-            {isModalOpen && <SocialModal onSubmit={handleSubmit} />}
         </>
     );
 };

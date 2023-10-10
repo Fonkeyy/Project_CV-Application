@@ -1,7 +1,7 @@
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 
 import { socialMediaList } from '../../../socialMediaList';
-import SocialButton from '../../SocialButton/SocialButton';
+import SocialButton from '../../SocialMedia/SocialMedia';
 import SocialAddButton from '../../SocialAddBtn/SocialAddBtn';
 
 import styles from './SocialMediaTile.module.css';
@@ -13,11 +13,18 @@ const SocialMediaTile = () => {
     const [socialBtns, setSocialBtns] = useState(initialSocialButtons);
     const { isValidated } = useContext(ValidContext);
 
+    useEffect(() => {
+        console.log(socialBtns);
+    }, [socialBtns]);
+
     const handleSubmit = (selectedElement) => {
         const element = socialBtns.find((el) => el.id === selectedElement.id);
+        selectedElement.submitted = true;
 
         if (element) {
             handleDelete(element);
+            setSocialBtns((prevBtns) => [...prevBtns, selectedElement]);
+        } else {
             setSocialBtns((prevBtns) => [...prevBtns, selectedElement]);
         }
     };
@@ -37,6 +44,7 @@ const SocialMediaTile = () => {
                         socialData={item} // * Store element itself in a prop
                         onSubmit={handleSubmit} // * Get the selectedElement as argument of the prop {onSubmit} passed to child
                         onDelete={handleDelete}
+                        submitted={item.submitted}
                     />
                 ))}
                 {!isValidated && (

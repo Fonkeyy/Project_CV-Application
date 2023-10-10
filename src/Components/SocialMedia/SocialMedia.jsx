@@ -9,11 +9,11 @@ import styles from '../Tiles/SocialMediaTile/SocialMediaTile.module.css';
 
 import { ValidContext } from '../../contexts/validContext';
 
-const SocialButton = ({ socialData, onSubmit, onDelete }) => {
+const SocialButton = ({ socialData, onSubmit, onDelete, submitted }) => {
     // const [element, setElement] = useState(socialData);
     const { isValidated } = useContext(ValidContext);
     const [url, setUrl] = useState('');
-    const [isSubmitted, setIsSubmitted] = useState(false);
+    const [isSubmitted, setIsSubmitted] = useState(submitted);
 
     const handleChange = (event) => {
         // * Set url to input value
@@ -37,7 +37,7 @@ const SocialButton = ({ socialData, onSubmit, onDelete }) => {
     };
 
     return (
-        <div className={styles.social_btn_wrapper}>
+        <div className={styles.social_media_container}>
             {isValidated && socialData.url ? (
                 <a href={`http://${socialData.url}`} target="_blank" rel="noreferrer">
                     <Button id={socialData.id} className={socialData.className} />
@@ -55,13 +55,17 @@ const SocialButton = ({ socialData, onSubmit, onDelete }) => {
                             {!isValidated && !isSubmitted && (
                                 <>
                                     <Button id={socialData.id} className={socialData.className} />
-                                    <InputField
-                                        type="url"
-                                        placeholder={socialData.url ? socialData.url : 'Enter the URL'}
-                                        onChange={handleChange}
-                                    />
-                                    <Button className="submit_btn" onClick={handleSubmit} />
-                                    <Button className="delete_btn" onClick={handleDelete} />
+                                    <div className={styles.input_wrapper}>
+                                        <InputField
+                                            type="url"
+                                            placeholder={socialData.url ? socialData.url : 'Enter the URL'}
+                                            onChange={handleChange}
+                                        />
+                                        <div className={styles.btn_wrapper}>
+                                            <Button className="submit_btn" onClick={handleSubmit} />
+                                            <Button className="delete_btn" onClick={handleDelete} />
+                                        </div>
+                                    </div>
                                 </>
                             )}
                         </>
@@ -75,6 +79,7 @@ SocialButton.propTypes = {
     socialData: PropTypes.object.isRequired,
     onSubmit: PropTypes.func.isRequired,
     onDelete: PropTypes.func.isRequired,
+    submitted: PropTypes.bool.isRequired,
 };
 
 export default SocialButton;

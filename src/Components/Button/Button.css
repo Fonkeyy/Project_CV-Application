@@ -69,14 +69,14 @@
     transition: background-image 0.1s ease-in-out, border 0.1s ease-in-out, scale 0.1s ease-in-out;
 }
 
-.social_btn {
+.social_media {
     width: 50px;
     height: 50px;
 
     transition: scale 0.1s ease-in-out;
 }
 
-.social_btn:hover {
+.social_media:hover {
     scale: 1.05;
     transition: scale 0.1s ease-in-out;
 }

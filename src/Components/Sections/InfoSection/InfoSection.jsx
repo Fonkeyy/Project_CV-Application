@@ -86,9 +86,9 @@ const InfoSection = () => {
                             onDelete={handleDelete}
                         />
                     ))}
+                    {!isValidated && <Button className="submit_btn " onClick={handleSubmit} />}
                 </div>
             )}
-            {!isValidated && <Button className="submit_btn " onClick={handleSubmit} />}
         </>
     );
 };
