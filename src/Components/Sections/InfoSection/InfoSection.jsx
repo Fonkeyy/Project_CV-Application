@@ -6,8 +6,23 @@ import { ValidContext } from '../../../contexts/validContext';
 import styles from './InfoSection.module.css';
 
 const initialFields = [
-    { id: 'tel', label: 'Phone Number', type: 'tel', placeholder: 'Enter your phone', value: '' },
-    { id: 'email', label: 'Email', type: 'email', placeholder: 'Enter your email', value: '' },
+    {
+        id: 'tel',
+        label: 'Phone Number',
+        type: 'tel',
+        placeholder: 'Enter your phone',
+        className: 'tel',
+        value: '',
+    },
+    {
+        id: 'email',
+        label: 'Email',
+        type: 'email',
+        placeholder: 'Enter your email',
+        className: 'email',
+        value: '',
+    },
+    { id: 'city', label: 'City', type: 'city', placeholder: 'Enter your city', className: 'city', value: '' },
     { id: 'github', label: 'Github', type: 'url', placeholder: 'Enter your Github', value: '' },
     { id: 'website', label: 'Website', type: 'url', placeholder: 'Enter your website', value: '' },
 ];
@@ -44,16 +59,19 @@ const InfoSection = () => {
         <>
             {isValidated && (
                 <div className={`${styles.info_section} ${styles.info_section_submitted}`}>
-                    {fields.map((field) => (
-                        <div key={uuidv4()}>
-                            <label>{field.label}</label>
-                            {field.type === 'url' ? (
-                                <a href={`http://${field.value}`} target="_blank" rel="noreferrer">
-                                    {field.value}
-                                </a>
-                            ) : (
-                                <p>{field.value}</p>
-                            )}
+                    {fields.map((field, index) => (
+                        <div key={index}>
+                            <span className={`'styles.'${field.className}}`}></span>
+                            <div key={uuidv4()}>
+                                <label>{field.label}</label>
+                                {field.type === 'url' ? (
+                                    <a href={`http://${field.value}`} target="_blank" rel="noreferrer">
+                                        {field.value}
+                                    </a>
+                                ) : (
+                                    <p>{field.value}</p>
+                                )}
+                            </div>
                         </div>
                     ))}
                 </div>

@@ -14,6 +14,22 @@
     width: clamp(100px, 40vw, 300px);
 }
 
+.tel {
+    background: url(../../../assets/SVG/);
+    width: 20px;
+    height: 20px;
+}
+.email {
+    background: url(../../../assets/SVG/);
+    width: 20px;
+    height: 20px;
+}
+.city {
+    background: url(../../../assets/SVG/);
+    width: 20px;
+    height: 20px;
+}
+
 @media screen and (min-width: 1000px) {
     .info_section {
         padding-top: 2rem;
