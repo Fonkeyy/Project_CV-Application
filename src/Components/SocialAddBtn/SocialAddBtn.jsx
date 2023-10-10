@@ -11,7 +11,7 @@ const SocialAddButton = ({ onSubmit }) => {
 
     const handleAddClick = () => {
         // * OnClick set isModalOpen to true => modal open up in rendering
-        setIsModalOpen(true);
+        setIsModalOpen(!isModalOpen);
     };
 
     const closeModal = () => {
@@ -20,7 +20,6 @@ const SocialAddButton = ({ onSubmit }) => {
 
     const handleSubmit = (selectedElement) => {
         // * OnClick on submit button:
-        // * Set isModalOpen to true => close modal
         // * Update selectedElement
         // * Pass selectedElement to parent component through prop {onSubmit}
         closeModal();

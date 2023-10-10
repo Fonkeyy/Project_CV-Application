@@ -8,7 +8,7 @@
 }
 
 .submit_btn:hover {
-    background: center url('../../assets/SVG/checkColor.svg');
+    background: center url('../../assets/SVG/buttons/checkColor.svg');
     border: 2px solid var(--green-btn);
     scale: 1.05;
     transition: background-image 0.1s ease-in-out, border 0.1s ease-in-out, scale 0.1s ease-in-out;

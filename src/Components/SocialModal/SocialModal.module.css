@@ -1,12 +1,10 @@
-.social_media_tile {
+.social_modal {
     display: flex;
     flex-direction: column;
-    place-items: center;
-    place-content: center;
-    gap: 1rem;
+    gap: 0.5rem;
 }
 
-.social_btn_wrapper {
+.url_container {
     display: flex;
     place-items: center;
     gap: 1rem;

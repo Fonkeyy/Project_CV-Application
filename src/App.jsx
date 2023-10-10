@@ -20,7 +20,7 @@ function App() {
                 </main>
                 <footer>
                     <InfoSection />
-                    {/* <SocialMediaTile /> */}
+                    <SocialMediaTile />
                     <ValidateBtn />
                 </footer>
             </ValidProvider>

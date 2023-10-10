@@ -1,19 +1,23 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 
 import { socialMediaList } from '../../../socialMediaList';
 import SocialButton from '../../SocialButton/SocialButton';
 import SocialAddButton from '../../SocialAddBtn/SocialAddBtn';
 
 import styles from './SocialMediaTile.module.css';
+import { ValidContext } from '../../../contexts/validContext';
 
 const SocialMediaTile = () => {
-    // * Initialize the useState of social buttons list with the 3 first social medias of socialMediaList
-    const initialSocialButtons = socialMediaList.slice(0, 4);
+    // * Initialize the useState of social buttons list with the 4 first social medias of socialMediaList
+    const initialSocialButtons = socialMediaList.slice(0, 1);
     const [socialBtns, setSocialBtns] = useState(initialSocialButtons);
+    const { isValidated } = useContext(ValidContext);
 
     const handleSubmit = (selectedElement) => {
-        if (selectedElement) {
-            // * Update the list with the selected element got from prop argument {onSubmit}
+        const element = socialBtns.find((el) => el.id === selectedElement.id);
+
+        if (element) {
+            handleDelete(element);
             setSocialBtns((prevBtns) => [...prevBtns, selectedElement]);
         }
     };
@@ -25,20 +29,20 @@ const SocialMediaTile = () => {
 
     return (
         <>
-            <div className={styles.btn_wrapper}>
-                {socialBtns.map((item, index) => (
+            <div className={styles.social_media_tile}>
+                {socialBtns.map((item) => (
                     <SocialButton
                         // * For each element in the list display a SocialButton
-                        key={index}
+                        key={item.id}
                         socialData={item} // * Store element itself in a prop
                         onSubmit={handleSubmit} // * Get the selectedElement as argument of the prop {onSubmit} passed to child
                         onDelete={handleDelete}
                     />
                 ))}
-                <SocialAddButton key={socialBtns.length} className="add_btn" onSubmit={handleSubmit} />
+                {!isValidated && (
+                    <SocialAddButton key={socialBtns.length} className="add_btn" onSubmit={handleSubmit} />
+                )}
             </div>
-            {/* <div className={styles.add_btn_container}>
-            </div> */}
         </>
     );
 };

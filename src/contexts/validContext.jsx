@@ -18,6 +18,6 @@ export const ValidProvider = ({ children }) => {
     return <ValidContext.Provider value={value}>{children}</ValidContext.Provider>;
 };
 
-// ValidProvider.propTypes = {
-//     children: PropTypes.object,
-// };
+ValidProvider.propTypes = {
+    children: PropTypes.array,
+};

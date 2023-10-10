@@ -1,5 +1,3 @@
 style socialModal
 add edit btn on social btn when hover
-move section folder out of component folder
-move tile folder out of component folder
 tiles should not render if empty

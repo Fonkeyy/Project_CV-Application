@@ -6,8 +6,12 @@ import { socialMediaList } from '../../socialMediaList';
 import InputField from '../InputField/InputField';
 import Button from '../Button/Button';
 
+import styles from './SocialModal.module.css';
+
 const SocialModal = ({ onSubmit }) => {
     const [selectedElement, setSelectedElement] = useState(null);
+
+    console.log(selectedElement);
 
     const handleSocialSelect = (event) => {
         // * Get the selected element id from the select list with event.target
@@ -28,36 +32,35 @@ const SocialModal = ({ onSubmit }) => {
     const handleSubmit = () => {
         if (selectedElement?.url) {
             onSubmit(selectedElement);
+        } else {
+            alert('Please enter valid URL before submitting');
         }
     };
 
     // * Render list of social medias with mapping through socialMediaList
     // * When an element is selected render an input text for url
     return (
-        <div className="social-modal">
-            <div className="social-modal-content">
-                <select className="social-list" onChange={handleSocialSelect}>
-                    <option value="">Select a social media platform</option>
-                    {socialMediaList.map((item) => (
-                        <option key={item.id} className={item.id} value={item.id}>
-                            {item.name}
-                        </option>
-                    ))}
-                </select>
-                {selectedElement && (
-                    <div>
-                        <InputField
-                            id={selectedElement.id}
-                            type="url"
-                            placeholder={'Enter the URL'}
-                            value={selectedElement.url || ''}
-                            onChange={handleUrlChange}
-                        />
-
-                        <Button className="submit_btn " onClick={handleSubmit} />
-                    </div>
-                )}
-            </div>
+        <div className={styles.social_modal}>
+            <select onChange={handleSocialSelect}>
+                <option value="">Select a social media platform</option>
+                {socialMediaList.map((item) => (
+                    <option key={item.id} className={item.id} value={item.id}>
+                        {item.name}
+                    </option>
+                ))}
+            </select>
+            {selectedElement && (
+                <div className={styles.url_container}>
+                    <InputField
+                        id={selectedElement.id}
+                        type="url"
+                        placeholder={'Enter the URL'}
+                        value={selectedElement.url || ''}
+                        onChange={handleUrlChange}
+                    />
+                    <Button className="submit_btn " onClick={handleSubmit} />
+                </div>
+            )}
         </div>
     );
 };
