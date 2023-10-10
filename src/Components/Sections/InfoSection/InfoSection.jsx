@@ -42,20 +42,38 @@ const InfoSection = () => {
     // * If is submitted, map through field list and display label + value
     // * When mouse is over display edit button
     // * If not submitted, map through field list and display each field with corresponding props + submit button
+
     return (
         <>
-            {isSubmitted ? (
-                <div
-                    className={`${styles.info_section}  ${styles.info_section_submitted}`}
-                    onMouseEnter={() => {
-                        setIsMouseOver(true);
-                    }}
-                    onMouseLeave={() => {
-                        setIsMouseOver(false);
-                    }}
-                    onClick={() => {
-                        setIsClicked(!isClicked);
-                    }}>
+            {isValidated && (
+                <div className={`${styles.info_section} ${styles.info_section_submitted}`}>
+                    {fields.map((field) => (
+                        <div key={uuidv4()}>
+                            <label>{field.label}</label>
+                            {field.type === 'url' ? (
+                                <a href={`http://${field.value}`} target="_blank" rel="noreferrer">
+                                    {field.value}
+                                </a>
+                            ) : (
+                                <p>{field.value}</p>
+                            )}
+                        </div>
+                    ))}
+                </div>
+            )}
+            {isSubmitted && (
+                <>
+                    <div
+                        className={`${styles.info_section} ${styles.info_section_submitted}`}
+                        onMouseEnter={() => {
+                            setIsMouseOver(true);
+                        }}
+                        onMouseLeave={() => {
+                            setIsMouseOver(false);
+                        }}
+                        onClick={() => {
+                            setIsClicked(!isClicked);
+                        }}></div>
                     {fields.map((field) => (
                         <div key={uuidv4()}>
                             <label>{field.label}</label>
@@ -71,8 +89,9 @@ const InfoSection = () => {
                     {!isValidated && (isMouseOver || isClicked) && (
                         <Button className="edit_btn" onClick={() => setIsSubmitted(false)} />
                     )}
-                </div>
-            ) : (
+                </>
+            )}
+            {!isValidated && !isSubmitted && (
                 <div className={styles.info_section}>
                     {fields.map((field) => (
                         <InfoComponent
@@ -86,7 +105,7 @@ const InfoSection = () => {
                             onDelete={handleDelete}
                         />
                     ))}
-                    {!isValidated && <Button className="submit_btn " onClick={handleSubmit} />}
+                    {!isValidated && <Button className="submit_btn" onClick={handleSubmit} />}
                 </div>
             )}
         </>

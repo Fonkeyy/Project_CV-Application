@@ -1,13 +1,10 @@
 import { useContext, useReducer, useState } from 'react';
 import PropTypes from 'prop-types';
-
 import InputField from '../../InputField/InputField';
 import Button from '../../Button/Button';
 import TileBtnWrapper from '../../TileBtnWrapper/TileBtnWrapper';
-
 import { ValidContext } from '../../../contexts/validContext';
 import { TileComponentInitialState, TileComponentReducer } from '../../../reducers/tileComponentReducer';
-
 import '../Tiles.css';
 
 const TileComponent = ({ onSubmit, onDelete, id, type, tilesContainerRef }) => {
@@ -55,37 +52,28 @@ const TileComponent = ({ onSubmit, onDelete, id, type, tilesContainerRef }) => {
     return (
         <>
             {isValidated && state.value1 && (
-                <div className="tile_submitted_container">
-                    <div className={`${'tile'} ${'tile_submitted'}`}>
-                        <div className="date_wrapper">
-                            <p>{state.value3}</p>
-                            <span>-</span>
-                            <p> {state.value4}</p>
-                        </div>
-                        <div className="value_wrapper">
-                            <p>{state.value1}</p>
-                            <p>{state.value2}</p>
-                        </div>
-                        {isPracticeTile && state.textareaValue && (
-                            <p className="textareaValue">{state.textareaValue}</p>
-                        )}
+                <div className={`${'tile'} ${'tile_submitted'}`}>
+                    <div className="date_wrapper">
+                        <p>{state.value3}</p>
+                        <span>-</span>
+                        <p> {state.value4}</p>
                     </div>
+                    <div className="value_wrapper">
+                        <p>{state.value1}</p>
+                        <p>{state.value2}</p>
+                    </div>
+                    {isPracticeTile && state.textareaValue && (
+                        <p className="textareaValue">{state.textareaValue}</p>
+                    )}
                 </div>
             )}
             {isValidated && !state.value1 && isParentContainerEmpty && <p>Oops it&apos;s empty...</p>}
             <>
                 {!isValidated && state.isSubmitted && (
                     <div
-                        className="tile_submitted_container"
-                        onMouseEnter={() => {
-                            dispatch({ type: 'MOUSE_OVER', payload: true });
-                        }}
-                        onMouseLeave={() => {
-                            dispatch({ type: 'MOUSE_OVER', payload: false });
-                        }}
-                        onClick={() => {
-                            dispatch({ type: 'CLICK', payload: true });
-                        }}>
+                        onMouseEnter={() => dispatch({ type: 'MOUSE_OVER', payload: true })}
+                        onMouseLeave={() => dispatch({ type: 'MOUSE_OVER', payload: false })}
+                        onClick={() => dispatch({ type: 'CLICK', payload: true })}>
                         <div className={`${'tile'} ${'tile_submitted'}`}>
                             <div className="date_wrapper">
                                 <p>{state.value3}</p>

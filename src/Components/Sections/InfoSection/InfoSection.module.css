@@ -16,12 +16,11 @@
 
 @media screen and (min-width: 1000px) {
     .info_section {
+        padding-top: 2rem;
         display: grid;
         width: fit-content;
         column-gap: 1rem;
-        row-gap: 2rem;
-        margin: auto;
-
+        row-gap: 1rem;
         grid-template-columns: repeat(4, 1fr);
     }
 

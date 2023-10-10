@@ -22,8 +22,6 @@ const SectionComponent = ({ type }) => {
 
     const tilesContainerRef = useRef();
 
-    console.log(tilesContainerRef);
-
     const handleOnChildSubmit = (value) => {
         setIsAddBtnNeeded(value);
     };

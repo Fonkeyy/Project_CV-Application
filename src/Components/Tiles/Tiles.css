@@ -1,25 +1,24 @@
+.tiles_container {
+    display: flex;
+    gap: 2rem;
+}
+
 .tile {
     display: flex;
     flex-direction: column;
-    gap: 0.6rem;
     align-items: center;
+    gap: 0.6rem;
 
     background-color: rgb(245, 245, 245);
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    padding: 1rem;
     border-radius: 8px;
+    width: clamp(100px, 40vw, 300px);
+    padding: 1.5rem;
 }
 
 .tile input,
 textarea {
-    width: clamp(100px, 40vw, 300px);
-}
-
-.tile_submitted_container {
-    display: flex;
-    flex-direction: column;
-    place-items: center;
-    gap: 1rem;
+    width: 100%;
 }
 
 .tile_submitted {
@@ -58,6 +57,7 @@ textarea {
     .tile {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
+        width: 100%;
     }
 
     .tile textarea {
