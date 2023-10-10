@@ -11,8 +11,6 @@ import styles from './SocialModal.module.css';
 const SocialModal = ({ onSubmit }) => {
     const [selectedElement, setSelectedElement] = useState(null);
 
-    console.log(selectedElement);
-
     const handleSocialSelect = (event) => {
         // * Get the selected element id from the select list with event.target
         const selectedElementId = event.target.value;

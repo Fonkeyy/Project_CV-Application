@@ -1,18 +1,28 @@
-import { useState } from 'react';
+import { useContext, useRef, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import PropTypes from 'prop-types';
 
 import Button from '../../Button/Button';
+import TileComponent from '../../Tiles/TileComponent/TileComponent';
 
 import { ValidContext } from '../../../contexts/validContext';
 
 import '../../Tiles/Tiles.css';
-import { useContext } from 'react';
 
-const SectionComponent = ({ TileComponent }) => {
-    const [tiles, setTiles] = useState([]);
+const SectionComponent = ({ type }) => {
+    const initialTile = {
+        key: uuidv4(),
+        id: uuidv4(),
+        type: type,
+    };
+
+    const [tiles, setTiles] = useState([initialTile]);
     const [isAddBtnNeeded, setIsAddBtnNeeded] = useState(false);
     const { isValidated } = useContext(ValidContext);
+
+    const tilesContainerRef = useRef();
+
+    console.log(tilesContainerRef);
 
     const handleOnChildSubmit = (value) => {
         setIsAddBtnNeeded(value);
@@ -28,46 +38,40 @@ const SectionComponent = ({ TileComponent }) => {
     const handleAddBtn = () => {
         setTiles((prevTiles) => [
             ...prevTiles,
-            <TileComponent
-                key={uuidv4()}
-                id={uuidv4()}
-                onSubmit={handleOnChildSubmit}
-                onDelete={handleDelete}
-            />,
+            {
+                key: uuidv4(),
+                id: uuidv4(),
+                type: type,
+                tilesContainerRef: tilesContainerRef,
+            },
         ]);
         setIsAddBtnNeeded(false);
     };
-
-    // * Initialize the first TileComponent
-    if (tiles.length === 0) {
-        setTiles([
-            <TileComponent
-                key={uuidv4()}
-                id={uuidv4()}
-                onSubmit={handleOnChildSubmit}
-                onDelete={handleDelete}
-            />,
-        ]);
-    }
 
     // * Create Section and map through array of tiles to render them
     // * Display AddBtn when needed
     return (
         <>
-            {tiles.map((tile) => {
-                return (
-                    <div key={tile.key} className="tiles_container">
-                        {tile}
-                    </div>
-                );
-            })}
+            <div className="tiles_container" ref={tilesContainerRef}>
+                {tiles.map((tile) => {
+                    return (
+                        <TileComponent
+                            key={tile.key}
+                            id={tile.id}
+                            onSubmit={handleOnChildSubmit}
+                            onDelete={handleDelete}
+                            type={tile.type}
+                            tilesContainerRef={tilesContainerRef}></TileComponent>
+                    );
+                })}
+            </div>
             {isAddBtnNeeded && !isValidated && <Button className="add_btn" onClick={handleAddBtn} />}
         </>
     );
 };
 
 SectionComponent.propTypes = {
-    TileComponent: PropTypes.func.isRequired,
+    type: PropTypes.string.isRequired,
 };
 
 export default SectionComponent;

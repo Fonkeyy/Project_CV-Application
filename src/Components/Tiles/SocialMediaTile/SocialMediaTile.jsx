@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useState } from 'react';
 
 import { socialMediaList } from '../../../socialMediaList';
 import SocialButton from '../../SocialMedia/SocialMedia';
@@ -12,10 +12,6 @@ const SocialMediaTile = () => {
     const initialSocialButtons = socialMediaList.slice(0, 1);
     const [socialBtns, setSocialBtns] = useState(initialSocialButtons);
     const { isValidated } = useContext(ValidContext);
-
-    useEffect(() => {
-        console.log(socialBtns);
-    }, [socialBtns]);
 
     const handleSubmit = (selectedElement) => {
         const element = socialBtns.find((el) => el.id === selectedElement.id);
