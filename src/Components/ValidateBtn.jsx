@@ -1,5 +1,5 @@
-import { ValidContext } from '../contexts/validContext';
 import { useContext } from 'react';
+import { ValidContext } from '../contexts/validContext';
 
 const ValidateBtn = () => {
     const { isValidated, toggleValid } = useContext(ValidContext);

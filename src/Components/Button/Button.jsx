@@ -1,9 +1,13 @@
-/* eslint-disable react/prop-types */
-
+import PropTypes from 'prop-types';
 import './Button.css';
 
-const Button = (props) => {
-    return <button className={props.className} onClick={props.onClick}></button>;
+const Button = ({ className, onClick }) => {
+    return <button className={className} onClick={onClick}></button>;
+};
+
+Button.propTypes = {
+    className: PropTypes.string.isRequired,
+    onClick: PropTypes.func,
 };
 
 export default Button;

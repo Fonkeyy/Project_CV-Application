@@ -1,9 +1,7 @@
 import { useContext, useState } from 'react';
-
 import { socialMediaList } from '../../../socialMediaList';
 import SocialButton from '../../SocialMedia/SocialMedia';
 import SocialAddButton from '../../SocialAddBtn/SocialAddBtn';
-
 import styles from './SocialMediaTile.module.css';
 import { ValidContext } from '../../../contexts/validContext';
 

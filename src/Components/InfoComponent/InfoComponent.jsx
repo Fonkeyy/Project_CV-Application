@@ -1,11 +1,9 @@
 import PropTypes from 'prop-types';
-
 import InputField from '../InputField/InputField';
 import Button from '../Button/Button';
-
 import styles from './InfoComponent.module.css';
 
-function InfoComponent(props) {
+const InfoComponent = (props) => {
     return (
         <div className={styles.info_component_container}>
             <label htmlFor={props.id}>{props.label} : </label>
@@ -25,7 +23,7 @@ function InfoComponent(props) {
             />
         </div>
     );
-}
+};
 
 InfoComponent.propTypes = {
     label: PropTypes.string.isRequired,

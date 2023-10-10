@@ -1,12 +1,9 @@
 import { useContext, useRef, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import PropTypes from 'prop-types';
-
 import Button from '../../Button/Button';
 import TileComponent from '../../Tiles/TileComponent/TileComponent';
-
 import { ValidContext } from '../../../contexts/validContext';
-
 import '../../Tiles/Tiles.css';
 
 const SectionComponent = ({ type }) => {

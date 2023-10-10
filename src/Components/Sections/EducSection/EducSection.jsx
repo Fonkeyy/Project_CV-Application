@@ -1,7 +1,5 @@
 import SectionComponent from '../SectionComponent/SectionComponent';
 
-import './EducSection.css';
-
 const EducSection = () => {
     return (
         <section>

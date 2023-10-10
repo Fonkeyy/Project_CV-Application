@@ -1,8 +1,6 @@
 import { useState } from 'react';
-
 import Button from '../Button/Button';
 import InputField from '../InputField/InputField';
-
 import styles from './ContactForm.module.css';
 
 const initialFields = [

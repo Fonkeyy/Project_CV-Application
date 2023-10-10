@@ -1,16 +1,13 @@
 import { useContext, useState } from 'react';
 import PropTypes from 'prop-types';
-
 import InputField from '../InputField/InputField';
 import Button from '../Button/Button';
-
 import '../Button/Button.css';
 import styles from '../Tiles/SocialMediaTile/SocialMediaTile.module.css';
 
 import { ValidContext } from '../../contexts/validContext';
 
 const SocialButton = ({ socialData, onSubmit, onDelete, submitted }) => {
-    // const [element, setElement] = useState(socialData);
     const { isValidated } = useContext(ValidContext);
     const [url, setUrl] = useState('');
     const [isSubmitted, setIsSubmitted] = useState(submitted);
@@ -23,7 +20,6 @@ const SocialButton = ({ socialData, onSubmit, onDelete, submitted }) => {
     const handleDelete = () => {
         // * Send element to parent component through prop {onDelete}
         onDelete(socialData);
-        // setElement(null);
     };
 
     const handleSubmit = () => {

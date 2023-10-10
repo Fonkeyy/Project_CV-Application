@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-function InputField(props) {
+const InputField = (props) => {
     return (
         <>
             <label htmlFor={props.id}>{props.id}</label>
@@ -14,7 +14,7 @@ function InputField(props) {
             />
         </>
     );
-}
+};
 
 InputField.propTypes = {
     id: PropTypes.string,

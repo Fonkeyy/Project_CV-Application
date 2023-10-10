@@ -1,11 +1,8 @@
-// eslint-disable-next-line no-unused-vars
-import React, { useState } from 'react';
+import { useState } from 'react';
 import PropTypes from 'prop-types';
-
 import { socialMediaList } from '../../socialMediaList';
 import InputField from '../InputField/InputField';
 import Button from '../Button/Button';
-
 import styles from './SocialModal.module.css';
 
 const SocialModal = ({ onSubmit }) => {

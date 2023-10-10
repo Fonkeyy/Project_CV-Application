@@ -1,11 +1,8 @@
 import { useContext, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-
 import InfoComponent from '../../InfoComponent/InfoComponent';
 import Button from '../../Button/Button';
-
 import { ValidContext } from '../../../contexts/validContext';
-
 import styles from './InfoSection.module.css';
 
 const initialFields = [

@@ -1,5 +1,4 @@
 import SectionComponent from '../SectionComponent/SectionComponent';
-
 import '../../../index.css';
 
 const PracticeSection = () => {

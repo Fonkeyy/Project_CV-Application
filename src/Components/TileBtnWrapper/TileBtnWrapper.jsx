@@ -1,7 +1,5 @@
 import PropTypes from 'prop-types';
-
 import Button from '../Button/Button';
-
 import styles from './TileBtnWrapper.module.css';
 // * Display an edit and a delete buttons with click handle by parent component
 function TileBtnWrapper({ id, handleEdit, onDelete }) {

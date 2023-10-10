@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
-
 import Button from '../Button/Button';
-
 import styles from '../Sections/HeaderSection/HeaderSection.module.css';
 
 const HeaderComponent = ({ id, inputClassName, placeholder }) => {

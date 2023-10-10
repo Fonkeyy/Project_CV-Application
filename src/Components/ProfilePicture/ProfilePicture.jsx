@@ -1,8 +1,5 @@
-// eslint-disable-next-line no-unused-vars
-import React, { useState } from 'react';
-
+import { useState } from 'react';
 import Button from '../Button/Button';
-
 import styles from './ProfilePicture.module.css';
 
 const ProfilePicture = () => {
