@@ -1,8 +1,8 @@
 import { useContext, useState } from 'react';
 import PropTypes from 'prop-types';
 import Button from '../Button/Button';
-import styles from '../Sections/HeaderSection/HeaderSection.module.css';
 import { ValidContext } from '../../contexts/validContext';
+import styles from '../Sections/HeaderSection/HeaderSection.module.css';
 
 const HeaderComponent = ({ id, inputClassName, placeholder }) => {
     const [inputValue, setInputValue] = useState('');
@@ -46,7 +46,7 @@ const HeaderComponent = ({ id, inputClassName, placeholder }) => {
                 <>
                     <p className={inputClassName}>{inputValue}</p>
                     {(isMouseOver || isClicked) && !isValidated && (
-                        <Button className="edit_btn" onClick={handleEdit} />
+                        <Button className="edit_btn edit_white" onClick={handleEdit} />
                     )}
                 </>
             ) : (

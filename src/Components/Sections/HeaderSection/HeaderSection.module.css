@@ -26,24 +26,21 @@ header {
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: center;
+    gap: 2rem;
 }
-
-/* .header_component button {
-    position: absolute;
-    right: 0;
-} */
 
 .input_text {
     background: transparent;
     border: none;
     text-align: center;
+    padding: 0;
+    width: fit-content;
+    margin: auto;
 }
 
 .full_name {
     color: white;
-    /* font-size: 2rem; */
-    font-size: clamp(35px, 6vw, 45px);
+    font-size: clamp(25px, 6vw, 40px);
 }
 
 .full_name::placeholder {
@@ -52,7 +49,7 @@ header {
 
 .title {
     color: var(--grey-btn);
-    font-size: clamp(25px, 6vw, 30px);
+    font-size: clamp(15px, 4vw, 25px);
 }
 
 .title::placeholder {

@@ -6,7 +6,7 @@
     width: clamp(100px, 40vw, 300px);
 }
 
-.info_section button {
+.info_section > button:last-of-type {
     margin-top: 1rem;
 }
 
