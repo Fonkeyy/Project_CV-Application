@@ -7,6 +7,7 @@ const HeaderComponent = ({ id, inputClassName, placeholder }) => {
     const [inputValue, setInputValue] = useState('');
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [isMouseOver, setIsMouseOver] = useState(false);
+    const [isClicked, setIsClicked] = useState(false);
 
     // * On input change set new state value
     const handleInputChange = (event) => {
@@ -24,17 +25,25 @@ const HeaderComponent = ({ id, inputClassName, placeholder }) => {
         setIsSubmitted(false);
     };
 
+    const handleOnKeyDown = (e) => {
+        if (e.key === ' ' || e.key === 'Enter') {
+            setIsClicked(!isClicked);
+        }
+    };
+
     // * If isSubmitted show input value and show edit button on mouse over
     // * If not show input field with submit button
     return (
         <div
             className={styles.header_component}
             onMouseEnter={() => setIsMouseOver(true)}
-            onMouseLeave={() => setIsMouseOver(false)}>
+            onMouseLeave={() => setIsMouseOver(false)}
+            onClick={() => setIsClicked(!isClicked)}
+            onKeyDown={handleOnKeyDown}>
             {isSubmitted ? (
                 <>
-                    <div className={styles.header_text}>{inputValue}</div>
-                    {isMouseOver && <Button className={styles.edit_btn} onClick={handleEdit} />}
+                    <p className={inputClassName}>{inputValue}</p>
+                    {(isMouseOver || isClicked) && <Button className="edit_btn" onClick={handleEdit} />}
                 </>
             ) : (
                 <>

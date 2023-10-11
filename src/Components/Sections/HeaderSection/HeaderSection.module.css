@@ -35,10 +35,10 @@ header::before {
     justify-content: center;
 }
 
-.header_component button {
+/* .header_component button {
     position: absolute;
     right: 0;
-}
+} */
 
 .input_text {
     background: transparent;
@@ -48,8 +48,10 @@ header::before {
 
 .full_name {
     color: white;
-    font-size: clamp(35px, 8vw, 50px);
+    /* font-size: 2rem; */
+    font-size: clamp(35px, 6vw, 45px);
 }
+
 .full_name::placeholder {
     color: white;
 }
