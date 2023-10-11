@@ -20,11 +20,11 @@
     outline: 10px solid var(--bg-color);
 }
 
-.add_profile_picture {
+.edit_image_btn {
     position: absolute;
     width: 40px;
     height: 40px;
-    bottom: calc(50% - 20px);
+    bottom: 50%;
     left: calc(50% - 20px);
     border: 2px solid var(--bg-color);
     background: center no-repeat url('../../assets/SVG//buttons/editPicture.svg');
@@ -32,7 +32,7 @@
     transition: scale 0.1s ease-in-out;
 }
 
-.add_profile_picture:hover {
+.edit_image_btn:hover {
     scale: 1.1;
     transition: scale 0.1s ease-in-out;
 }

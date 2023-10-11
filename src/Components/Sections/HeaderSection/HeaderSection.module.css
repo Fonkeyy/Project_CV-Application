@@ -1,24 +1,18 @@
 header {
     position: relative;
     height: 70vh;
+    width: 100vw;
     display: flex;
     place-content: center;
     place-items: center;
     margin-bottom: calc(var(--pp-size) / 1.6);
 }
 
-header::before {
+.header_background {
     content: '';
     position: absolute;
-    background-image: url(https://images.unsplash.com/photo-1508830524289-0adcbe822b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2025&q=80);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
     height: 70vh;
     width: 100vw;
-    z-index: -1;
-    opacity: 0.9;
     filter: blur(3px);
 }
 
@@ -63,4 +57,32 @@ header::before {
 
 .title::placeholder {
     color: var(--grey-btn);
+}
+
+.edit_wrapper {
+    display: flex;
+    place-items: center;
+    gap: 1rem;
+
+    position: absolute;
+    top: 10px;
+}
+
+.edit_wrapper p {
+    color: white;
+}
+
+input[type='file'] {
+    z-index: 1;
+    position: absolute;
+    top: 45px;
+    background: transparent;
+    color: var(--grey-btn);
+}
+
+input[type='file']::file-selector-button {
+    background: transparent;
+    color: white;
+    border: 1px solid var(--grey-btn);
+    border-radius: 5px;
 }

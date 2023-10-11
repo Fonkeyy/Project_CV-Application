@@ -27,6 +27,10 @@
     transition: scale 0.1s ease-in-out;
 }
 
+.edit_white {
+    background: center no-repeat url('../../assets/SVG//buttons/editPicture.svg');
+}
+
 .add_btn {
     background: center url('../../assets/SVG/buttons/add.svg');
     width: 25px;

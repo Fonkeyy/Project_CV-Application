@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import Button from '../Button/Button';
+import { ValidContext } from '../../contexts/validContext';
 import styles from './ProfilePicture.module.css';
 
 const ProfilePicture = () => {
@@ -9,6 +10,7 @@ const ProfilePicture = () => {
     const [isMouseOver, setIsMouseOver] = useState(false);
     const [isClicked, setIsClicked] = useState(false);
     const [isEditClick, setIsEditClick] = useState(false);
+    const { isValidated } = useContext(ValidContext);
 
     const handleEdit = () => {
         setIsEditClick(!isEditClick);
@@ -40,11 +42,11 @@ const ProfilePicture = () => {
             onClick={() => setIsClicked(!isClicked)}
             onKeyDown={handleOnKeyDown}>
             <div id={styles.profile_picture} style={{ backgroundImage: `url(${url})` }}></div>
-            {(isMouseOver || isClicked) && url && (
-                <Button className={`${'edit_btn'} ${styles.add_profile_picture}`} onClick={handleEdit} />
+            {(isMouseOver || isClicked) && url && !isValidated && (
+                <Button className={`${'edit_btn'} ${styles.edit_image_btn}`} onClick={handleEdit} />
             )}
-            {(isMouseOver || isClicked) && !url && (
-                <Button className={`${'add_btn'} ${styles.add_profile_picture}`} onClick={handleEdit} />
+            {(isMouseOver || isClicked) && !url && !isValidated && (
+                <Button className={`${'add_btn'} edit_image_btn`} onClick={handleEdit} />
             )}
             {isEditClick && <input type="file" onChange={handleFileChange} />}
         </div>

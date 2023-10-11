@@ -1,13 +1,15 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import PropTypes from 'prop-types';
 import Button from '../Button/Button';
 import styles from '../Sections/HeaderSection/HeaderSection.module.css';
+import { ValidContext } from '../../contexts/validContext';
 
 const HeaderComponent = ({ id, inputClassName, placeholder }) => {
     const [inputValue, setInputValue] = useState('');
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [isMouseOver, setIsMouseOver] = useState(false);
     const [isClicked, setIsClicked] = useState(false);
+    const { isValidated } = useContext(ValidContext);
 
     // * On input change set new state value
     const handleInputChange = (event) => {
@@ -43,7 +45,9 @@ const HeaderComponent = ({ id, inputClassName, placeholder }) => {
             {isSubmitted ? (
                 <>
                     <p className={inputClassName}>{inputValue}</p>
-                    {(isMouseOver || isClicked) && <Button className="edit_btn" onClick={handleEdit} />}
+                    {(isMouseOver || isClicked) && !isValidated && (
+                        <Button className="edit_btn" onClick={handleEdit} />
+                    )}
                 </>
             ) : (
                 <>
@@ -57,7 +61,7 @@ const HeaderComponent = ({ id, inputClassName, placeholder }) => {
                         value={inputValue}
                         onChange={handleInputChange}></input>
 
-                    <Button className="submit_btn " onClick={handleSubmit} />
+                    {!isValidated && <Button className="submit_btn " onClick={handleSubmit} />}
                 </>
             )}
         </div>

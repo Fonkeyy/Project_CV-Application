@@ -1,17 +1,19 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import HeaderComponent from '../../HeaderComponent/HeaderComponent';
 import ProfilePicture from '../../ProfilePicture/ProfilePicture';
 
 import styles from './HeaderSection.module.css';
 import Button from '../../Button/Button';
+import { ValidContext } from '../../../contexts/validContext';
 
 const HeaderSection = () => {
     const [url, setUrl] = useState(
-        'https://www.perfocal.com/blog/content/images/size/w960/2021/01/Perfocal_17-11-2019_TYWFAQ_100_standard-3.jpg'
+        'https://images.unsplash.com/photo-1508830524289-0adcbe822b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2025&q=80'
     );
     const [isMouseOver, setIsMouseOver] = useState(false);
     const [isClicked, setIsClicked] = useState(false);
     const [isEditClick, setIsEditClick] = useState(false);
+    const { isValidated } = useContext(ValidContext);
 
     const handleEdit = () => {
         setIsEditClick(!isEditClick);
@@ -32,13 +34,23 @@ const HeaderSection = () => {
     };
 
     return (
-        <header
-            style={{ backgroundImage: `url(${url})` }}
-            tabIndex={0}
-            onMouseEnter={() => setIsMouseOver(!isMouseOver)}
-            onMouseLeave={() => setIsMouseOver(!isMouseOver)}
-            onClick={() => setIsClicked(!isClicked)}
-            onKeyDown={handleOnKeyDown}>
+        <header>
+            <div
+                className={styles.header_background}
+                style={{
+                    backgroundImage: `url(${url})`,
+                    backgroundSize: 'cover',
+                    backgroundRepeat: 'no-repeat',
+                    backgroundPosition: 'center',
+                    backgroundAttachment: 'fixed',
+                    width: '100vw',
+                    height: '70vh',
+                }}
+                tabIndex={0}
+                onMouseEnter={() => setIsMouseOver(!isMouseOver)}
+                onMouseLeave={() => setIsMouseOver(!isMouseOver)}
+                onClick={() => setIsClicked(!isClicked)}
+                onKeyDown={handleOnKeyDown}></div>
             <div className={styles.header_content}>
                 <HeaderComponent
                     id="full_name"
@@ -52,8 +64,11 @@ const HeaderSection = () => {
                 />
             </div>
             <ProfilePicture />
-            {(isMouseOver || isClicked) && url && (
-                <Button className={`${'edit_btn'} ${styles.add_profile_picture}`} onClick={handleEdit} />
+            {(isMouseOver || isClicked) && url && !isValidated && (
+                <div className={styles.edit_wrapper}>
+                    <p>Edit Background:</p>
+                    <Button className={`${'edit_btn'} ${'edit_white'}`} onClick={handleEdit} />
+                </div>
             )}
             {isEditClick && <input type="file" onChange={handleFileChange} />}
         </header>
