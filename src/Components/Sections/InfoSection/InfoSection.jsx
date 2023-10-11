@@ -70,55 +70,6 @@ const InfoSection = () => {
 
     return (
         <>
-            {isValidated && (
-                <div className={`${styles.info_section} ${styles.info_section_submitted}`}>
-                    {fields.map((field, index) => (
-                        <div key={index}>
-                            <span className={`'styles.'${field.className}}`}></span>
-                            <div key={uuidv4()}>
-                                <label>{field.label}</label>
-                                {field.type === 'url' ? (
-                                    <a href={`http://${field.value}`} target="_blank" rel="noreferrer">
-                                        {field.value}
-                                    </a>
-                                ) : (
-                                    <p>{field.value}</p>
-                                )}
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            )}
-            {isSubmitted && (
-                <>
-                    <div
-                        className={`${styles.info_section} ${styles.info_section_submitted}`}
-                        onMouseEnter={() => {
-                            setIsMouseOver(true);
-                        }}
-                        onMouseLeave={() => {
-                            setIsMouseOver(false);
-                        }}
-                        onClick={() => {
-                            setIsClicked(!isClicked);
-                        }}></div>
-                    {fields.map((field) => (
-                        <div key={uuidv4()}>
-                            <label>{field.label}</label>
-                            {field.type === 'url' ? (
-                                <a href={`http://${field.value}`} target="_blank" rel="noreferrer">
-                                    {field.value}
-                                </a>
-                            ) : (
-                                <p>{field.value}</p>
-                            )}
-                        </div>
-                    ))}
-                    {!isValidated && (isMouseOver || isClicked) && (
-                        <Button className="edit_btn" onClick={() => setIsSubmitted(false)} />
-                    )}
-                </>
-            )}
             {!isValidated && !isSubmitted && (
                 <div className={styles.info_section}>
                     {fields.map((field) => (
@@ -135,6 +86,56 @@ const InfoSection = () => {
                         />
                     ))}
                     {!isValidated && <Button className="submit_btn" onClick={handleSubmit} />}
+                </div>
+            )}
+            {isSubmitted && (
+                <>
+                    <div
+                        className={`${styles.info_section} ${styles.info_section_submitted}`}
+                        onMouseEnter={() => {
+                            setIsMouseOver(true);
+                        }}
+                        onMouseLeave={() => {
+                            setIsMouseOver(false);
+                        }}
+                        onClick={() => {
+                            setIsClicked(!isClicked);
+                        }}>
+                        {fields.map((field) => (
+                            <div key={uuidv4()}>
+                                <label>{field.label}</label>
+                                {field.type === 'url' ? (
+                                    <a href={`http://${field.value}`} target="_blank" rel="noreferrer">
+                                        {field.value}
+                                    </a>
+                                ) : (
+                                    <p>{field.value}</p>
+                                )}
+                            </div>
+                        ))}
+                        {!isValidated && (isMouseOver || isClicked) && (
+                            <Button className="edit_btn" onClick={() => setIsSubmitted(!isSubmitted)} />
+                        )}
+                    </div>
+                </>
+            )}
+            {isValidated && (
+                <div className={`${styles.info_section} ${styles.info_section_submitted}`}>
+                    {fields.map((field) => (
+                        <>
+                            <span className={`'styles.'${field.className}}`}></span>
+                            <div key={uuidv4()}>
+                                <label>{field.label}</label>
+                                {field.type === 'url' ? (
+                                    <a href={`http://${field.value}`} target="_blank" rel="noreferrer">
+                                        {field.value}
+                                    </a>
+                                ) : (
+                                    <p>{field.value}</p>
+                                )}
+                            </div>
+                        </>
+                    ))}
                 </div>
             )}
         </>

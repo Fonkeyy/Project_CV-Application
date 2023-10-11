@@ -1,11 +1,26 @@
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 import InputField from '../InputField/InputField';
 import Button from '../Button/Button';
 import styles from './InfoComponent.module.css';
 
 const InfoComponent = (props) => {
+    const [isMouseOver, setIsMouseOver] = useState(false);
+    const [isClicked, setIsClicked] = useState(false);
+
+    const handleOnKeyDown = (e) => {
+        if (e.key === 'enter' || e.key === ' ') {
+            setIsClicked(true);
+        }
+    };
     return (
-        <div className={styles.info_component_container}>
+        <div
+            tabIndex={0}
+            className={styles.info_component_container}
+            onMouseEnter={() => setIsMouseOver(true)}
+            onMouseLeave={() => setIsMouseOver(false)}
+            onClick={() => setIsClicked(!isClicked)}
+            onKeyDown={() => handleOnKeyDown}>
             <div className={`${styles[props.className]}`}></div>
             <InputField
                 id={props.id}
@@ -15,12 +30,14 @@ const InfoComponent = (props) => {
                 value={props.value}
                 onChange={props.onChange}
             />
-            <Button
-                className="delete_btn"
-                onClick={() => {
-                    props.onDelete(props.id);
-                }}
-            />
+            {(isMouseOver || isClicked) && (
+                <Button
+                    className="delete_btn"
+                    onClick={() => {
+                        props.onDelete(props.id);
+                    }}
+                />
+            )}
         </div>
     );
 };

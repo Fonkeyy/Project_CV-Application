@@ -1,3 +1,5 @@
 reduce width name header
-change logic display from infoSection to InfoComponent?
 add reducer for profile picture and header background?
+change font header
+center submit btn in educ tile/ practice tile
+add margin between practice section /header
