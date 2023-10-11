@@ -17,8 +17,12 @@
 }
 
 .tile input,
-textarea {
+.tile textarea {
     width: 100%;
+}
+
+.tile button {
+    margin-top: 1rem;
 }
 
 .tile_submitted {

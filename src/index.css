@@ -29,7 +29,7 @@ main {
     flex-direction: column;
     place-items: center;
     place-content: center;
-    gap: 2rem;
+    gap: 1rem;
 }
 
 section {
@@ -42,7 +42,7 @@ section {
     box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
 
     width: 80vw;
-    padding: 0rem 2rem 2rem;
+    padding: 2rem 2rem;
 }
 
 button {
@@ -88,6 +88,6 @@ footer {
 
 @media screen and (min-width: 1000px) {
     section {
-        padding: 0rem 3rem 3rem;
+        padding: 3rem 3rem;
     }
 }

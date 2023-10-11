@@ -6,6 +6,10 @@
     width: clamp(100px, 40vw, 300px);
 }
 
+.info_section button {
+    margin-top: 1rem;
+}
+
 .info_section_submitted {
     gap: 0.8rem;
 }
