@@ -1,4 +1,5 @@
 .info_component_container {
+    position: relative;
     display: flex;
     gap: 0.5rem;
     place-items: center;
