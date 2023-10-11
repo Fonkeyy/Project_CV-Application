@@ -6,7 +6,7 @@ import styles from './InfoComponent.module.css';
 const InfoComponent = (props) => {
     return (
         <div className={styles.info_component_container}>
-            <label htmlFor={props.id}>{props.label} : </label>
+            <div className={`${styles[props.className]}`}></div>
             <InputField
                 id={props.id}
                 className={props.className}

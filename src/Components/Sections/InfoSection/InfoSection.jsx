@@ -22,9 +22,22 @@ const initialFields = [
         className: 'email',
         value: '',
     },
-    { id: 'city', label: 'City', type: 'city', placeholder: 'Enter your city', className: 'city', value: '' },
-    { id: 'github', label: 'Github', type: 'url', placeholder: 'Enter your Github', value: '' },
-    { id: 'website', label: 'Website', type: 'url', placeholder: 'Enter your website', value: '' },
+    {
+        id: 'city',
+        label: 'City',
+        type: 'city',
+        placeholder: 'Enter your city',
+        className: 'location',
+        value: '',
+    },
+    {
+        id: 'website',
+        label: 'Website',
+        type: 'url',
+        placeholder: 'Enter your website',
+        className: 'website',
+        value: '',
+    },
 ];
 
 const InfoSection = () => {
@@ -115,6 +128,7 @@ const InfoSection = () => {
                             id={field.id}
                             inputType={field.type}
                             placeholder={field.placeholder}
+                            className={field.className}
                             value={field.value}
                             onChange={handleChange}
                             onDelete={handleDelete}
