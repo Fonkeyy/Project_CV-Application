@@ -61,7 +61,7 @@ const HeaderComponent = ({ id, inputClassName, placeholder }) => {
                         value={inputValue}
                         onChange={handleInputChange}></input>
 
-                    {!isValidated && <Button className="submit_btn " onClick={handleSubmit} />}
+                    {!isValidated && <Button className="submit_btn submit_white " onClick={handleSubmit} />}
                 </>
             )}
         </div>
