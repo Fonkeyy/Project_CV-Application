@@ -1,12 +1,15 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import PropTypes from 'prop-types';
 import Button from '../Button/Button';
+import { ValidContext } from '../../contexts/validContext';
 import styles from '../Sections/HeaderSection/HeaderSection.module.css';
 
 const HeaderComponent = ({ id, inputClassName, placeholder }) => {
     const [inputValue, setInputValue] = useState('');
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [isMouseOver, setIsMouseOver] = useState(false);
+    const [isClicked, setIsClicked] = useState(false);
+    const { isValidated } = useContext(ValidContext);
 
     // * On input change set new state value
     const handleInputChange = (event) => {
@@ -24,17 +27,27 @@ const HeaderComponent = ({ id, inputClassName, placeholder }) => {
         setIsSubmitted(false);
     };
 
+    const handleOnKeyDown = (e) => {
+        if (e.key === ' ' || e.key === 'Enter') {
+            setIsClicked(!isClicked);
+        }
+    };
+
     // * If isSubmitted show input value and show edit button on mouse over
     // * If not show input field with submit button
     return (
         <div
             className={styles.header_component}
             onMouseEnter={() => setIsMouseOver(true)}
-            onMouseLeave={() => setIsMouseOver(false)}>
+            onMouseLeave={() => setIsMouseOver(false)}
+            onClick={() => setIsClicked(!isClicked)}
+            onKeyDown={handleOnKeyDown}>
             {isSubmitted ? (
                 <>
-                    <div className={styles.header_text}>{inputValue}</div>
-                    {isMouseOver && <Button className={styles.edit_btn} onClick={handleEdit} />}
+                    <p className={inputClassName}>{inputValue}</p>
+                    {(isMouseOver || isClicked) && !isValidated && (
+                        <Button className="edit_btn edit_white" onClick={handleEdit} />
+                    )}
                 </>
             ) : (
                 <>
@@ -48,7 +61,7 @@ const HeaderComponent = ({ id, inputClassName, placeholder }) => {
                         value={inputValue}
                         onChange={handleInputChange}></input>
 
-                    <Button className="submit_btn " onClick={handleSubmit} />
+                    {!isValidated && <Button className="submit_btn submit_white " onClick={handleSubmit} />}
                 </>
             )}
         </div>

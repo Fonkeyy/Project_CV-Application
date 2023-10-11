@@ -31,10 +31,6 @@
     }
 
     .input_wrapper {
-        gap: 2rem;
-    }
-
-    .btn_wrapper {
         gap: 1rem;
     }
 }

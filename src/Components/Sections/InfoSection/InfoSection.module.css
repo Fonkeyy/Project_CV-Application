@@ -2,8 +2,12 @@
     display: flex;
     flex-direction: column;
     place-items: center;
-    place-content: center;
     gap: 0.5rem;
+    width: clamp(100px, 40vw, 300px);
+}
+
+.info_section > button:last-of-type {
+    margin-top: 1rem;
 }
 
 .info_section_submitted {
@@ -11,7 +15,7 @@
 }
 
 .info_section input {
-    width: clamp(100px, 40vw, 300px);
+    width: clamp(100px, 35vw, 250px);
 }
 
 .tel {

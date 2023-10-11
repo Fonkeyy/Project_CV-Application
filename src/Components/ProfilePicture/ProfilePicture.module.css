@@ -1,13 +1,8 @@
 #profile_picture_container {
     position: absolute;
-    width: var(--pp-size);
     height: calc(var(--pp-size) + 3rem);
     background-color: transparent;
     bottom: calc(0px - calc(var(--pp-size) + 6rem) / 2);
-    left: calc(50% - calc(var(--pp-size) / 2));
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
 }
 
 #profile_picture {
@@ -20,11 +15,11 @@
     outline: 10px solid var(--bg-color);
 }
 
-.add_profile_picture {
+.edit_image_btn {
     position: absolute;
     width: 40px;
     height: 40px;
-    bottom: calc(50% - 20px);
+    bottom: 50%;
     left: calc(50% - 20px);
     border: 2px solid var(--bg-color);
     background: center no-repeat url('../../assets/SVG//buttons/editPicture.svg');
@@ -32,7 +27,7 @@
     transition: scale 0.1s ease-in-out;
 }
 
-.add_profile_picture:hover {
+.edit_image_btn:hover {
     scale: 1.1;
     transition: scale 0.1s ease-in-out;
 }

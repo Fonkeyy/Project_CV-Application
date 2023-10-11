@@ -2,7 +2,7 @@
     background: center url('../../assets/SVG/buttons/check.svg');
     width: 25px;
     height: 25px;
-    border: 2px solid var(--grey-btn);
+    border: 2px solid var(--primary-text-color);
     scale: 1;
     transition: background-image 0.1s ease-in-out, border 0.1s ease-in-out, scale 0.1s ease-in-out;
 }
@@ -12,6 +12,11 @@
     border: 2px solid var(--green-btn);
     scale: 1.05;
     transition: background-image 0.1s ease-in-out, border 0.1s ease-in-out, scale 0.1s ease-in-out;
+}
+
+.submit_white {
+    background: center url('../../assets/SVG/buttons/submitWhite.svg');
+    border: 2px solid white;
 }
 
 .edit_btn {
@@ -27,11 +32,15 @@
     transition: scale 0.1s ease-in-out;
 }
 
+.edit_white {
+    background: center no-repeat url('../../assets/SVG//buttons/editPicture.svg');
+}
+
 .add_btn {
     background: center url('../../assets/SVG/buttons/add.svg');
     width: 25px;
     height: 25px;
-    border: 1px solid var(--grey-btn);
+    border: 1px solid var(--primary-text-color);
     scale: 1;
     transition: scale 0.1s ease-in-out;
 }
@@ -42,6 +51,9 @@
 }
 
 .delete_btn {
+    /* ! see if need to add another container so the icon stay clickable */
+    position: absolute;
+    right: -30px;
     background: center url('../../assets/SVG/buttons/delete.svg');
     width: 25px;
     height: 25px;
@@ -59,7 +71,7 @@
     background: center no-repeat url('../../assets/SVG/buttons/send.svg');
     width: 25px;
     height: 25px;
-    border: 2px solid var(--grey-btn);
+    border: 2px solid var(--primary-text-color);
 }
 
 .send_btn:hover {

@@ -2,10 +2,8 @@ import { useContext, useState } from 'react';
 import PropTypes from 'prop-types';
 import InputField from '../InputField/InputField';
 import Button from '../Button/Button';
-import '../Button/Button.css';
-import styles from '../Tiles/SocialMediaTile/SocialMediaTile.module.css';
-
 import { ValidContext } from '../../contexts/validContext';
+import styles from '../Tiles/SocialMediaTile/SocialMediaTile.module.css';
 
 const SocialButton = ({ socialData, onSubmit, onDelete, submitted }) => {
     const { isValidated } = useContext(ValidContext);
