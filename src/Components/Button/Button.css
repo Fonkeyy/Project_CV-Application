@@ -111,9 +111,9 @@
 }
 
 .validate_btn {
-    padding: 1rem;
+    padding: 0.8rem;
     font-size: 0.9rem;
-    color: var(--foreground-secondary);
+    color: var(--foreground-system-success);
     background-color: var(--background-system-success);
     border-radius: 15px;
     scale: 1;

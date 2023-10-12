@@ -9,11 +9,11 @@
     --background-primary: rgb(237, 239, 245);
     --background-secondary: white;
     --background-tertiary: rgb(230, 230, 230);
-    --background-system-success: rgb(3, 201, 136);
+    --background-system-success: rgb(26, 134, 107);
 
     --border-primary: rgb(60, 72, 107);
     --border-secondary: rgb(230, 230, 230);
-    --border-system-success: rgb(3, 201, 136);
+    --border-system-success: rgb(26, 134, 107);
 }
 
 * {

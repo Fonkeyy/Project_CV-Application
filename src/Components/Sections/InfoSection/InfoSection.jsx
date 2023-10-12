@@ -85,7 +85,9 @@ const InfoSection = () => {
                             onDelete={handleDelete}
                         />
                     ))}
-                    {!isValidated && <Button className="submit_btn" onClick={handleSubmit} />}
+                    {!isValidated && (
+                        <Button className="submit_btn" ariaLabel={'submit infos'} onClick={handleSubmit} />
+                    )}
                 </div>
             )}
             {!isValidated && isSubmitted && (

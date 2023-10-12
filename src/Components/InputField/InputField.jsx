@@ -11,13 +11,14 @@ const InputField = (props) => {
                 placeholder={props.placeholder}
                 value={props.value}
                 onChange={props.onChange}
+                autoComplete="on"
             />
         </>
     );
 };
 
 InputField.propTypes = {
-    id: PropTypes.string,
+    id: PropTypes.string.isRequired,
     className: PropTypes.string,
     type: PropTypes.string.isRequired,
     placeholder: PropTypes.string,

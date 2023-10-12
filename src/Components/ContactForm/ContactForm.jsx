@@ -35,7 +35,7 @@ const ContactForm = () => {
                     {fields.map((field) => (
                         <InputField
                             key={field.id}
-                            id={field.id}
+                            id={`contact-form-${field.id}`}
                             placeholder={field.placeholder}
                             type={field.type}
                             value={field.value}
@@ -44,7 +44,7 @@ const ContactForm = () => {
                     ))}
                     <label htmlFor="message"></label>
                     <textarea id="message" placeholder="Write your message here..."></textarea>
-                    <Button className="send_btn" onClick={handleSubmit} />
+                    <Button className="send_btn" ariaLabel={'send message'} onClick={handleSubmit} />
                 </>
             )}
         </div>

@@ -7,9 +7,7 @@ import Button from '../../Button/Button';
 import { ValidContext } from '../../../contexts/validContext';
 
 const HeaderSection = () => {
-    const [url, setUrl] = useState(
-        'https://images.unsplash.com/photo-1508830524289-0adcbe822b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2025&q=80'
-    );
+    const [url, setUrl] = useState('src/assets/img/laptop.avif');
     const [isMouseOver, setIsMouseOver] = useState(false);
     const [isClicked, setIsClicked] = useState(false);
     const [isEditClick, setIsEditClick] = useState(false);
@@ -37,6 +35,7 @@ const HeaderSection = () => {
         <header>
             <div
                 className={styles.header_background}
+                alt={url}
                 style={{
                     backgroundImage: `url(${url})`,
                     backgroundSize: 'cover',

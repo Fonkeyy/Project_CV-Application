@@ -53,7 +53,7 @@ const SocialModal = ({ onSubmit }) => {
                         value={selectedElement.url || ''}
                         onChange={handleUrlChange}
                     />
-                    <Button className="submit_btn " onClick={handleSubmit} />
+                    <Button className="submit_btn" ariaLabel={'submit url'} onClick={handleSubmit} />
                 </div>
             )}
         </div>

@@ -68,16 +68,18 @@ const TileComponent = ({ onSubmit, onDelete, id, type, tilesContainerRef }) => {
                             value={state.value2}
                             onChange={handleChange}
                         />
-                        <input
-                            id="date-start"
+                        <InputField
+                            id={`date-start${type}`}
                             type="month"
                             value={state.value3}
-                            onChange={handleChange}></input>
-                        <input
-                            id="date-end"
+                            onChange={handleChange}
+                        />
+                        <InputField
+                            id={`date-end${type}`}
                             type="month"
                             value={state.value4}
-                            onChange={handleChange}></input>
+                            onChange={handleChange}
+                        />
                         {isPracticeTile && (
                             <textarea
                                 id="textarea"
@@ -86,7 +88,11 @@ const TileComponent = ({ onSubmit, onDelete, id, type, tilesContainerRef }) => {
                                 value={state.textareaValue}
                                 onChange={handleChange}></textarea>
                         )}
-                        <Button className="submit_btn " onClick={handleSubmit} />
+                        <Button
+                            className="submit_btn"
+                            ariaLabel={`submit ${type} tile`}
+                            onClick={handleSubmit}
+                        />
                     </div>
                 </div>
             )}

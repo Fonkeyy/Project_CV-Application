@@ -30,7 +30,7 @@ const SocialAddButton = ({ onSubmit }) => {
             {isModalOpen ? (
                 <SocialModal onSubmit={handleSubmit} />
             ) : (
-                <Button id="add_btn" className="add_btn" onClick={handleAddClick} />
+                <Button ariaLabel="add button" className="add_btn" onClick={handleAddClick} />
             )}
         </>
     );
