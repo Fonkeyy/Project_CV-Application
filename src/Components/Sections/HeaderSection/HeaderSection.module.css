@@ -26,6 +26,7 @@ header {
     position: relative;
     display: flex;
     align-items: center;
+    gap: 1rem;
 }
 
 .input_text {
@@ -48,6 +49,7 @@ header {
 }
 
 .title {
+    color: var(--foreground-secondary);
     font-size: clamp(20px, 4vw, 25px);
 }
 

@@ -46,7 +46,11 @@ const HeaderComponent = ({ id, inputClassName, placeholder }) => {
                 <>
                     <p className={inputClassName}>{inputValue}</p>
                     {(isMouseOver || isClicked) && !isValidated && (
-                        <Button className="edit_btn edit_white" onClick={handleEdit} />
+                        <Button
+                            className="edit_btn edit_white"
+                            ariaLabel={`edit ${id}`}
+                            onClick={handleEdit}
+                        />
                     )}
                 </>
             ) : (
