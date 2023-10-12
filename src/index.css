@@ -1,15 +1,35 @@
 :root {
     --pp-size: 250px;
-    --primary-text-color: rgb(60, 72, 107);
-    --secondary-text-color: rgb(71, 74, 78);
-    --bg-color: rgb(237, 239, 245);
-    --grey-btn: rgb(147, 163, 186);
-    --green-btn: #03c988;
+
+    --white: white;
+    --white-2: rgb(237, 239, 245);
+    --white-3: rgb(230, 230, 230);
+
+    --grey: rgb(147, 163, 186);
+    --grey-2: rgb(71, 74, 78);
+
+    --blue: rgb(60, 72, 107);
+
+    --green: #03c988;
+
+    --foreground-primary: var(--grey-2);
+    --foreground-secondary: var(--white-3);
+    --foreground-tertiary: var(--blue);
+    --foreground-system-success: var(--white);
+
+    --background-primary: var(--white-2);
+    --background-secondary: var(--white);
+    --background-tertiary: var(--white-3);
+    --background-system-success: var(--green);
+
+    --border-primary: var(--blue);
+    --border-secondary: var(--white-3);
+    --border-system-success: var(--green);
 }
 
 * {
     font-family: Roboto, Helvetica, Arial, Verdana, Tahoma, sans-serif;
-    color: var(--primary-text-color);
+    color: var(--foreground-primary);
     margin: 0;
     padding: 0;
 }
@@ -20,7 +40,7 @@
 }
 
 body {
-    background-color: var(--bg-color);
+    background-color: var(--background-primary);
     overflow-x: hidden;
 }
 
@@ -65,15 +85,15 @@ label {
 input,
 textarea {
     padding: 0.4rem;
-    background-color: rgb(245, 245, 245);
-    border: 1px solid var(--primary-text-color);
+    background-color: var(--background-secondary);
+    border: 1px solid var(--border-primary);
     border-radius: 5px;
     font-size: 0.9rem;
 }
 
 textarea::placeholder,
 input::placeholder {
-    color: var(--secondary-text-color);
+    color: var(--foreground-primary);
 }
 
 footer {

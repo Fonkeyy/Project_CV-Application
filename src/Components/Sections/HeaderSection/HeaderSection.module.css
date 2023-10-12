@@ -38,21 +38,19 @@ header {
 }
 
 .full_name {
-    color: white;
+    color: var(--foreground-secondary);
     font-size: clamp(35px, 6vw, 40px);
 }
 
 .full_name::placeholder {
-    color: white;
+    color: var(--foreground-secondary);
 }
 
 .title {
-    color: var(--grey-btn);
     font-size: clamp(20px, 4vw, 25px);
 }
 
 .title::placeholder {
-    color: var(--grey-btn);
 }
 
 .edit_wrapper {
@@ -65,7 +63,7 @@ header {
 }
 
 .edit_wrapper p {
-    color: white;
+    color: var(--foreground-secondary);
 }
 
 input[type='file'] {
@@ -73,12 +71,12 @@ input[type='file'] {
     position: absolute;
     top: 45px;
     background: transparent;
-    color: var(--grey-btn);
+    color: var(--foreground-primary);
 }
 
 input[type='file']::file-selector-button {
     background: transparent;
-    color: white;
+    color: var(--foreground-secondary);
     border: 1px solid var(--grey-btn);
     border-radius: 5px;
 }
