@@ -84,41 +84,51 @@ const TileComponent = ({ onSubmit, onDelete, id, type, tilesContainerRef }) => {
                         <div className="value_wrapper">
                             <p>{state.value1}</p>
                             <p>{state.value2}</p>
-                            {isPracticeTile && state.textareaValue && (
-                                <p className="textarea_value">{state.textareaValue}</p>
-                            )}
                         </div>
+                        {isPracticeTile && state.textareaValue && (
+                            <p className="textarea_value">{state.textareaValue}</p>
+                        )}
                     </div>
                     {(state.isMouseOver || state.isClicked) && TileBtnWrapper({ handleEdit, onDelete, id })}
                 </div>
             )}
 
             {!isValidated && !state.isSubmitted && (
-                <div className="tile">
-                    <InputField
-                        id={field1Name}
-                        type="text"
-                        placeholder={field1Name}
-                        value={state.value1}
-                        onChange={handleChange}
-                    />
-                    <InputField
-                        id={field2Name}
-                        type="text"
-                        placeholder={field2Name}
-                        value={state.value2}
-                        onChange={handleChange}
-                    />
-                    <input id="date-start" type="month" value={state.value3} onChange={handleChange}></input>
-                    <input id="date-end" type="month" value={state.value4} onChange={handleChange}></input>
-                    {isPracticeTile && (
-                        <textarea
-                            id="textarea"
-                            className="textarea"
+                <div className="tile_container">
+                    <div className="tile">
+                        <InputField
+                            id={field1Name}
+                            type="text"
+                            placeholder={field1Name}
+                            value={state.value1}
                             onChange={handleChange}
-                            placeholder="Describe your experience, missions..."></textarea>
-                    )}
-                    <Button className="submit_btn " onClick={handleSubmit} />
+                        />
+                        <InputField
+                            id={field2Name}
+                            type="text"
+                            placeholder={field2Name}
+                            value={state.value2}
+                            onChange={handleChange}
+                        />
+                        <input
+                            id="date-start"
+                            type="month"
+                            value={state.value3}
+                            onChange={handleChange}></input>
+                        <input
+                            id="date-end"
+                            type="month"
+                            value={state.value4}
+                            onChange={handleChange}></input>
+                        {isPracticeTile && (
+                            <textarea
+                                id="textarea"
+                                className="textarea"
+                                onChange={handleChange}
+                                placeholder="Describe your experience, missions..."></textarea>
+                        )}
+                        <Button className="submit_btn " onClick={handleSubmit} />
+                    </div>
                 </div>
             )}
         </>

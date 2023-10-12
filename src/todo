@@ -3,4 +3,5 @@ set all social media logo same size
 configure sending message form
 check btn wrapper on tiles
 see keyboard navigation on info section
-fix contact section wodth on destktop mode
+add white variation to input backgrond
+add persistance in tile textarea 
