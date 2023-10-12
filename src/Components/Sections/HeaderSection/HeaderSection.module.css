@@ -26,34 +26,36 @@ header {
     position: relative;
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
 }
 
 .input_text {
     background: transparent;
     border: none;
     text-align: center;
-    padding: 0;
+    padding: 0px;
     width: fit-content;
     margin: auto;
 }
 
 .full_name {
-    color: white;
-    font-size: clamp(25px, 6vw, 40px);
+    color: var(--foreground-secondary);
+    font-size: clamp(35px, 6vw, 40px);
 }
 
 .full_name::placeholder {
-    color: white;
+    color: var(--foreground-secondary);
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .title {
-    color: var(--grey-btn);
-    font-size: clamp(15px, 4vw, 25px);
+    color: var(--foreground-secondary);
+    font-size: clamp(20px, 4vw, 25px);
 }
 
 .title::placeholder {
-    color: var(--grey-btn);
+    color: var(--foreground-secondary);
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .edit_wrapper {
@@ -66,7 +68,7 @@ header {
 }
 
 .edit_wrapper p {
-    color: white;
+    color: var(--foreground-secondary);
 }
 
 input[type='file'] {
@@ -74,12 +76,12 @@ input[type='file'] {
     position: absolute;
     top: 45px;
     background: transparent;
-    color: var(--grey-btn);
+    color: var(--foreground-primary);
 }
 
 input[type='file']::file-selector-button {
     background: transparent;
-    color: white;
+    color: var(--foreground-secondary);
     border: 1px solid var(--grey-btn);
     border-radius: 5px;
 }

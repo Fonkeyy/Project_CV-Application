@@ -5,6 +5,11 @@
     place-items: center;
 }
 
+.delete_btn_container {
+    width: 25px;
+    height: 25px;
+}
+
 .tel {
     background: url(../../assets/SVG/icons/phone.svg);
     width: 25px;

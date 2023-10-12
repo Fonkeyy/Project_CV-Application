@@ -51,48 +51,8 @@ const TileComponent = ({ onSubmit, onDelete, id, type, tilesContainerRef }) => {
 
     return (
         <>
-            {isValidated && state.value1 && (
-                <div className={`${'tile'} ${'tile_submitted'}`}>
-                    <div className="date_wrapper">
-                        <p>{state.value3}</p>
-                        <span>-</span>
-                        <p> {state.value4}</p>
-                    </div>
-                    <div className="value_wrapper">
-                        <p>{state.value1}</p>
-                        <p>{state.value2}</p>
-                    </div>
-                    {isPracticeTile && state.textareaValue && (
-                        <p className="textareaValue">{state.textareaValue}</p>
-                    )}
-                </div>
-            )}
-            {isValidated && !state.value1 && isParentContainerEmpty && <p>Oops it&apos;s empty...</p>}
-            <>
-                {!isValidated && state.isSubmitted && (
-                    <div
-                        onMouseEnter={() => dispatch({ type: 'MOUSE_OVER', payload: true })}
-                        onMouseLeave={() => dispatch({ type: 'MOUSE_OVER', payload: false })}
-                        onClick={() => dispatch({ type: 'CLICK', payload: true })}>
-                        <div className={`${'tile'} ${'tile_submitted'}`}>
-                            <div className="date_wrapper">
-                                <p>{state.value3}</p>
-                                <span>-</span>
-                                <p> {state.value4}</p>
-                            </div>
-                            <div className="value_wrapper">
-                                <p>{state.value1}</p>
-                                <p>{state.value2}</p>
-                            </div>
-                            {isPracticeTile && state.textareaValue && (
-                                <p className="textareaValue">{state.textareaValue}</p>
-                            )}
-                        </div>
-                        {(state.isMouseOver || state.isClicked) &&
-                            TileBtnWrapper({ handleEdit, onDelete, id })}
-                    </div>
-                )}
-                {!isValidated && !state.isSubmitted && (
+            {!isValidated && !state.isSubmitted && (
+                <div className="tile_container">
                     <div className="tile">
                         <InputField
                             id={field1Name}
@@ -108,27 +68,77 @@ const TileComponent = ({ onSubmit, onDelete, id, type, tilesContainerRef }) => {
                             value={state.value2}
                             onChange={handleChange}
                         />
-                        <input
-                            id="date-start"
+                        <InputField
+                            id={`date-start${type}`}
                             type="month"
                             value={state.value3}
-                            onChange={handleChange}></input>
-                        <input
-                            id="date-end"
+                            onChange={handleChange}
+                        />
+                        <InputField
+                            id={`date-end${type}`}
                             type="month"
                             value={state.value4}
-                            onChange={handleChange}></input>
+                            onChange={handleChange}
+                        />
                         {isPracticeTile && (
                             <textarea
                                 id="textarea"
                                 className="textarea"
-                                onChange={handleChange}
-                                placeholder="Describe your experience, missions..."></textarea>
+                                placeholder="Describe your experience, missions..."
+                                value={state.textareaValue}
+                                onChange={handleChange}></textarea>
                         )}
-                        <Button className="submit_btn " onClick={handleSubmit} />
+                        <Button
+                            className="submit_btn"
+                            ariaLabel={`submit ${type} tile`}
+                            onClick={handleSubmit}
+                        />
                     </div>
-                )}
-            </>
+                </div>
+            )}
+            {!isValidated && state.isSubmitted && (
+                <div
+                    className="tile_container"
+                    onMouseEnter={() => dispatch({ type: 'MOUSE_OVER', payload: true })}
+                    onMouseLeave={() => dispatch({ type: 'MOUSE_OVER', payload: false })}
+                    onClick={() => dispatch({ type: 'CLICK', payload: true })}>
+                    <div className={`${'tile'} ${'tile_submitted'}`}>
+                        <div className="date_wrapper">
+                            <p>{state.value3}</p>
+                            <span>-</span>
+                            <p> {state.value4}</p>
+                        </div>
+                        <div className="value_wrapper">
+                            <p>{state.value1}</p>
+                            <p>{state.value2}</p>
+                        </div>
+                        {isPracticeTile && state.textareaValue && (
+                            <p className="textarea_value">{state.textareaValue}</p>
+                        )}
+                    </div>
+                    <div className="tile_btns_wrapper">
+                        {(state.isMouseOver || state.isClicked) &&
+                            TileBtnWrapper({ handleEdit, onDelete, id })}
+                    </div>
+                </div>
+            )}
+            {isValidated && state.value1 && (
+                <div className={`${'tile'} ${'tile_submitted'}`}>
+                    <div className="date_wrapper">
+                        <p>{state.value3}</p>
+                        <span>-</span>
+                        <p> {state.value4}</p>
+                    </div>
+                    <div className="value_wrapper">
+                        <p>{state.value1}</p>
+                        <p>{state.value2}</p>
+                    </div>
+                    {isPracticeTile && state.textareaValue && (
+                        <p className="textarea_value">{state.textareaValue}</p>
+                    )}
+                </div>
+            )}
+            {isValidated && !state.value1 && isParentContainerEmpty && <p>Oops it&apos;s empty...</p>}
         </>
     );
 };

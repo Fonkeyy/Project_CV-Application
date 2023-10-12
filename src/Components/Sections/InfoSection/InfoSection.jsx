@@ -85,10 +85,12 @@ const InfoSection = () => {
                             onDelete={handleDelete}
                         />
                     ))}
-                    {!isValidated && <Button className="submit_btn" onClick={handleSubmit} />}
+                    {!isValidated && (
+                        <Button className="submit_btn" ariaLabel={'submit infos'} onClick={handleSubmit} />
+                    )}
                 </div>
             )}
-            {isSubmitted && (
+            {!isValidated && isSubmitted && (
                 <>
                     <div
                         className={`${styles.info_section} ${styles.info_section_submitted}`}
@@ -101,41 +103,53 @@ const InfoSection = () => {
                         onClick={() => {
                             setIsClicked(!isClicked);
                         }}>
-                        {fields.map((field) => (
-                            <div key={uuidv4()}>
-                                <label>{field.label}</label>
-                                {field.type === 'url' ? (
-                                    <a href={`http://${field.value}`} target="_blank" rel="noreferrer">
-                                        {field.value}
-                                    </a>
-                                ) : (
-                                    <p>{field.value}</p>
-                                )}
-                            </div>
-                        ))}
-                        {!isValidated && (isMouseOver || isClicked) && (
-                            <Button className="edit_btn" onClick={() => setIsSubmitted(!isSubmitted)} />
+                        {fields.map(
+                            (field) =>
+                                field.value && (
+                                    <div key={uuidv4()}>
+                                        <label>{field.label}</label>
+                                        <span className={`${styles[field.className]}`}></span>
+
+                                        {field.type === 'url' ? (
+                                            <a
+                                                href={`http://${field.value}`}
+                                                target="_blank"
+                                                rel="noreferrer">
+                                                {field.value}
+                                            </a>
+                                        ) : (
+                                            <p>{field.value}</p>
+                                        )}
+                                    </div>
+                                )
                         )}
+                        <div className={styles.delete_btn_container}>
+                            {!isValidated && (isMouseOver || isClicked) && (
+                                <Button className="edit_btn" onClick={() => setIsSubmitted(!isSubmitted)} />
+                            )}
+                        </div>
                     </div>
                 </>
             )}
             {isValidated && (
                 <div className={`${styles.info_section} ${styles.info_section_submitted}`}>
-                    {fields.map((field) => (
-                        <>
-                            <span className={`'styles.'${field.className}}`}></span>
-                            <div key={uuidv4()}>
-                                <label>{field.label}</label>
-                                {field.type === 'url' ? (
-                                    <a href={`http://${field.value}`} target="_blank" rel="noreferrer">
-                                        {field.value}
-                                    </a>
-                                ) : (
-                                    <p>{field.value}</p>
-                                )}
-                            </div>
-                        </>
-                    ))}
+                    {fields.map(
+                        (field) =>
+                            field.value && (
+                                <div key={uuidv4()}>
+                                    <label>{field.label}</label>
+                                    <span className={`${styles[field.className]}`}></span>
+
+                                    {field.type === 'url' ? (
+                                        <a href={`http://${field.value}`} target="_blank" rel="noreferrer">
+                                            {field.value}
+                                        </a>
+                                    ) : (
+                                        <p>{field.value}</p>
+                                    )}
+                                </div>
+                            )
+                    )}
                 </div>
             )}
         </>
