@@ -47,8 +47,8 @@ const HeaderSection = () => {
                     height: '70vh',
                 }}
                 tabIndex={0}
-                onMouseEnter={() => setIsMouseOver(!isMouseOver)}
-                onMouseLeave={() => setIsMouseOver(!isMouseOver)}
+                onMouseEnter={() => setIsMouseOver(true)}
+                onMouseLeave={() => setIsMouseOver(false)}
                 onClick={() => setIsClicked(!isClicked)}
                 onKeyDown={handleOnKeyDown}></div>
             <div className={styles.header_content}>
@@ -63,14 +63,17 @@ const HeaderSection = () => {
                     placeholder="Web Developer"
                 />
             </div>
-            <ProfilePicture />
             {(isMouseOver || isClicked) && url && !isValidated && (
-                <div className={styles.edit_wrapper}>
+                <div
+                    className={styles.edit_wrapper}
+                    onMouseEnter={() => setIsMouseOver(true)}
+                    onMouseLeave={() => setIsMouseOver(false)}>
                     <p>Edit Background:</p>
                     <Button className={`${'edit_btn'} ${'edit_white'}`} onClick={handleEdit} />
                 </div>
             )}
             {isEditClick && <input type="file" onChange={handleFileChange} />}
+            <ProfilePicture />
         </header>
     );
 };

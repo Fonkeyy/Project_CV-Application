@@ -21,7 +21,7 @@ const InfoComponent = (props) => {
             onMouseLeave={() => setIsMouseOver(false)}
             onClick={() => setIsClicked(!isClicked)}
             onKeyDown={() => handleOnKeyDown}>
-            <div className={`${styles[props.className]}`}></div>
+            <span className={`${styles[props.className]}`}></span>
             <InputField
                 id={props.id}
                 className={props.className}
@@ -30,14 +30,16 @@ const InfoComponent = (props) => {
                 value={props.value}
                 onChange={props.onChange}
             />
-            {(isMouseOver || isClicked) && (
-                <Button
-                    className="delete_btn"
-                    onClick={() => {
-                        props.onDelete(props.id);
-                    }}
-                />
-            )}
+            <div className={styles.delete_btn_container}>
+                {(isMouseOver || isClicked) && (
+                    <Button
+                        className="delete_btn"
+                        onClick={() => {
+                            props.onDelete(props.id);
+                        }}
+                    />
+                )}
+            </div>
         </div>
     );
 };

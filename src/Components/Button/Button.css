@@ -51,9 +51,6 @@
 }
 
 .delete_btn {
-    /* ! see if need to add another container so the icon stay clickable */
-    position: absolute;
-    right: -30px;
     background: center url('../../assets/SVG/buttons/delete.svg');
     width: 25px;
     height: 25px;

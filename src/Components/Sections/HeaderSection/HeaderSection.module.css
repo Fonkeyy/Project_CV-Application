@@ -26,21 +26,20 @@ header {
     position: relative;
     display: flex;
     align-items: center;
-    gap: 2rem;
 }
 
 .input_text {
     background: transparent;
     border: none;
     text-align: center;
-    padding: 0;
+    padding: 0px;
     width: fit-content;
     margin: auto;
 }
 
 .full_name {
     color: white;
-    font-size: clamp(25px, 6vw, 40px);
+    font-size: clamp(35px, 6vw, 40px);
 }
 
 .full_name::placeholder {
@@ -49,7 +48,7 @@ header {
 
 .title {
     color: var(--grey-btn);
-    font-size: clamp(15px, 4vw, 25px);
+    font-size: clamp(20px, 4vw, 25px);
 }
 
 .title::placeholder {
