@@ -72,7 +72,7 @@ const HeaderSection = () => {
                     <Button className={`${'edit_btn'} ${'edit_white'}`} onClick={handleEdit} />
                 </div>
             )}
-            {isEditClick && <input type="file" onChange={handleFileChange} />}
+            {isEditClick && isMouseOver && <input type="file" onChange={handleFileChange} />}
             <ProfilePicture />
         </header>
     );

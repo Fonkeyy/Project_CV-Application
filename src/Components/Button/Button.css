@@ -40,7 +40,7 @@
     background: center url('../../assets/SVG/buttons/add.svg');
     width: 25px;
     height: 25px;
-    border: 1px solid var(--foreground-secondary);
+    border: 1px solid var(--border-primary);
     scale: 1;
     transition: scale 0.1s ease-in-out;
 }

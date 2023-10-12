@@ -15,8 +15,8 @@ const InfoComponent = (props) => {
     };
     return (
         <div
-            tabIndex={0}
             className={styles.info_component_container}
+            tabIndex={0}
             onMouseEnter={() => setIsMouseOver(true)}
             onMouseLeave={() => setIsMouseOver(false)}
             onClick={() => setIsClicked(!isClicked)}

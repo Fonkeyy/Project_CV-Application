@@ -1,30 +1,19 @@
 :root {
     --pp-size: 250px;
 
-    --white: white;
-    --white-2: rgb(237, 239, 245);
-    --white-3: rgb(230, 230, 230);
+    --foreground-primary: rgb(71, 74, 78);
+    --foreground-secondary: rgb(230, 230, 230);
+    --foreground-tertiary: rgb(60, 72, 107);
+    --foreground-system-success: white;
 
-    --grey: rgb(147, 163, 186);
-    --grey-2: rgb(71, 74, 78);
+    --background-primary: rgb(237, 239, 245);
+    --background-secondary: white;
+    --background-tertiary: rgb(230, 230, 230);
+    --background-system-success: rgb(3, 201, 136);
 
-    --blue: rgb(60, 72, 107);
-
-    --green: #03c988;
-
-    --foreground-primary: var(--grey-2);
-    --foreground-secondary: var(--white-3);
-    --foreground-tertiary: var(--blue);
-    --foreground-system-success: var(--white);
-
-    --background-primary: var(--white-2);
-    --background-secondary: var(--white);
-    --background-tertiary: var(--white-3);
-    --background-system-success: var(--green);
-
-    --border-primary: var(--blue);
-    --border-secondary: var(--white-3);
-    --border-system-success: var(--green);
+    --border-primary: rgb(60, 72, 107);
+    --border-secondary: rgb(230, 230, 230);
+    --border-system-success: rgb(3, 201, 136);
 }
 
 * {
@@ -63,6 +52,10 @@ section {
 
     width: 80vw;
     padding: 2rem 2rem;
+}
+
+h2 {
+    color: var(--foreground-tertiary);
 }
 
 button {
