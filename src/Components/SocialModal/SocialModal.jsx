@@ -5,7 +5,7 @@ import InputField from '../InputField/InputField';
 import Button from '../Button/Button';
 import styles from './SocialModal.module.css';
 
-const SocialModal = ({ onSubmit }) => {
+const SocialModal = ({ onSubmit, list }) => {
     const [selectedElement, setSelectedElement] = useState(null);
 
     const handleSocialSelect = (event) => {
@@ -38,29 +38,59 @@ const SocialModal = ({ onSubmit }) => {
         <div className={styles.social_modal}>
             <select onChange={handleSocialSelect}>
                 <option value="">Select a social media platform</option>
-                {socialMediaList.map((item) => (
-                    <option key={item.id} className={item.id} value={item.id}>
-                        {item.name}
-                    </option>
-                ))}
+                {list.map(
+                    (item) =>
+                        !item.submitted && (
+                            <option key={item.id} value={item.id}>
+                                {item.name}
+                            </option>
+                        )
+                )}
             </select>
             {selectedElement && (
                 <div className={styles.url_container}>
                     <InputField
                         id={selectedElement.id}
                         type="url"
-                        placeholder={'Enter the URL'}
+                        placeholder="Enter the URL"
                         value={selectedElement.url || ''}
                         onChange={handleUrlChange}
                     />
-                    <Button className="submit_btn" ariaLabel={'submit url'} onClick={handleSubmit} />
+                    <Button className="submit_btn" aria-label="submit url" onClick={handleSubmit} />
                 </div>
             )}
         </div>
     );
+    // return (
+    //     <div className={styles.social_modal}>
+    //         <select onChange={handleSocialSelect}>
+    //             <option value="">Select a social media platform</option>
+    //             {socialMediaList.map((item) => (
+    //                 {!item.submitted && (
+    //                 <option key={item.id} className={item.id} value={item.id}>
+    //                     {item.name}
+    //                 </option>
+    //                 )}
+    //             ))}
+    //         </select>
+    //         {selectedElement && (
+    //             <div className={styles.url_container}>
+    //                 <InputField
+    //                     id={selectedElement.id}
+    //                     type="url"
+    //                     placeholder={'Enter the URL'}
+    //                     value={selectedElement.url || ''}
+    //                     onChange={handleUrlChange}
+    //                 />
+    //                 <Button className="submit_btn" ariaLabel={'submit url'} onClick={handleSubmit} />
+    //             </div>
+    //         )}
+    //     </div>
+    // );
 };
 
 SocialModal.propTypes = {
     onSubmit: PropTypes.func.isRequired,
+    list: PropTypes.array.isRequired,
 };
 export default SocialModal;

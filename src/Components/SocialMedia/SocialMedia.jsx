@@ -31,49 +31,49 @@ const SocialButton = ({ socialData, onSubmit, onDelete, submitted }) => {
     };
 
     return (
-        <div className={styles.social_media_container}>
-            {isValidated && socialData.url ? (
+        <div className={styles.social_media_wrapper}>
+            {!isValidated && !isSubmitted && (
+                <>
+                    <Button
+                        className={socialData.className}
+                        ariaLabel={socialData.id}
+                        onClick={() => setIsSubmitted(!isSubmitted)}
+                    />
+                    <div className={styles.input_wrapper}>
+                        <InputField
+                            type="url"
+                            id="url"
+                            placeholder={socialData.url ? socialData.url : 'Enter the URL'}
+                            onChange={handleChange}
+                        />
+                        <div className={styles.btn_wrapper}>
+                            <Button
+                                className="submit_btn"
+                                ariaLabel={`submit ${socialData.id}`}
+                                onClick={handleSubmit}
+                            />
+                            <Button
+                                className="delete_btn"
+                                ariaLabel={`delete ${socialData.id}`}
+                                onClick={handleDelete}
+                            />
+                        </div>
+                    </div>
+                </>
+            )}
+
+            {!isValidated && isSubmitted && (
+                <Button
+                    className={socialData.className}
+                    ariaLabel={socialData.id}
+                    onClick={() => setIsSubmitted(!isSubmitted)}
+                />
+            )}
+
+            {isValidated && socialData.url && (
                 <a href={`http://${socialData.url}`} target="_blank" rel="noreferrer">
                     <Button className={socialData.className} ariaLabel={socialData.id} />
                 </a>
-            ) : (
-                <>
-                    {!isValidated && isSubmitted ? (
-                        <Button
-                            ariaLabel={socialData.id}
-                            className={socialData.className}
-                            onClick={() => setIsSubmitted(!isSubmitted)}
-                        />
-                    ) : (
-                        <>
-                            {!isValidated && !isSubmitted && (
-                                <>
-                                    <Button ariaLabel={socialData.id} className={socialData.className} />
-                                    <div className={styles.input_wrapper}>
-                                        <InputField
-                                            type="url"
-                                            id="url"
-                                            placeholder={socialData.url ? socialData.url : 'Enter the URL'}
-                                            onChange={handleChange}
-                                        />
-                                        <div className={styles.btn_wrapper}>
-                                            <Button
-                                                className="submit_btn"
-                                                ariaLabel={`submit ${socialData.id}`}
-                                                onClick={handleSubmit}
-                                            />
-                                            <Button
-                                                className="delete_btn"
-                                                ariaLabel={`delete ${socialData.id}`}
-                                                onClick={handleDelete}
-                                            />
-                                        </div>
-                                    </div>
-                                </>
-                            )}
-                        </>
-                    )}
-                </>
             )}
         </div>
     );

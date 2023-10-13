@@ -64,7 +64,7 @@ const HeaderSection = () => {
             </div>
             {(isMouseOver || isClicked) && url && !isValidated && (
                 <div
-                    className={styles.edit_wrapper}
+                    className={styles.edit_bg_img_wrapper}
                     onMouseEnter={() => setIsMouseOver(true)}
                     onMouseLeave={() => setIsMouseOver(false)}>
                     <p>Edit Background:</p>

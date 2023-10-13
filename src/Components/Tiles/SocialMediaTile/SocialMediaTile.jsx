@@ -2,21 +2,23 @@ import { useContext, useState } from 'react';
 import { socialMediaList } from '../../../socialMediaList';
 import SocialButton from '../../SocialMedia/SocialMedia';
 import SocialAddButton from '../../SocialAddBtn/SocialAddBtn';
-import styles from './SocialMediaTile.module.css';
 import { ValidContext } from '../../../contexts/validContext';
+import styles from './SocialMediaTile.module.css';
 
 const SocialMediaTile = () => {
     // * Initialize the useState of social buttons list with the 4 first social medias of socialMediaList
-    const initialSocialButtons = socialMediaList.slice(0, 1);
+    const [socialMediaListCopy] = useState(socialMediaList);
+    const initialSocialButtons = socialMediaListCopy.slice(0, 1);
     const [socialBtns, setSocialBtns] = useState(initialSocialButtons);
     const { isValidated } = useContext(ValidContext);
 
     const handleSubmit = (selectedElement) => {
-        const element = socialBtns.find((el) => el.id === selectedElement.id);
-        selectedElement.submitted = true;
+        const elementButton = socialBtns.find((el) => el.id === selectedElement.id);
+        const elementItem = socialMediaListCopy.find((el) => el.id === selectedElement.id);
 
-        if (element) {
-            handleDelete(element);
+        if (elementButton) {
+            handleDelete(elementButton);
+            elementItem.submitted = true;
             setSocialBtns((prevBtns) => [...prevBtns, selectedElement]);
         } else {
             setSocialBtns((prevBtns) => [...prevBtns, selectedElement]);
@@ -26,6 +28,9 @@ const SocialMediaTile = () => {
     const handleDelete = (selectedElement) => {
         // * Delete selected element from the list
         setSocialBtns((prevBtns) => prevBtns.filter((btn) => btn !== selectedElement));
+
+        const elementItem = socialMediaListCopy.find((el) => el.id === selectedElement.id);
+        elementItem.submitted = false;
     };
 
     return (
@@ -42,7 +47,12 @@ const SocialMediaTile = () => {
                     />
                 ))}
                 {!isValidated && (
-                    <SocialAddButton key={socialBtns.length} className="add_btn" onSubmit={handleSubmit} />
+                    <SocialAddButton
+                        key={socialBtns.length}
+                        className="add_btn"
+                        onSubmit={handleSubmit}
+                        list={socialMediaListCopy}
+                    />
                 )}
             </div>
         </>

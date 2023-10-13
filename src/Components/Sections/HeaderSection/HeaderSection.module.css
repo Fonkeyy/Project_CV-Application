@@ -58,7 +58,12 @@ header {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.edit_wrapper {
+.edit_container {
+    width: 25px;
+    height: 25px;
+}
+
+.edit_bg_img_wrapper {
     display: flex;
     place-items: center;
     gap: 1rem;
@@ -67,7 +72,7 @@ header {
     top: 10px;
 }
 
-.edit_wrapper p {
+.edit_bg_img_wrapper p {
     color: var(--foreground-secondary);
 }
 

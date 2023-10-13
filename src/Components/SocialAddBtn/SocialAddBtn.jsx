@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import SocialModal from '../SocialModal/SocialModal';
 import Button from '../Button/Button';
 
-const SocialAddButton = ({ onSubmit }) => {
+const SocialAddButton = ({ onSubmit, list }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const handleAddClick = () => {
@@ -28,7 +28,7 @@ const SocialAddButton = ({ onSubmit }) => {
     return (
         <>
             {isModalOpen ? (
-                <SocialModal onSubmit={handleSubmit} />
+                <SocialModal onSubmit={handleSubmit} list={list} />
             ) : (
                 <Button ariaLabel="add button" className="add_btn" onClick={handleAddClick} />
             )}
@@ -38,5 +38,6 @@ const SocialAddButton = ({ onSubmit }) => {
 
 SocialAddButton.propTypes = {
     onSubmit: PropTypes.func.isRequired,
+    list: PropTypes.array,
 };
 export default SocialAddButton;

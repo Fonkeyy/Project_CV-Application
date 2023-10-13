@@ -6,7 +6,7 @@
     gap: 1rem;
 }
 
-.social_media_container {
+.social_media_wrapper {
     display: flex;
     flex-direction: column;
     place-items: center;
@@ -25,7 +25,7 @@
 }
 
 @media screen and (min-width: 720px) {
-    .social_media_container {
+    .social_media_tile {
         flex-direction: row;
         gap: 2rem;
     }
