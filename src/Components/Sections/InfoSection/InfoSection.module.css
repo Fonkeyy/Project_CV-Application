@@ -2,9 +2,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    place-items: center;
     gap: 0.5rem;
-    width: clamp(100px, 40vw, 300px);
 }
 
 .info_section > button:last-of-type {
@@ -15,13 +13,14 @@
     gap: 0.8rem;
 }
 
-.info_section_submitted > button:last-of-type {
-    position: absolute;
-    bottom: -3rem;
-}
-
 .info_section input {
     width: clamp(100px, 35vw, 250px);
+}
+
+.info_wrapper {
+    display: flex;
+    place-items: center;
+    gap: 0.8rem;
 }
 
 .tel {
@@ -41,30 +40,43 @@
 }
 
 .delete_btn_container {
-    width: 3rem;
-    height: 3rem;
+    width: 25px;
+    height: 25px;
 }
 
 @media screen and (min-width: 1000px) {
     .info_section {
         padding-top: 2rem;
-        display: grid;
-        width: fit-content;
+        place-items: center;
+        place-content: center;
         column-gap: 1rem;
         row-gap: 1rem;
-        grid-template-columns: repeat(4, 1fr);
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 23%));
+        width: 85vw;
     }
 
     .info_section input {
         width: fit-content;
+        width: 8rem;
     }
 
-    .info_section button:last-of-type {
-        grid-column-start: span 4;
+    .delete_btn_container {
+        width: 85vw;
+        height: 5rem;
+        margin-top: -2rem;
+        display: flex;
+        place-items: center;
+        place-content: center;
+    }
+}
+
+@media screen and (min-width: 1300px) {
+    .info_section {
+        width: 70vw;
     }
 
-    .info_section_submitted {
-        flex-direction: row;
-        gap: 0.8rem;
+    .delete_btn_container {
+        width: 70vw;
     }
 }

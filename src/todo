@@ -2,8 +2,6 @@ set all social media logo same size
 configure sending message form
 see keyboard navigation on info section
 fix edit btn in header so it dont move when hovering
-fix input date not showing the chosen date
-input in contact form dont works
 add icons on infos tile when submitted
 remove social media from list if already added ?
 flex direction on social logo on desktop

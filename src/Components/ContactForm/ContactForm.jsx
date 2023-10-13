@@ -4,9 +4,9 @@ import InputField from '../InputField/InputField';
 import styles from './ContactForm.module.css';
 
 const initialFields = [
-    { id: 'name', type: 'text', placeholder: 'Your name', value: '' },
-    { id: 'phone', type: 'tel', placeholder: 'Your number ', value: '' },
-    { id: 'email', type: 'mail', placeholder: 'your-Email@send.com', value: '' },
+    { id: 'contact-form-name', type: 'text', placeholder: 'Your name', value: '' },
+    { id: 'contact-form-phone', type: 'tel', placeholder: 'Your number ', value: '' },
+    { id: 'contact-form-email', type: 'mail', placeholder: 'your-Email@send.com', value: '' },
 ];
 
 const ContactForm = () => {
@@ -35,7 +35,7 @@ const ContactForm = () => {
                     {fields.map((field) => (
                         <InputField
                             key={field.id}
-                            id={`contact-form-${field.id}`}
+                            id={field.id}
                             placeholder={field.placeholder}
                             type={field.type}
                             value={field.value}

@@ -1,9 +1,10 @@
 import { useContext, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import { ValidContext } from '../../../contexts/validContext';
 import InfoComponent from '../../InfoComponent/InfoComponent';
 import Button from '../../Button/Button';
-import { ValidContext } from '../../../contexts/validContext';
 import styles from './InfoSection.module.css';
+import styles2 from '../../InfoComponent/InfoComponent.module.css';
 
 const initialFields = [
     {
@@ -23,19 +24,19 @@ const initialFields = [
         value: '',
     },
     {
-        id: 'city',
-        label: 'City',
-        type: 'city',
-        placeholder: 'Enter your city',
-        className: 'location',
-        value: '',
-    },
-    {
         id: 'website',
         label: 'Website',
         type: 'url',
         placeholder: 'Enter your website',
         className: 'website',
+        value: '',
+    },
+    {
+        id: 'city',
+        label: 'City',
+        type: 'city',
+        placeholder: 'Enter your city',
+        className: 'location',
         value: '',
     },
 ];
@@ -71,24 +72,26 @@ const InfoSection = () => {
     return (
         <>
             {!isValidated && !isSubmitted && (
-                <div className={styles.info_section}>
-                    {fields.map((field) => (
-                        <InfoComponent
-                            key={field.id}
-                            label={field.label}
-                            id={field.id}
-                            inputType={field.type}
-                            placeholder={field.placeholder}
-                            className={field.className}
-                            value={field.value}
-                            onChange={handleChange}
-                            onDelete={handleDelete}
-                        />
-                    ))}
+                <>
+                    <div className={styles.info_section}>
+                        {fields.map((field) => (
+                            <InfoComponent
+                                key={field.id}
+                                label={field.label}
+                                id={field.id}
+                                inputType={field.type}
+                                placeholder={field.placeholder}
+                                className={field.className}
+                                value={field.value}
+                                onChange={handleChange}
+                                onDelete={handleDelete}
+                            />
+                        ))}
+                    </div>
                     {!isValidated && (
                         <Button className="submit_btn" ariaLabel={'submit infos'} onClick={handleSubmit} />
                     )}
-                </div>
+                </>
             )}
             {!isValidated && isSubmitted && (
                 <>
@@ -106,9 +109,9 @@ const InfoSection = () => {
                         {fields.map(
                             (field) =>
                                 field.value && (
-                                    <div key={uuidv4()}>
+                                    <div key={uuidv4()} className={styles.info_wrapper}>
                                         <label>{field.label}</label>
-                                        <span className={`${styles[field.className]}`}></span>
+                                        <div className={`${styles2[field.className]}`}></div>
 
                                         {field.type === 'url' ? (
                                             <a
@@ -123,11 +126,18 @@ const InfoSection = () => {
                                     </div>
                                 )
                         )}
-                        <div className={styles.delete_btn_container}>
-                            {!isValidated && (isMouseOver || isClicked) && (
-                                <Button className="edit_btn" onClick={() => setIsSubmitted(!isSubmitted)} />
-                            )}
-                        </div>
+                    </div>
+                    <div
+                        className={styles.delete_btn_container}
+                        onMouseEnter={() => {
+                            setIsMouseOver(true);
+                        }}
+                        onMouseLeave={() => {
+                            setIsMouseOver(false);
+                        }}>
+                        {!isValidated && (isMouseOver || isClicked) && (
+                            <Button className="edit_btn" onClick={() => setIsSubmitted(!isSubmitted)} />
+                        )}
                     </div>
                 </>
             )}
@@ -136,9 +146,9 @@ const InfoSection = () => {
                     {fields.map(
                         (field) =>
                             field.value && (
-                                <div key={uuidv4()}>
+                                <div key={uuidv4()} className={styles.info_wrapper}>
                                     <label>{field.label}</label>
-                                    <span className={`${styles[field.className]}`}></span>
+                                    <span className={`${styles2[field.className]}`}></span>
 
                                     {field.type === 'url' ? (
                                         <a href={`http://${field.value}`} target="_blank" rel="noreferrer">

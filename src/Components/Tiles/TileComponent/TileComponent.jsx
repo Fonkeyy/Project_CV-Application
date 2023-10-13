@@ -25,8 +25,8 @@ const TileComponent = ({ onSubmit, onDelete, id, type, tilesContainerRef }) => {
 
         if (target.id === field1Name) payload.value1 = target.value;
         if (target.id === field2Name) payload.value2 = target.value;
-        if (target.id === 'date-start') payload.value3 = target.value;
-        if (target.id === 'date-end') payload.value4 = target.value;
+        if (target.id === `date-start${type}`) payload.value3 = target.value;
+        if (target.id === `date-end${type}`) payload.value4 = target.value;
         if (target.id === 'textarea') payload.textareaValue = target.value;
 
         dispatch({ type: 'UPDATE_VALUES', payload });
