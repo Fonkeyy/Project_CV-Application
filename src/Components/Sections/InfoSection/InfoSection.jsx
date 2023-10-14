@@ -109,24 +109,23 @@ const InfoSection = () => {
             )}
             {isValidated && (
                 <div className={`${styles.info_section} ${styles.info_section_submitted}`}>
-                    fields.map(
-                    {(field) =>
-                        field.value && (
-                            <div key={uuidv4()} className={styles.info_wrapper}>
-                                <label>{field.label}</label>
-                                <span className={`${styles2[field.className]}`}></span>
+                    {fields.map(
+                        (field) =>
+                            field.value && (
+                                <div key={uuidv4()} className={styles.info_wrapper}>
+                                    <label>{field.label}</label>
+                                    <span className={`${styles2[field.className]}`}></span>
 
-                                {field.type === 'url' ? (
-                                    <a href={`http://${field.value}`} target="_blank" rel="noreferrer">
-                                        {field.value}
-                                    </a>
-                                ) : (
-                                    <p>{field.value}</p>
-                                )}
-                            </div>
-                        )
-                    }
-                    )
+                                    {field.type === 'url' ? (
+                                        <a href={`http://${field.value}`} target="_blank" rel="noreferrer">
+                                            {field.value}
+                                        </a>
+                                    ) : (
+                                        <p>{field.value}</p>
+                                    )}
+                                </div>
+                            )
+                    )}
                 </div>
             )}
             {!isValidated && !isSubmitted && (

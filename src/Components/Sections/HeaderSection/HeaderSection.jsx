@@ -68,7 +68,11 @@ const HeaderSection = () => {
                     onMouseEnter={() => setIsMouseOver(true)}
                     onMouseLeave={() => setIsMouseOver(false)}>
                     <p>Edit Background:</p>
-                    <Button className={`${'edit_btn'} ${'edit_white'}`} onClick={handleEdit} />
+                    <Button
+                        className={`${'edit_btn'} ${'edit_white'}`}
+                        onClick={handleEdit}
+                        ariaLabel={'edit background image'}
+                    />
                 </div>
             )}
             {isEditClick && isMouseOver && <input type="file" onChange={handleFileChange} />}

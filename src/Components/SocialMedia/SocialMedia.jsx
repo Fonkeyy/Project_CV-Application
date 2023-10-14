@@ -44,6 +44,7 @@ const SocialButton = ({ socialData, onSubmit, onDelete, submitted }) => {
                             type="url"
                             id="url"
                             placeholder={socialData.url ? socialData.url : 'Enter the URL'}
+                            value={url}
                             onChange={handleChange}
                         />
                         <div className={styles.btn_wrapper}>

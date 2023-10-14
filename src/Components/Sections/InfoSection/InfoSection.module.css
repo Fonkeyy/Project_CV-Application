@@ -16,6 +16,12 @@
     gap: 1rem;
 }
 
+.info_wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
 .info_section input {
     width: clamp(100px, 35vw, 250px);
 }
