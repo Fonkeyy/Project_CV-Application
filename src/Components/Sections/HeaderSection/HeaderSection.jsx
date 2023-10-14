@@ -4,13 +4,10 @@ import HeaderComponent from '../../HeaderComponent/HeaderComponent';
 import ProfilePicture from '../../ProfilePicture/ProfilePicture';
 import Button from '../../Button/Button';
 import styles from './HeaderSection.module.css';
-import backgroundImage from '../../../assets/img/home.jpg';
+import backgroundImage from '../../../assets/img/laptop.avif';
 
 const HeaderSection = () => {
     const [url, setUrl] = useState(backgroundImage);
-    // const [url, setUrl] = useState('../../../assets/img/laptop.avif');
-    // const [url, setUrl] = useState('../../assets/img/laptop.avif');
-    // const [url, setUrl] = useState('src/assets/img/laptop.avif');
     const [isMouseOver, setIsMouseOver] = useState(false);
     const [isClicked, setIsClicked] = useState(false);
     const [isEditClick, setIsEditClick] = useState(false);
