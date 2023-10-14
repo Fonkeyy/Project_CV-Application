@@ -45,9 +45,7 @@ const InfoSection = () => {
     const { isValidated } = useContext(ValidContext);
 
     const [isSubmitted, setIsSubmitted] = useState(false);
-    const [isClicked, setIsClicked] = useState(false);
     const [fields, setFields] = useState(initialFields);
-    const [isMouseOver, setIsMouseOver] = useState(false);
 
     // * On input change set input value to the corresponding field
     const handleChange = (event) => {
@@ -72,80 +70,30 @@ const InfoSection = () => {
     return (
         <div className={styles.info_section_wrapper}>
             {!isValidated && !isSubmitted && (
-                <>
-                    <div className={styles.info_section}>
-                        {fields.map((field) => (
-                            <InfoComponent
-                                key={field.id}
-                                label={field.label}
-                                id={field.id}
-                                inputType={field.type}
-                                placeholder={field.placeholder}
-                                className={field.className}
-                                value={field.value}
-                                onChange={handleChange}
-                                onDelete={handleDelete}
-                            />
-                        ))}
-                    </div>
-                </>
+                <div className={styles.info_section}>
+                    {fields.map((field) => (
+                        <InfoComponent
+                            key={field.id}
+                            label={field.label}
+                            id={field.id}
+                            inputType={field.type}
+                            placeholder={field.placeholder}
+                            className={field.className}
+                            value={field.value}
+                            onChange={handleChange}
+                            onDelete={handleDelete}
+                        />
+                    ))}
+                </div>
             )}
             {!isValidated && isSubmitted && (
-                <>
-                    <div
-                        className={`${styles.info_section} ${styles.info_section_submitted}`}
-                        onMouseEnter={() => {
-                            setIsMouseOver(true);
-                        }}
-                        onMouseLeave={() => {
-                            setIsMouseOver(false);
-                        }}
-                        onClick={() => {
-                            setIsClicked(!isClicked);
-                        }}>
-                        {fields.map(
-                            (field) =>
-                                field.value && (
-                                    <div key={uuidv4()} className={styles.info_wrapper}>
-                                        <label>{field.label}</label>
-                                        <div className={`${styles2[field.className]}`}></div>
-
-                                        {field.type === 'url' ? (
-                                            <a
-                                                href={`http://${field.value}`}
-                                                target="_blank"
-                                                rel="noreferrer">
-                                                {field.value}
-                                            </a>
-                                        ) : (
-                                            <p>{field.value}</p>
-                                        )}
-                                    </div>
-                                )
-                        )}
-                    </div>
-                    <div
-                        className={styles.delete_btn_container}
-                        onMouseEnter={() => {
-                            setIsMouseOver(true);
-                        }}
-                        onMouseLeave={() => {
-                            setIsMouseOver(false);
-                        }}>
-                        {!isValidated && (isMouseOver || isClicked) && (
-                            <Button className="edit_btn" onClick={() => setIsSubmitted(!isSubmitted)} />
-                        )}
-                    </div>
-                </>
-            )}
-            {isValidated && (
                 <div className={`${styles.info_section} ${styles.info_section_submitted}`}>
                     {fields.map(
                         (field) =>
                             field.value && (
                                 <div key={uuidv4()} className={styles.info_wrapper}>
                                     <label>{field.label}</label>
-                                    <span className={`${styles2[field.className]}`}></span>
+                                    <div className={`${styles2[field.className]}`}></div>
 
                                     {field.type === 'url' ? (
                                         <a href={`http://${field.value}`} target="_blank" rel="noreferrer">
@@ -159,8 +107,37 @@ const InfoSection = () => {
                     )}
                 </div>
             )}
-            {!isValidated && (
+            {isValidated && (
+                <div className={`${styles.info_section} ${styles.info_section_submitted}`}>
+                    fields.map(
+                    {(field) =>
+                        field.value && (
+                            <div key={uuidv4()} className={styles.info_wrapper}>
+                                <label>{field.label}</label>
+                                <span className={`${styles2[field.className]}`}></span>
+
+                                {field.type === 'url' ? (
+                                    <a href={`http://${field.value}`} target="_blank" rel="noreferrer">
+                                        {field.value}
+                                    </a>
+                                ) : (
+                                    <p>{field.value}</p>
+                                )}
+                            </div>
+                        )
+                    }
+                    )
+                </div>
+            )}
+            {!isValidated && !isSubmitted && (
                 <Button className="submit_btn" ariaLabel={'submit infos'} onClick={handleSubmit} />
+            )}
+            {!isValidated && isSubmitted && (
+                <Button
+                    className="edit_btn"
+                    ariaLabel={'edit infos'}
+                    onClick={() => setIsSubmitted(!isSubmitted)}
+                />
             )}
         </div>
     );

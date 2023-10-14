@@ -20,7 +20,8 @@ const InfoComponent = (props) => {
             onMouseEnter={() => setIsMouseOver(true)}
             onMouseLeave={() => setIsMouseOver(false)}
             onClick={() => setIsClicked(!isClicked)}
-            onKeyDown={() => handleOnKeyDown}>
+            onKeyDown={() => handleOnKeyDown}
+            onFocus={() => setIsMouseOver(true)}>
             <span className={`${styles[props.className]}`}></span>
             <InputField
                 id={props.id}

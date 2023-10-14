@@ -41,10 +41,13 @@ const HeaderComponent = ({ id, inputClassName, placeholder }) => {
             onMouseEnter={() => setIsMouseOver(true)}
             onMouseLeave={() => setIsMouseOver(false)}
             onClick={() => setIsClicked(!isClicked)}
+            onFocus={() => setIsMouseOver(true)}
             onKeyDown={handleOnKeyDown}>
             {isSubmitted ? (
                 <>
-                    <p className={inputClassName}>{inputValue}</p>
+                    <p tabIndex={0} className={inputClassName}>
+                        {inputValue}
+                    </p>
                     <div className={styles.edit_container}>
                         {(isMouseOver || isClicked) && !isValidated && (
                             <Button

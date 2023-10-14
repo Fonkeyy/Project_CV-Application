@@ -31,3 +31,11 @@
     scale: 1.1;
     transition: scale 0.1s ease-in-out;
 }
+
+#profile_picture_container input {
+    margin-top: 14rem;
+}
+
+#profile_picture_container input[type='file']::file-selector-button {
+    color: var(--foreground-tertiary);
+}
