@@ -70,7 +70,7 @@ const SocialButton = ({ socialData, onSubmit, onDelete, submitted }) => {
                 />
             )}
 
-            {isValidated && socialData.url && (
+            {isValidated && (
                 <a href={`http://${socialData.url}`} target="_blank" rel="noreferrer">
                     <Button className={socialData.className} ariaLabel={socialData.id} />
                 </a>

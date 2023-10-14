@@ -29,6 +29,11 @@
 }
 
 @media screen and (min-width: 720px) {
+    .social_media_tile {
+        flex-direction: row;
+        gap: 2rem;
+    }
+
     .social_media_wrapper {
         flex-direction: row;
         gap: 1.5rem;

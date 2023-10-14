@@ -7,11 +7,4 @@
 
 .tile_btn_wrapper:hover {
     width: fit-content;
-    transition: width 3s ease;
-}
-
-@media screen and (min-width: 1000px) {
-    .tile_btn_wrapper {
-        /* grid-column-start: span 3; */
-    }
 }

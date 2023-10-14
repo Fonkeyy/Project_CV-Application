@@ -11,6 +11,7 @@ const SocialMediaTile = () => {
     const initialSocialButtons = socialMediaListCopy.slice(0, 1);
     const [socialBtns, setSocialBtns] = useState(initialSocialButtons);
     const { isValidated } = useContext(ValidContext);
+    const areAllSubmitted = socialMediaListCopy.every((obj) => obj.submitted === true);
 
     const handleSubmit = (selectedElement) => {
         const elementButton = socialBtns.find((el) => el.id === selectedElement.id);
@@ -19,9 +20,12 @@ const SocialMediaTile = () => {
         if (elementButton) {
             handleDelete(elementButton);
             elementItem.submitted = true;
-            setSocialBtns((prevBtns) => [...prevBtns, selectedElement]);
+            elementItem.url = selectedElement.url;
+            setSocialBtns((prevBtns) => [...prevBtns, elementItem]);
         } else {
-            setSocialBtns((prevBtns) => [...prevBtns, selectedElement]);
+            elementItem.submitted = true;
+            elementItem.url = selectedElement.url;
+            setSocialBtns((prevBtns) => [...prevBtns, elementItem]);
         }
     };
 
@@ -46,7 +50,7 @@ const SocialMediaTile = () => {
                         submitted={item.submitted}
                     />
                 ))}
-                {!isValidated && (
+                {!isValidated && !areAllSubmitted && (
                     <SocialAddButton
                         key={socialBtns.length}
                         className="add_btn"
