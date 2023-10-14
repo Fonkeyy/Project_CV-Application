@@ -15,8 +15,12 @@
 
 .input_wrapper {
     display: flex;
+    flex-direction: column;
     place-items: center;
-    gap: 0.5rem;
+    gap: 1rem;
+}
+.input_wrapper input {
+    width: min-content;
 }
 
 .btn_wrapper {
@@ -25,12 +29,13 @@
 }
 
 @media screen and (min-width: 720px) {
-    .social_media_tile {
+    .social_media_wrapper {
         flex-direction: row;
-        gap: 2rem;
+        gap: 1.5rem;
     }
 
     .input_wrapper {
+        flex-direction: row;
         gap: 1rem;
     }
 }

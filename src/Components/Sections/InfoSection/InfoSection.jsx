@@ -70,7 +70,7 @@ const InfoSection = () => {
     // * If not submitted, map through field list and display each field with corresponding props + submit button
 
     return (
-        <>
+        <div className={styles.info_section_wrapper}>
             {!isValidated && !isSubmitted && (
                 <>
                     <div className={styles.info_section}>
@@ -88,9 +88,6 @@ const InfoSection = () => {
                             />
                         ))}
                     </div>
-                    {!isValidated && (
-                        <Button className="submit_btn" ariaLabel={'submit infos'} onClick={handleSubmit} />
-                    )}
                 </>
             )}
             {!isValidated && isSubmitted && (
@@ -162,7 +159,10 @@ const InfoSection = () => {
                     )}
                 </div>
             )}
-        </>
+            {!isValidated && (
+                <Button className="submit_btn" ariaLabel={'submit infos'} onClick={handleSubmit} />
+            )}
+        </div>
     );
 };
 
