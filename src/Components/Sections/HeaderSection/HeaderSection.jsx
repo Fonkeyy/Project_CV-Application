@@ -1,13 +1,15 @@
 import { useContext, useState } from 'react';
+import { ValidContext } from '../../../contexts/validContext';
 import HeaderComponent from '../../HeaderComponent/HeaderComponent';
 import ProfilePicture from '../../ProfilePicture/ProfilePicture';
-
-import styles from './HeaderSection.module.css';
 import Button from '../../Button/Button';
-import { ValidContext } from '../../../contexts/validContext';
+import styles from './HeaderSection.module.css';
+import backgroundImage from '../../../assets/img/home.jpg';
 
 const HeaderSection = () => {
-    const [url, setUrl] = useState('/assets/img/home.jpg');
+    const [url, setUrl] = useState(backgroundImage);
+    // const [url, setUrl] = useState('../../../assets/img/laptop.avif');
+    // const [url, setUrl] = useState('../../assets/img/laptop.avif');
     // const [url, setUrl] = useState('src/assets/img/laptop.avif');
     const [isMouseOver, setIsMouseOver] = useState(false);
     const [isClicked, setIsClicked] = useState(false);
@@ -17,7 +19,6 @@ const HeaderSection = () => {
     const handleEdit = () => {
         setIsEditClick(!isEditClick);
     };
-
     const handleFileChange = (event) => {
         const file = event.target.files[0];
         const imageUrl = URL.createObjectURL(file);
