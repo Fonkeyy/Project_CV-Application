@@ -7,7 +7,7 @@ import Button from '../../Button/Button';
 import { ValidContext } from '../../../contexts/validContext';
 
 const HeaderSection = () => {
-    const [url, setUrl] = useState('dist/assets/img/home.jpg');
+    const [url, setUrl] = useState('/assets/img/home.jpg');
     // const [url, setUrl] = useState('src/assets/img/laptop.avif');
     const [isMouseOver, setIsMouseOver] = useState(false);
     const [isClicked, setIsClicked] = useState(false);
