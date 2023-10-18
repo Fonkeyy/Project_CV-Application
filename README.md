@@ -12,10 +12,10 @@ This project was the first in The Odin Project's React course and served as an i
 - **Introduction to useReducer**: In one component, I implemented the useReducer hook to manage multiple states efficiently.
 
 ## Features
--**Editable Fields**: All fields are editable
--**Customization**: The application allows users to import background images and profile pictures to personalize their CV.
--**Dynamic Tiles**: The user can add or delete tiles as needed
--**Social Media Integration**: The application supports the inclusion of external URLs to social media buttons, enabling easy access to online profiles.
+- **Editable Fields**: All fields are editable
+- **Customization**: The application allows users to import background images and profile pictures to personalize their CV.
+- **Dynamic Tiles**: The user can add or delete tiles as needed
+- **Social Media Integration**: The application supports the inclusion of external URLs to social media buttons, enabling easy access to online profiles.
 
 ## Screenshots
 
