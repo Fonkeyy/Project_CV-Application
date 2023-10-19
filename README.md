@@ -1,7 +1,7 @@
 # Project CV-Application
 
 ## Project Overview 
-This project was the first in The Odin Project's React course and served as an introduction to component creation and state management. The CV Application allows users to input and edit their practical educational and personal information. It was a valuable learning experience, helping me understand how to structure code, create components, and manage state in a React application.
+This [project](https://www.theodinproject.com/lessons/node-path-react-new-cv-application) was the first in The Odin Project's React course and served as an introduction to component creation and state management. The CV Application allows users to input and edit their practical educational and personal information. It was a valuable learning experience, helping me understand how to structure code, create components, and manage state in a React application.
 
  ## 🚀 Learning Highlights 
 - **Component Creation**: This project encouraged me to identify code duplication and convert it into reusable components.
@@ -18,6 +18,7 @@ This project was the first in The Odin Project's React course and served as an i
 - **Social Media Integration**: The application supports the inclusion of external URLs to social media buttons, enabling easy access to online profiles.
 
  ## 📷 Screenshots 
+![cv](https://github.com/Fonkeyy/Project_CV-Application/assets/113917387/ae9e4193-e199-439e-8447-e3039a5584fe)
 
 
  ## 💻 Live Demo
